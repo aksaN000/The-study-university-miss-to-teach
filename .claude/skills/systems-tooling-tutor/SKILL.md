@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (153 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (185 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
@@ -370,6 +370,11 @@ Python's. That shaped a real design decision, not just a note to self:
 - **Phase 13 (build/CI) closes the same way** — a comparison chapter ("The same
   pipeline, five languages") after the Python/generic CI material, doing for build tooling what
   the packaging capstone does.
+- **Scope boundary (Aksan, 2026-10-07: "it needs to clear as much concepts as it can to make a
+  cs student complete"; book size is not a constraint).** Anything in the practical layer
+  between CS theory and real software earns a chapter. Theory the courses teach earns a
+  refresher box inside the chapter that leans on it, not a chapter of its own. When in doubt,
+  add the chapter.
 - **Not literal wall-to-wall coverage of every language in existence, and that's deliberate, not a
   shortcut.** The goal Aksan stated is being able to switch to any language when the time comes,
   not having memorized five ecosystems' command sets today. Depth in one anchor plus explicit,
@@ -473,21 +478,21 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 | Phase | Topic |
 |---|---|
 | 0 | Mental foundations: OS role, processes, memory, filesystem, permissions, fork/exec/CreateProcess, env vars, paths, encodings |
-| 1 | The command line: terminal vs. shell, PowerShell, bash, argv and `--`, PATH, dotfiles, WSL2, Ubuntu, apt, SSH, scripting, macOS |
-| 2 | From source to running process: executable formats, the C pipeline, linking/loading, what the CPU executes, ABIs, interpreters, CPython, JVM, V8 tiers, Node, script launchers, CLI design |
-| 3 | Version control internals: object model, refs, HEAD, merge/rebase, reflog |
-| 4 | Networking essentials: ports and sockets, localhost, DNS, TCP/UDP in practice, HTTP, TLS, SSH keys, servers, network tools |
-| 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, conda, uv/poetry |
-| 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx/npm create, CJS vs. ESM, Vite, TypeScript, accessibility, supply chain, licenses, functional ideas, cross-ecosystem capstone |
-| 7 | APIs: REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks |
+| 1 | The command line: terminal vs. shell, PowerShell, bash, help and docs, links, streams, pipes, exit codes, signals, globbing, regex, structured text, grep/sed/awk/jq, argv, PATH, dotfiles, VMs, WSL2, Ubuntu, apt, disks, archives, hashes, SSH, tmux, scripting, macOS |
+| 2 | From source to running process: executable formats, the C pipeline, what the CPU executes, linking/loading, ABIs, interpreters, CPython, JVM, V8, Node, WebAssembly, memory and sanitizers, debuggers, script launchers, CLI design |
+| 3 | Version control internals: object model, refs, HEAD, merge/rebase, conflicts, remotes, LFS/submodules/monorepos, reflog, history |
+| 4 | Networking essentials: ports and sockets, localhost, DNS, TCP/UDP in practice, HTTP anatomy, TLS, SSH keys, servers, network tools |
+| 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, lockfiles, conda, uv/poetry, the editor and language servers, publishing |
+| 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx, CJS vs. ESM, Vite, TypeScript, accessibility, supply chain, licenses, functional ideas, cross-ecosystem capstone |
+| 7 | APIs: browser DevTools, REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks, streaming/WebSockets/gRPC |
 | 8 | Databases in practice: the database as a server, SQLite, SQL at the prompt, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
 | 9 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
-| 10 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, reproducible races, queues and workers, partial failure, replication |
+| 10 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, races and deadlocks, queues and workers, partial failure, replication |
 | 11 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
 | 12 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
-| 13 | Automation and build tooling: Make, GitHub Actions, testing, pre-commit, linters, type checkers, reproducible builds |
-| 14 | Deployment and operations: deploying, systemd, reverse proxies, HTTPS, logs, process inspection, profiling, monitoring, rollback |
-| 15 | ML infrastructure: CUDA/drivers, DVC, MLflow/W&B, config, serving, reproducibility |
+| 13 | Automation and build tooling: Make, GitHub Actions, testing levels, pre-commit, linters, type checkers, AI coding assistants, reproducible builds, documents as code |
+| 14 | Deployment and operations: deploying, the cloud, systemd, scheduling and time, application servers, reverse proxies, HTTPS, caching and CDNs, logs, process inspection, profiling, monitoring, rollback, infrastructure as code, orchestration |
+| 15 | ML infrastructure: environments, CUDA, multi-GPU, Slurm, DVC, data formats, model weights, tracking, config, serving, local models, LLM serving, reproducibility |
 | 16 | Capstone: one application through every layer, then broken on purpose layer by layer |
 
 ---
