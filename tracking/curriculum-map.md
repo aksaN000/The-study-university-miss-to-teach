@@ -12,7 +12,7 @@ Generated from `book/generate_stubs.py` (the single syllabus source). Phase N = 
 
 | Phase | Part | Topic | Status |
 |---|---|---|---|
-| 0 | I | Mental Foundations (9 ch.) | 🔄 Diagnostic sent, awaiting answers |
+| 0 | I | Mental Foundations (9 ch.) | 🔄 Diagnostic answered (2026-10-07); ch01 next |
 | 1 | II | The Command Line (31 ch.) | ⏳ Not started |
 | 2 | III | From Source Code to Running Process (16 ch.) | ⏳ Not started |
 | 3 | IV | Version Control, Properly (10 ch.) | ⏳ Not started |
@@ -827,3 +827,33 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   project's intent. The `book-latest` tag no longer needs deleting by hand: the build workflow
   now moves the tag to each build's commit before publishing. **Next session: teaching begins
   with the Phase 0 diagnostic** (sent 2026-07-30, never answered; resend it fresh).
+- **2026-10-07, Session 2: Phase 0 diagnostic answered (teaching begins)**: the original
+  2026-07-30 questions were never saved, so a fresh ten-question diagnostic was sent, one or two
+  questions per Phase 0 chapter plus "which shell". Answered from memory. Pattern: the course
+  vocabulary is present (syscalls, threads vs. processes, inodes, permission bits), but it is
+  not yet connected to the real machine, which is exactly the gap this project assumes. Two
+  misses where the theory is on record as known but was not applied: same address in two
+  processes called a contradiction (virtual address spaces, CSE321 paging), and no fork/exec
+  link to "how a shell runs a program" (fork semantics are listed as solid). Per chapter:
+  - ch01 OS role: syscall/kernel boundary right in spirit. Misconception: the OS "sends each
+    instruction to the CPU" and scheduling governs how lines run; actually the CPU fetches
+    directly and the kernel regains control only via syscalls, interrupts, exceptions. Also
+    conflated CPU privilege (cannot touch hardware) with file permissions (not allowed this file).
+  - ch02 Processes: process isolation and thread sharing solid. Undercounted VS Code (said 3;
+    Electron is many processes, plus the shell, conpty host, language server).
+  - ch03 Memory: 3a partial (paging to disk, but framed as whole processes); 3b wrong (see above).
+  - ch04 Filesystem: same-volume move = metadata change: solid. Delete marks blocks free: right
+    (missed SSD TRIM; Recycle Bin is itself a move). `C:\` and folders as directory files: guess.
+  - ch05 Permissions: `-rwxr-xr--` read correctly (missed the leading type char). "Run as
+    administrator" misread as setting file bits; process privilege (token) vs. file
+    permissions not yet distinguished.
+  - ch06 Running a program: believes `train.py` is loaded and executed alongside python and
+    interpreted line by line (the July "press Run" blind spot again). fork/exec, CreateProcess
+    unknown in practice.
+  - ch07 Env vars: no model; `(base)` unknown. Inheritance question guessed correctly.
+  - ch08 Paths: relative-to-what unknown (current working directory); thought the terminal
+    cannot run `open()`; `.` and `..` reversed/confused and used `.` as a separator.
+  - ch09 Encodings: "bytes per character" guessed correctly; CRLF warning and `ï»¿` seen, unknown.
+  - Shell: PowerShell by default (5.1 vs. 7 not yet known).
+  None of this is ticked; ticks wait for each chapter's recall check. Next: ch01, What does an
+  operating system actually do.
