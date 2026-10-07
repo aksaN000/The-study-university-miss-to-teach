@@ -1,0 +1,32 @@
+name: Build the book
+
+on:
+  push:
+    branches: [main]
+    paths: ["book/**", ".github/workflows/build-book.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile with XeLaTeX (full TeX Live image)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: book
+          latexmk_use_xelatex: true
+
+      - name: Publish as the book-latest release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: book-latest
+          name: From Zero (latest build)
+          body: Rebuilt automatically from commit ${{ github.sha }}.
+          files: book/main.pdf
+          make_latest: true

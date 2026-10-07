@@ -1,0 +1,63 @@
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+\markboth{Preface}{Preface}
+
+Every computer science degree teaches the same shape of thing badly, or not at all: the
+layer that sits between the code we write and the machine that runs it. We learn
+algorithms, data structures, operating system theory, sometimes even how a compiler works
+internally, and then we sit down at a real machine, in a real terminal, and none of it
+tells us why \texttt{python} with no arguments starts an interactive prompt, what actually
+happens when we type \texttt{git push}, or why our carefully installed packages vanish the
+moment we open a different Python environment.
+
+This book exists because that gap is real, it is common, and it is entirely fixable. It
+just needs someone to actually walk through it with us instead of assuming we will pick it
+up by osmosis from Stack Overflow and trial and error.
+
+We wrote it a chapter at a time, the same way it should be read: never faster than
+understanding allows. Each chapter grew out of an actual session: a real command, typed
+into a real terminal, on a real machine that already had years of accumulated mess sitting
+on it. We did not invent clean examples for this book. We used what was actually there:
+two Python installations nobody remembered installing, three hundred globally installed
+packages, a \texttt{git} workflow that was three memorized commands deep and zero commits
+deep in understanding. If the machine in front of you looks like that too, good: that is
+exactly who this book is for.
+
+A few things about how we have chosen to write this.
+
+We use ``we'' throughout, not ``you,'' because we do not think of this as a lecture. It is
+closer to two people sitting at the same terminal, one of whom has already been down this
+particular road and knows where the potholes are. When we say the prompt changed, or the
+command failed in a particular way, we mean it: we are looking at the same output
+together.
+
+We do not skip the history. Every tool in this book, the shell, virtual environments,
+Docker, Git itself, exists because something else broke first, and understanding what
+broke is most of what makes the current design stop looking arbitrary. A rule with no
+history behind it is just something to memorize and forget. A rule with its history
+attached is something we can reconstruct ourselves, years later, even after the exact
+syntax has slipped away.
+
+We assume nothing going in. Not because a reader of this book is not capable of more (if
+you are reading this, you almost certainly already know more theoretical computer science
+than this book will ever ask of you), but because the specific gap this book fills is
+usually invisible to the people who have it. It hides behind a Run button, a pre-built
+cloud notebook, or a friend who set things up once, years ago, and it hides so well that
+an entire degree can be finished without ever noticing it is there. So every chapter
+starts as if this is the first time, because for a great many readers, in this exact spot,
+it genuinely is.
+
+No two chapters look quite alike, and that is deliberate rather than sloppy. A chapter
+that is mostly a mental model reads as prose, with a margin note where a definition or a
+piece of history earns one. A chapter that lives in the terminal shows the real command
+and the real output. A chapter that only makes sense side by side with three other
+ecosystems becomes a table instead of a wall of text pretending to be one. The shape
+follows what is actually being taught. What stays constant, chapter to chapter, is the
+questions at the end: real ones, heard in real conversation, not invented to fill a
+section.
+
+If this book leaves us with working commands but no mental model of why they work, it has
+failed at the one thing it set out to do. Everything else, the terminal fluency, the
+\texttt{git} confidence, the Docker comfort, is downstream of that.
+
+Let's begin.

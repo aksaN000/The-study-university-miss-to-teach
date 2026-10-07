@@ -1,0 +1,60 @@
+% Compiled with XeLaTeX (needed for fontspec / real system fonts).
+% latexmk -pdf -pdflatex="xelatex -interaction=nonstopmode -halt-on-error %O %S" main.tex
+
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\usepackage{microtype}
+
+% ---- Type: one warm, well-built serif family carries the whole book.
+% Weight and size build hierarchy, not a mismatched second typeface.
+% Lora ships as a variable font; xdvipdfmx mis-embeds it when fontspec
+% resolves it through fontconfig's named-instance lookup (a known class
+% of variable-font bug), so it's loaded here by explicit file path
+% instead, which sidesteps that path entirely and is more portable
+% besides -- it doesn't depend on Lora being registered with the OS. ----
+\setmainfont{Lora}[
+  Path = fonts/,
+  UprightFont = Lora-Variable.ttf,
+  BoldFont = Lora-Variable.ttf,
+  ItalicFont = Lora-Italic-Variable.ttf,
+  BoldItalicFont = Lora-Italic-Variable.ttf,
+]
+\setmonofont{Latin Modern Mono}[Scale=0.92]
+% \displayfont is Lora at whatever weight is invoked around it (bfseries
+% for headings) -- kept as a named alias so heading commands read clearly
+% and so a different display face can be swapped in later in one place.
+\let\displayfont\normalfont
+
+% ---- Page: a real book trim with room for a margin column. ----
+\usepackage[paperwidth=7.5in, paperheight=9.5in,
+            top=0.85in, bottom=0.9in, left=0.75in,
+            textwidth=4.3in, marginparsep=0.35in, marginparwidth=1.6in,
+            includemp]{geometry}
+
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\small\itshape}
+\usepackage{booktabs}
+\usepackage{array}
+
+% ---- Palette: three colors, used with intent, not five decorative ones. ----
+\definecolor{ink}{HTML}{2A2825}      % body text -- warmer than pure black
+\definecolor{accent}{HTML}{A34A1F}   % the book's one signature color: chapter
+                                       % numbers, colon-heading labels, sidenote
+                                       % rules, epigraph marks
+\definecolor{codeink}{HTML}{2F3B45}  % terminal-block rule and prompt color
+\definecolor{codebg}{HTML}{F4F1EA}   % terminal-block background, warm paper tone
+\definecolor{warn}{HTML}{8C3B12}     % breakage callouts only
+
+\color{ink}
+
+\usepackage[colorlinks=true, linkcolor=accent!70!black,
+            citecolor=accent!70!black, urlcolor=codeink,
+            bookmarksnumbered=true]{hyperref}

@@ -1,0 +1,102 @@
+% ============================================================
+% ADAPTIVE TOOLKIT, not a fixed per-chapter template.
+% Each chapter uses whichever of these actually serves its content.
+% None are mandatory; none appear in a fixed order.
+% ============================================================
+
+% ---- Colon headings: "Label: elaboration", the label weighted and
+% colored, the elaboration in the body weight. Use for \section-level
+% headings when a heading is used at all -- plain prose needs none. ----
+\newcommand{\theading}[2]{%
+  \par\addvspace{18pt}%
+  {\displayfont\bfseries\large\color{accent}#1:}%
+  {\displayfont\large\color{ink}\space #2}%
+  \par\addvspace{8pt}\nopagebreak
+}
+% A bare colon-styled label with no visible elaboration text following.
+\newcommand{\tlabel}[1]{{\displayfont\bfseries\large\color{accent}#1}\par\addvspace{6pt}\nopagebreak}
+
+% ---- Sidenote: the primary lightweight tool. A short marginal aside --
+% a definition, a history fragment, a cross-reference -- set beside the
+% line that prompted it rather than boxed into the flow. Use liberally,
+% or not at all, per chapter. ----
+\newcounter{sidenotenum}[chapter]
+\newcommand{\sidenote}[1]{%
+  \refstepcounter{sidenotenum}%
+  \textsuperscript{\color{accent}\tiny\bfseries\thesidenotenum}%
+  \marginnote{\textsuperscript{\color{accent}\tiny\bfseries\thesidenotenum}\,#1}%
+}
+
+% ---- Epigraph: a short framing line under the chapter title, before
+% the prose begins. Use when a chapter opens with a quote, a fragment
+% of the "why," or a question worth sitting with -- not mandatory. ----
+\newcommand{\epigraph}[2]{%
+  \begin{flushright}\displayfont\itshape\color{ink!80}
+    \parbox{0.75\textwidth}{\raggedleft #1\par\smallskip
+    \normalfont\upshape\small\color{accent}#2}
+  \end{flushright}\bigskip
+}
+
+% ---- Terminal: real command, real output. Used only when a chapter
+% actually has one to show. ----
+\lstdefinestyle{termstyle}{
+  basicstyle=\ttfamily\small\color{codeink},
+  backgroundcolor=\color{codebg},
+  frame=l, framerule=2pt, rulecolor=\color{accent},
+  framesep=10pt, breaklines=true, breakatwhitespace=false,
+  columns=fullflexible, showstringspaces=false,
+  aboveskip=12pt, belowskip=12pt
+}
+\lstnewenvironment{terminal}{\lstset{style=termstyle}}{}
+
+% ---- Breakage: the deliberate-failure moment, when a chapter has one.
+% Deliberately plainer than a full color box -- a rule, not a cage. ----
+\newtcolorbox{breakage}{
+  breakable, enhanced, colback=white, colframe=warn,
+  borderline west={2.5pt}{0pt}{warn}, boxrule=0pt, frame hidden,
+  left=12pt, right=4pt, top=4pt, bottom=4pt,
+  fonttitle=\displayfont\bfseries\color{warn}, title={Break it on purpose}
+}
+
+% ---- Comparison table: for the cross-language / cross-OS capstones.
+% booktabs rules, no vertical lines, generous row spacing. ----
+\newcommand{\comparerow}{\\[2pt]}
+\renewcommand{\arraystretch}{1.3}
+
+% ---- FAQ: available, not mandatory, not forced into a fixed slot.
+% One per real anticipated question, wherever in the chapter it's
+% actually relevant -- often but not always at the end. ----
+\newtcolorbox{faqentry}[1]{
+  breakable, enhanced, colback=accent!4, colframe=accent!45!black,
+  boxrule=0.4pt, arc=3pt, left=10pt, right=10pt, top=7pt, bottom=7pt,
+  fonttitle=\displayfont\bfseries\color{accent!25!black}, title={#1},
+  before skip=10pt, after skip=10pt
+}
+
+% ============================================================
+% Chapter, section, and page furniture
+% ============================================================
+
+\titleformat{\chapter}[display]
+  {\normalfont}
+  {\displayfont\fontsize{60}{60}\selectfont\color{accent!85!black}\thechapter}
+  {8pt}
+  {\raggedright\displayfont\bfseries\fontsize{28}{32}\selectfont\color{ink}}
+\titlespacing*{\chapter}{0pt}{-8pt}{32pt}
+
+\titleformat{\part}[display]
+  {\normalfont\centering}
+  {\displayfont\Large\color{accent}Part \thepart}
+  {12pt}
+  {\centering\displayfont\bfseries\Huge\color{ink}}
+
+\titleformat{\section}{\displayfont\bfseries\Large\color{ink}}{\thesection}{8pt}{}
+\titleformat{\subsection}{\displayfont\bfseries\large\color{ink}}{\thesubsection}{6pt}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape\color{ink!70}\leftmark}
+\fancyhead[RO]{\small\itshape\color{ink!70}\rightmark}
+\fancyfoot[C]{\small\color{accent}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{accent!50}\leaders\hrule height \headrulewidth\hfill}}

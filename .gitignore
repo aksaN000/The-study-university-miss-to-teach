@@ -1,0 +1,16 @@
+# LaTeX build output: the PDF is built by CI and published as a release, not committed
+book/*.aux
+book/*.log
+book/*.toc
+book/*.out
+book/*.fls
+book/*.fdb_latexmk
+book/*.xdv
+book/*.synctex.gz
+book/main.pdf
+# Python
+__pycache__/
+*.pyc
+# OS noise
+.DS_Store
+Thumbs.db

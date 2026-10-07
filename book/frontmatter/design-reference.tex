@@ -1,0 +1,64 @@
+\chapter*{Design reference}
+\addcontentsline{toc}{chapter}{Design reference (not a real chapter)}
+\markboth{Design reference}{Design reference}
+
+\emph{This page is not part of the syllabus. It exists to show what each tool in the
+adaptive toolkit actually looks like once used, with placeholder content standing in for a
+real session. Delete it, or keep it as a quick reference: either is fine.}
+
+\bigskip
+
+\epigraph{A page that never has to lie about being finished is worth more than one that
+pretends to be.}{a working note, not a real citation}
+
+\theading{The idea}{a colon heading, label in the accent color, elaboration in body weight,
+using this chapter's own words rather than a generic slot name.}
+
+This is what ordinary prose looks like on the page: Lora at eleven and a bit points, a
+text column sized for comfortable line length, and a wide outer margin standing by for
+whenever a thought is worth setting beside the line that prompted it rather than
+interrupting the sentence to explain itself.\sidenote{This is a sidenote. Short, set in
+the margin, numbered quietly, used as often or as rarely as a given chapter actually
+warrants, never mandatory.} Some paragraphs will want several of these. Most chapters,
+especially the purely conceptual ones, may want none at all, and that is fine.
+
+\theading{Seeing it for real}{a terminal block, used only in chapters that actually have a
+command to show.}
+
+\begin{terminal}
+$ echo "placeholder command, not a real session"
+placeholder command, not a real session
+\end{terminal}
+
+\theading{When something breaks on purpose}{the breakage callout, a rule rather than a
+cage, used only where a chapter has a genuine deliberate failure to walk through.}
+
+\begin{breakage}
+Placeholder: what we broke, what it looked like, how we found our way back.
+\end{breakage}
+
+\theading{A comparison-shaped chapter}{when the content is inherently a table, it becomes
+one instead of prose pretending otherwise.}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Tool} & \textbf{Lockfile} & \textbf{Registry} \\
+\midrule
+pip & requirements.txt / lock & PyPI \\
+npm & package-lock.json & npm registry \\
+Cargo & Cargo.lock & crates.io \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\theading{Questions we might have}{available wherever they land, not bundled into a fixed
+closing slot.}
+
+\begin{faqentry}{Is this placeholder text a real question?}
+No. In a real chapter this box holds a question actually asked or actually confusing
+during the session it documents.
+\end{faqentry}
+
+\bigskip
+\emph{End of design reference.}
