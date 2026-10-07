@@ -46,6 +46,7 @@ SYLLABUS = [
         "Three kinds of things on PATH: native binaries, language engines, and scripted tools",
         "Executable files: ELF, PE, Mach-O, magic numbers, and shebangs",
         "The C pipeline: preprocess, compile, assemble, link",
+        "What the CPU actually executes: instructions, registers, and the stack",
         "Linking and loading: static, dynamic, and the loader that runs first",
         "ABIs: why a binary built here refuses to run there",
         "Interpreters, honestly: line by line, tree walking, and bytecode",
@@ -72,7 +73,7 @@ SYLLABUS = [
         "localhost, loopback, and private vs. public addresses",
         "DNS: from a name to an address",
         "TCP and UDP in practice: connections, handshakes, refusals, and timeouts",
-        "HTTP basics",
+        "HTTP: the anatomy of a request and a response",
         "TLS and certificates",
         "SSH keys",
         "What a server actually is",
@@ -119,6 +120,7 @@ SYLLABUS = [
     ('part09-databases', 'Databases in Practice', 8, [
         "A database is a server: processes, ports, and connection strings",
         "SQLite: the database that is just a file",
+        "SQL at the prompt: psql, sqlite3, and the queries we actually write",
         "Drivers and connection pools: why connections are expensive",
         "Migrations: schema changes as version-controlled code",
         "ORMs vs. raw SQL: what the abstraction hides",
@@ -138,7 +140,7 @@ SYLLABUS = [
     ('part11-concurrency', 'Concurrency and Distributed Systems in Practice', 10, [
         "Concurrency in practice: threads, processes, and async I/O",
         "Python's GIL and the free-threaded build: what actually runs in parallel",
-        "Race conditions we can reproduce: locks, and letting the database be the lock",
+        "Race conditions and deadlocks we can reproduce: locks, and letting the database be the lock",
         "Queues and background workers: work that should not happen inside the request",
         "More than one machine: partial failure, timeouts, and retries",
         "Replication and consistency in practice: what eventually consistent actually means",
@@ -163,7 +165,7 @@ SYLLABUS = [
     ('part14-automation-build', 'Automation and Build Tooling', 13, [
         "Makefiles",
         "GitHub Actions and CI/CD",
-        "Automated testing as a habit, not a chore",
+        "Automated testing: what a test proves, from unit to end-to-end",
         "Pre-commit hooks",
         "Linters and formatters",
         "Type checkers: mypy, pyright, and tsc, and what they actually prove",

@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (151 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (153 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
@@ -474,13 +474,13 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 |---|---|
 | 0 | Mental foundations: OS role, processes, memory, filesystem, permissions, fork/exec/CreateProcess, env vars, paths, encodings |
 | 1 | The command line: terminal vs. shell, PowerShell, bash, argv and `--`, PATH, dotfiles, WSL2, Ubuntu, apt, SSH, scripting, macOS |
-| 2 | From source to running process: executable formats, the C pipeline, linking/loading, ABIs, interpreters, CPython, JVM, V8 tiers, Node, script launchers, CLI design |
+| 2 | From source to running process: executable formats, the C pipeline, linking/loading, what the CPU executes, ABIs, interpreters, CPython, JVM, V8 tiers, Node, script launchers, CLI design |
 | 3 | Version control internals: object model, refs, HEAD, merge/rebase, reflog |
 | 4 | Networking essentials: ports and sockets, localhost, DNS, TCP/UDP in practice, HTTP, TLS, SSH keys, servers, network tools |
 | 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, conda, uv/poetry |
 | 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx/npm create, CJS vs. ESM, Vite, TypeScript, accessibility, supply chain, licenses, functional ideas, cross-ecosystem capstone |
 | 7 | APIs: REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks |
-| 8 | Databases in practice: the database as a server, SQLite, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
+| 8 | Databases in practice: the database as a server, SQLite, SQL at the prompt, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
 | 9 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
 | 10 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, reproducible races, queues and workers, partial failure, replication |
 | 11 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
@@ -566,6 +566,7 @@ No exam and no deadline changes this table completely relative to the sibling sk
 When a session begins:
 
 - [ ] Read `tracking/curriculum-map.md` for current phase, status, and the session log
+- [ ] Check its "Chapter Plan Notes" for anything already agreed about this chapter
 - [ ] Confirm which specific sub-topic this session covers — not a whole phase
 - [ ] Check "What Not To Re-Teach" before assuming a topic starts from zero
 - [ ] Point to the matching canonical resource (Missing Semester lecture, Pro Git chapter, PEP, etc.)
