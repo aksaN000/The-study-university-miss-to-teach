@@ -123,7 +123,6 @@ SYLLABUS = [
         "Accessibility in practice: what the browser exposes, and how we test it",
         "Supply-chain security: every dependency is code we chose to run",
         "Software licenses: what we may use, and what we owe when we publish",
-        "Functional ideas in everyday tools: immutability and pure functions in Git, React, and builds",
         "Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares",
     ]),
     ('part08-apis', 'APIs: How Applications Talk', 7, [
@@ -147,6 +146,7 @@ SYLLABUS = [
         "Foreign function interfaces: how Python and JavaScript call C",
         "Library vs. framework: inversion of control, or why the framework calls us",
         "Building a tiny web framework: routing, middleware, and the request object",
+        "Functional ideas in everyday tools: immutability and pure functions in Git, React, and builds",
         "Building a tiny React: components, the virtual DOM, and reconciliation",
         "Building a tiny autograd: how PyTorch computes gradients",
         "Plugins and extension points: how tools let us add our own code",
@@ -194,7 +194,6 @@ SYLLABUS = [
         "Volumes, ports, and networking",
         "docker-compose",
         "GPU containers",
-        "Why \"works on my machine\" stops being necessary",
     ]),
     ('part15-automation-build', 'Automation and Build Tooling', 14, [
         "Makefiles",
@@ -228,7 +227,6 @@ SYLLABUS = [
         "Orchestration: what Kubernetes is for, and when we do not need it",
     ]),
     ('part17-ml-infra', 'Machine Learning Infrastructure', 16, [
-        "Reproducible ML environments",
         "CUDA and driver versions",
         "More than one GPU: data parallelism and NCCL in practice",
         "Shared GPU machines: Slurm and job schedulers",

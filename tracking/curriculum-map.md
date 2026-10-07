@@ -18,17 +18,17 @@ Generated from `book/generate_stubs.py` (the single syllabus source). Phase N = 
 | 3 | IV | Version Control, Properly (10 ch.) | ⏳ Not started |
 | 4 | V | Networking Essentials (9 ch.) | ⏳ Not started |
 | 5 | VI | Python Environments and Packaging (12 ch.) | ⏳ Not started |
-| 6 | VII | JavaScript and Node Tooling (15 ch.) | ⏳ Not started |
+| 6 | VII | JavaScript and Node Tooling (14 ch.) | ⏳ Not started |
 | 7 | VIII | APIs: How Applications Talk (9 ch.) | ⏳ Not started |
-| 8 | IX | Under the Hood: How Languages, Libraries, and Frameworks Are Built (12 ch.) | ⏳ Not started |
+| 8 | IX | Under the Hood: How Languages, Libraries, and Frameworks Are Built (13 ch.) | ⏳ Not started |
 | 9 | X | Databases in Practice (10 ch.) | ⏳ Not started |
 | 10 | XI | Security in Practice (6 ch.) | ⏳ Not started |
 | 11 | XII | Concurrency and Distributed Systems in Practice (6 ch.) | ⏳ Not started |
 | 12 | XIII | Jupyter and the Notebook Stack (6 ch.) | ⏳ Not started |
-| 13 | XIV | Containers (7 ch.) | ⏳ Not started |
+| 13 | XIV | Containers (6 ch.) | ⏳ Not started |
 | 14 | XV | Automation and Build Tooling (10 ch.) | ⏳ Not started |
 | 15 | XVI | Deployment and Operations (17 ch.) | ⏳ Not started |
-| 16 | XVII | Machine Learning Infrastructure (13 ch.) | ⏳ Not started |
+| 16 | XVII | Machine Learning Infrastructure (12 ch.) | ⏳ Not started |
 | 17 | XVIII | Capstone: From Source to Production (2 ch.) | ⏳ Not started |
 
 ---
@@ -152,30 +152,30 @@ chapters by title in conversation and by number only when reading the compiled b
 - [ ] ch98 Accessibility in practice: what the browser exposes, and how we test it
 - [ ] ch99 Supply-chain security: every dependency is code we chose to run
 - [ ] ch100 Software licenses: what we may use, and what we owe when we publish
-- [ ] ch101 Functional ideas in everyday tools: immutability and pure functions in Git, React, and builds
-- [ ] ch102 Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares
+- [ ] ch101 Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares
 
 ### Phase 7: APIs: How Applications Talk (Part VIII)
-- [ ] ch103 What the browser does with a URL: DevTools as our instrument
-- [ ] ch104 APIs over HTTP: endpoints, REST, and JSON
-- [ ] ch105 API conventions: status codes, idempotency, pagination, rate limits, and versioning
-- [ ] ch106 Authentication vs. authorization
-- [ ] ch107 Cookies and sessions: state on a stateless protocol
-- [ ] ch108 Tokens and JWT: authentication without server-side sessions
-- [ ] ch109 The same-origin policy and CORS: why the browser blocked our request
-- [ ] ch110 Webhooks: when the server calls us
-- [ ] ch111 Beyond request and response: streaming, WebSockets, and gRPC
+- [ ] ch102 What the browser does with a URL: DevTools as our instrument
+- [ ] ch103 APIs over HTTP: endpoints, REST, and JSON
+- [ ] ch104 API conventions: status codes, idempotency, pagination, rate limits, and versioning
+- [ ] ch105 Authentication vs. authorization
+- [ ] ch106 Cookies and sessions: state on a stateless protocol
+- [ ] ch107 Tokens and JWT: authentication without server-side sessions
+- [ ] ch108 The same-origin policy and CORS: why the browser blocked our request
+- [ ] ch109 Webhooks: when the server calls us
+- [ ] ch110 Beyond request and response: streaming, WebSockets, and gRPC
 
 ### Phase 8: Under the Hood: How Languages, Libraries, and Frameworks Are Built (Part IX)
-- [ ] ch112 Language, runtime, standard library: three things we call "Python"
-- [ ] ch113 How a language evolves: PEPs, TC39, versions, and deprecations
-- [ ] ch114 Building a tiny language, part one: from text to a syntax tree
-- [ ] ch115 Building a tiny language, part two: a tree-walking interpreter
-- [ ] ch116 Building a tiny language, part three: bytecode and a small virtual machine
-- [ ] ch117 What a library really is: public API, internals, and reading the source of one we use
-- [ ] ch118 Foreign function interfaces: how Python and JavaScript call C
-- [ ] ch119 Library vs. framework: inversion of control, or why the framework calls us
-- [ ] ch120 Building a tiny web framework: routing, middleware, and the request object
+- [ ] ch111 Language, runtime, standard library: three things we call "Python"
+- [ ] ch112 How a language evolves: PEPs, TC39, versions, and deprecations
+- [ ] ch113 Building a tiny language, part one: from text to a syntax tree
+- [ ] ch114 Building a tiny language, part two: a tree-walking interpreter
+- [ ] ch115 Building a tiny language, part three: bytecode and a small virtual machine
+- [ ] ch116 What a library really is: public API, internals, and reading the source of one we use
+- [ ] ch117 Foreign function interfaces: how Python and JavaScript call C
+- [ ] ch118 Library vs. framework: inversion of control, or why the framework calls us
+- [ ] ch119 Building a tiny web framework: routing, middleware, and the request object
+- [ ] ch120 Functional ideas in everyday tools: immutability and pure functions in Git, React, and builds
 - [ ] ch121 Building a tiny React: components, the virtual DOM, and reconciliation
 - [ ] ch122 Building a tiny autograd: how PyTorch computes gradients
 - [ ] ch123 Plugins and extension points: how tools let us add our own code
@@ -223,57 +223,55 @@ chapters by title in conversation and by number only when reading the compiled b
 - [ ] ch155 Volumes, ports, and networking
 - [ ] ch156 docker-compose
 - [ ] ch157 GPU containers
-- [ ] ch158 Why "works on my machine" stops being necessary
 
 ### Phase 14: Automation and Build Tooling (Part XV)
-- [ ] ch159 Makefiles
-- [ ] ch160 GitHub Actions and CI/CD
-- [ ] ch161 Automated testing: what a test proves, from unit to end-to-end
-- [ ] ch162 Pre-commit hooks
-- [ ] ch163 Linters and formatters
-- [ ] ch164 Type checkers: mypy, pyright, and tsc, and what they actually prove
-- [ ] ch165 AI coding assistants as tools: what they run, what they see, and how we review them
-- [ ] ch166 Reproducible builds
-- [ ] ch167 Documents as code: Markdown, LaTeX, and BibTeX
-- [ ] ch168 The same pipeline, five languages: CI beyond Python
+- [ ] ch158 Makefiles
+- [ ] ch159 GitHub Actions and CI/CD
+- [ ] ch160 Automated testing: what a test proves, from unit to end-to-end
+- [ ] ch161 Pre-commit hooks
+- [ ] ch162 Linters and formatters
+- [ ] ch163 Type checkers: mypy, pyright, and tsc, and what they actually prove
+- [ ] ch164 AI coding assistants as tools: what they run, what they see, and how we review them
+- [ ] ch165 Reproducible builds
+- [ ] ch166 Documents as code: Markdown, LaTeX, and BibTeX
+- [ ] ch167 The same pipeline, five languages: CI beyond Python
 
 ### Phase 15: Deployment and Operations (Part XVI)
-- [ ] ch169 Deploying something small to a real machine
-- [ ] ch170 The cloud is someone else's computer: VMs, object storage, and paying by the hour
-- [ ] ch171 Keeping a process alive: systemd, restart policies, and graceful shutdown
-- [ ] ch172 Scheduled work and time: cron, systemd timers, UTC, and time zones
-- [ ] ch173 Application servers: WSGI, ASGI, and what actually serves our code
-- [ ] ch174 Reverse proxies: one public port, many services
-- [ ] ch175 From a domain name to HTTPS on our own server
-- [ ] ch176 HTTP caching and CDNs: the copies between us and our users
-- [ ] ch177 Reading logs
-- [ ] ch178 Inspecting a running process: ps, top, lsof, ss, and strace
-- [ ] ch179 Resource limits and the OOM killer: when the operating system ends our process
-- [ ] ch180 Debugging a process that will not start
-- [ ] ch181 Profiling: finding out why it is slow
-- [ ] ch182 Health checks, monitoring, and observability
-- [ ] ch183 Deployment strategies and rollback: shipping without fear
-- [ ] ch184 Infrastructure as code: describing machines instead of clicking
-- [ ] ch185 Orchestration: what Kubernetes is for, and when we do not need it
+- [ ] ch168 Deploying something small to a real machine
+- [ ] ch169 The cloud is someone else's computer: VMs, object storage, and paying by the hour
+- [ ] ch170 Keeping a process alive: systemd, restart policies, and graceful shutdown
+- [ ] ch171 Scheduled work and time: cron, systemd timers, UTC, and time zones
+- [ ] ch172 Application servers: WSGI, ASGI, and what actually serves our code
+- [ ] ch173 Reverse proxies: one public port, many services
+- [ ] ch174 From a domain name to HTTPS on our own server
+- [ ] ch175 HTTP caching and CDNs: the copies between us and our users
+- [ ] ch176 Reading logs
+- [ ] ch177 Inspecting a running process: ps, top, lsof, ss, and strace
+- [ ] ch178 Resource limits and the OOM killer: when the operating system ends our process
+- [ ] ch179 Debugging a process that will not start
+- [ ] ch180 Profiling: finding out why it is slow
+- [ ] ch181 Health checks, monitoring, and observability
+- [ ] ch182 Deployment strategies and rollback: shipping without fear
+- [ ] ch183 Infrastructure as code: describing machines instead of clicking
+- [ ] ch184 Orchestration: what Kubernetes is for, and when we do not need it
 
 ### Phase 16: Machine Learning Infrastructure (Part XVII)
-- [ ] ch186 Reproducible ML environments
-- [ ] ch187 CUDA and driver versions
-- [ ] ch188 More than one GPU: data parallelism and NCCL in practice
-- [ ] ch189 Shared GPU machines: Slurm and job schedulers
-- [ ] ch190 Data versioning with DVC
-- [ ] ch191 Data formats for data: CSV, Parquet, Arrow, and why loading is slow
-- [ ] ch192 Model weights and the Hugging Face cache: where models actually live
-- [ ] ch193 Experiment tracking: MLflow and W&B
-- [ ] ch194 Configuration management
-- [ ] ch195 Serving a model
-- [ ] ch196 Running models locally: llama.cpp, Ollama, and quantization
-- [ ] ch197 Serving large language models: batching, the KV cache, and vLLM
-- [ ] ch198 Why almost every ML project fails to be reproducible
+- [ ] ch185 CUDA and driver versions
+- [ ] ch186 More than one GPU: data parallelism and NCCL in practice
+- [ ] ch187 Shared GPU machines: Slurm and job schedulers
+- [ ] ch188 Data versioning with DVC
+- [ ] ch189 Data formats for data: CSV, Parquet, Arrow, and why loading is slow
+- [ ] ch190 Model weights and the Hugging Face cache: where models actually live
+- [ ] ch191 Experiment tracking: MLflow and W&B
+- [ ] ch192 Configuration management
+- [ ] ch193 Serving a model
+- [ ] ch194 Running models locally: llama.cpp, Ollama, and quantization
+- [ ] ch195 Serving large language models: batching, the KV cache, and vLLM
+- [ ] ch196 Why almost every ML project fails to be reproducible
 
 ### Phase 17: Capstone: From Source to Production (Part XVIII)
-- [ ] ch199 One application through every layer
-- [ ] ch200 Breaking it on purpose, one layer at a time
+- [ ] ch197 One application through every layer
+- [ ] ch198 Breaking it on purpose, one layer at a time
 ### Cross-Cutting — Professional Habits (reinforce throughout, not a single session)
 - [ ] Reading documentation and source instead of guessing
 - [ ] Reading error messages carefully and completely
@@ -315,7 +313,8 @@ needs them. Refer to chapters by title. Check this list when preparing any sessi
 - **Profiling**: benchmarking honestly (warm-up, variance, what to measure).
 - **CUDA and driver versions**: floating-point formats (fp32, fp16, bf16) and why results differ
   across hardware; a CSE330 refresher.
-- **Reproducible ML environments**: random seeds and the limits of determinism.
+- **Why almost every ML project fails to be reproducible**: random seeds and the limits of
+  determinism; pinning the whole stack (Python, wheels, CUDA runtime, driver) as one unit.
 - **venv: what it actually does, mechanically**: a breakage where the same import works in the
   terminal and fails elsewhere; revisited in the scheduled-work chapter (cron runs a different
   Python), the systemd chapter (a service's environment), and kernel specs (a kernel pointing at
@@ -813,3 +812,9 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   the venv-escape breakage, the three-CUDA collision, weights disk space, remote Jupyter through a
   tunnel, static frontend serving, dev/prod parity, and container OOM. Rejected: moving Security
   to right after APIs (its injection chapter needs databases). 200 chapters in 18 parts.
+- **2026-10-07, redundancy pass**: Aksan allowed removing anything added unnecessarily. Read
+  all 200 titles. Removed "Why works on my machine stops being necessary" (a recap with no new
+  mechanism; the isolation chapter and part-end Trace it cover it) and "Reproducible ML
+  environments" (overlapped Part VI, the CUDA note, and the ML closing chapter, which absorbs its
+  seeds note). Moved "Functional ideas in everyday tools" from Part VII into Part IX, just before
+  the tiny React that depends on immutability. 198 chapters in 18 parts.

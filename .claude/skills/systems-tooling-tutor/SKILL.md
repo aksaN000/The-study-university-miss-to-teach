@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (200 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (198 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
@@ -483,9 +483,9 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 | 3 | Version control internals: object model, refs, HEAD, merge/rebase, conflicts, remotes, LFS/submodules/monorepos, reflog, history |
 | 4 | Networking essentials: ports and sockets, localhost, DNS, TCP/UDP in practice, HTTP anatomy, TLS, SSH keys, servers, network tools |
 | 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, lockfiles, conda, uv/poetry, the editor and language servers, publishing |
-| 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx, CJS vs. ESM, Vite, TypeScript, accessibility, supply chain, licenses, functional ideas, cross-ecosystem capstone |
+| 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx, CJS vs. ESM, Vite, production builds, TypeScript, accessibility, supply chain, licenses, cross-ecosystem capstone |
 | 7 | APIs: browser DevTools, REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks, streaming/WebSockets/gRPC |
-| 8 | Under the hood: language vs. runtime vs. stdlib, language evolution, a tiny language (tree, interpreter, bytecode VM), library internals, FFI, inversion of control, a tiny web framework, a tiny React, a tiny autograd, plugins |
+| 8 | Under the hood: language vs. runtime vs. stdlib, language evolution, a tiny language (tree, interpreter, bytecode VM), library internals, FFI, inversion of control, a tiny web framework, functional ideas, a tiny React, a tiny autograd, plugins |
 | 9 | Databases in practice: the database as a server, SQLite, SQL at the prompt, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
 | 10 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
 | 11 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, races and deadlocks, queues and workers, partial failure, replication |
@@ -493,7 +493,7 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 | 13 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
 | 14 | Automation and build tooling: Make, GitHub Actions, testing levels, pre-commit, linters, type checkers, AI coding assistants, reproducible builds, documents as code |
 | 15 | Deployment and operations: deploying, the cloud, systemd, scheduling and time, application servers, reverse proxies, HTTPS, caching and CDNs, logs, process inspection, profiling, monitoring, rollback, infrastructure as code, orchestration |
-| 16 | ML infrastructure: environments, CUDA, multi-GPU, Slurm, DVC, data formats, model weights, tracking, config, serving, local models, LLM serving, reproducibility |
+| 16 | ML infrastructure: CUDA, multi-GPU, Slurm, DVC, data formats, model weights, tracking, config, serving, local models, LLM serving, reproducibility |
 | 17 | Capstone: one application through every layer, then broken on purpose layer by layer |
 
 ---
