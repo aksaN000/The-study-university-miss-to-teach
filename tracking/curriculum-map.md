@@ -253,8 +253,17 @@ Stated by Aksan directly; supersedes the partial, self-reported list above. BRAC
   Networks, CSE440 Natural Language Processing, CSE428 Image Processing
 - **Other**: CSE423 Computer Graphics, STA301 Advanced Statistics, ECO101 and ECO102
   (micro and macroeconomics fundamentals)
-- **Not on the list**: any security, parallel/distributed systems, HCI, or ethics course; any
-  MAT course (to confirm). These shape the coverage audit's open questions.
+- **Mathematics and science**: MAT110 Math I (Differential Calculus and Co-ordinate Geometry),
+  MAT120 Math II (Integral Calculus and Differential Equations), MAT215 Math III (Complex
+  Variables and Laplace Transformations), MAT216 Math IV (Linear Algebra and Fourier Analysis),
+  STA201 Elements of Statistics and Probability, PHY111 and PHY112 Principles of Physics I and
+  II, CHE101, BIO101
+- **Humanities and general education**: ENG101 English Fundamentals, ENG102 English Composition
+  I, HUM103 Ethics and Culture, HUM101, BNG103 Bangla Language and Literature, EMB101/DEV101
+  Emergence of Bangladesh / Bangladesh Studies, CST301 For the Love of Food
+- **Not on the list**: any security, parallel/distributed systems, or HCI course. These shape
+  the coverage audit's open questions. HUM103 is the only ethics course and is general rather
+  than computing-specific.
 
 Courses taken are not the same as material that landed: per the "What NOT to Re-Teach" rule,
 verify with one light question before building on any of them.
@@ -528,3 +537,8 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   session-assigned branch (`claude/brave-feynman-eeu2b0`). Aksan asked for all work to go to
   `main`; new branches only when he asks. Main fast-forwarded to include them, and the
   convention is now in SKILL.md under "Home of Everything".
+- **2026-10-07, coverage audit pass 3**: Aksan added his maths, science, and general-education
+  courses (recorded under "Degree Course List"). MSF is now fully degree-covered (MAT110, MAT120,
+  MAT215, MAT216, STA201, STA301, CSE230, CSE330), closing the MAT checkbox. HUM103 Ethics and
+  Culture moves SEP's general ethics to the degree; computing-specific professional practice
+  (licensing, publishing) stays open question 4. Seven open questions remain.
