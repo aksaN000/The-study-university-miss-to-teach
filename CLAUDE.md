@@ -9,6 +9,9 @@ Before doing anything else in a session:
    how sessions run, how the book is written, and the repository layout.
 2. Read `tracking/curriculum-map.md` for where things stand. Its session log is the memory of
    this project; do not rely on anything else to know what happened before.
+3. While the project is in its design phase, also read `tracking/design-inbox.md` (confusions
+   awaiting triage) and `tracking/coverage-audit.md` (the CS2023 audit). The design freezes only
+   when the criteria in the curriculum map's "Design Freeze Criteria" section all hold.
 
 Hard rules, repeated here because they matter most:
 

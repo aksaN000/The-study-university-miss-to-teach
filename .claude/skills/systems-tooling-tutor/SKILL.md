@@ -220,7 +220,11 @@ Repository layout (authoritative; paths elsewhere in this file are relative to t
 
 - `CLAUDE.md`: the short orientation Claude Code loads every session; points here.
 - `.claude/skills/systems-tooling-tutor/SKILL.md`: this file, the stable rulebook.
-- `tracking/curriculum-map.md`: live progress (phase table, chapter checklist, session log).
+- `tracking/curriculum-map.md`: live progress (phase table, chapter checklist, design freeze
+  criteria, session log).
+- `tracking/design-inbox.md`: confusions from Aksan's other work, each triaged as covered, fold
+  in, or new chapter.
+- `tracking/coverage-audit.md`: CS2023 knowledge-area audit (degree, project, or out of scope).
 - `book/`: LaTeX sources; `book/generate_stubs.py` holds `SYLLABUS`, the single source of truth
   for chapter titles and order. The PDF is not committed: GitHub Actions
   (`.github/workflows/build-book.yml`) compiles it on every push and publishes it as the

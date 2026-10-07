@@ -295,6 +295,23 @@ thing this project exists to close.
 
 ---
 
+## Design Freeze Criteria (2026-10-07)
+
+The project is in its design phase. Teaching (starting with the Phase 0 diagnostic) begins only
+once the design freezes, and it freezes only when all three hold at the same time:
+
+- [ ] **The coverage audit is complete**: every CS2023 knowledge area in
+  `tracking/coverage-audit.md` is labelled degree, project, or out of scope with a reason; no
+  row is pending; every open question the audit raised is decided.
+- [ ] **The design inbox is empty of untriaged items**: every entry in
+  `tracking/design-inbox.md` has a verdict (covered, fold in, new chapter).
+- [ ] **Aksan signs off**, explicitly, in a session, recorded in the session log with the date.
+
+After the freeze, new confusions still go through the inbox, but a new chapter then needs
+Aksan's explicit approval because it moves a frozen plan.
+
+---
+
 ## Tracking and Infrastructure Decision (2026-10-07, supersedes the 2026-07-30 one below)
 
 Everything lives in one GitHub repository, `aksaN000/The-study-university-miss-to-teach`, which
@@ -457,3 +474,15 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   what a complete CS engineer and researcher needs; only then does teaching begin, starting
   with the Phase 0 diagnostic. Proposed next design step: a systematic coverage audit against
   ACM/IEEE CS2023 knowledge areas and his BRAC course list.
+- **2026-10-07, design process (no teaching yet)**: Aksan set up the machinery for ending the
+  design phase deliberately. Added `tracking/design-inbox.md` (confusions from other work, each
+  triaged as covered, fold into an existing chapter, or new chapter placed by dependency; the
+  React four-module review is recorded there retroactively as the first triaged item). Recorded
+  the Design Freeze Criteria above: audit complete, inbox has no untriaged items, Aksan signs
+  off. Started `tracking/coverage-audit.md` against the 17 CS2023 knowledge areas; it is
+  provisional because the course list on record is partial and partly self-reported. It raised
+  six open questions for Aksan (databases in practice, practical concurrency and distributed
+  basics, secrets and service security, licensing, profiling, HCI). **Not done**: saving his
+  founding brief as `tracking/project-brief.md`, because the brief and his course list were
+  referenced in his message but not included; nothing was reconstructed from memory. Next: Aksan
+  pastes the brief verbatim and his full course list, then the audit's pending rows get closed.
