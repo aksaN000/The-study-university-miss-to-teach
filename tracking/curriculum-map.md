@@ -410,7 +410,7 @@ once the design freezes, and it freezes only when all three hold at the same tim
 - [x] **The coverage audit is complete** (2026-10-07): every CS2023 knowledge area in
   `tracking/coverage-audit.md` is labelled degree, project, or out of scope with a reason; no
   row is pending; every open question the audit raised is decided.
-- [x] **The design inbox is empty of untriaged items** (as of 2026-10-07; reopens whenever a new item arrives): every entry in
+- [ ] **The design inbox is empty of untriaged items** (reopened 2026-10-07 by the second review): every entry in
   `tracking/design-inbox.md` has a verdict (covered, fold in, new chapter).
 - [ ] **Aksan signs off**, explicitly, in a session, recorded in the session log with the date.
 
@@ -664,3 +664,6 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   algorithm listings. Verified by compiling locally and inspecting rendered pages. Rule added to
   SKILL.md: every mechanism gets a figure, and fun is a teaching tool. Also answered: a skill
   saved on claude.ai does not update itself; Aksan re-saves each new `.skill` file sent in chat.
+- **2026-10-07, second external review logged**: proposed verdicts in the design inbox (two new
+  chapters: CPU, SQL at the prompt; two retitles; three fold-ins; Jupyter stays). Awaiting
+  Aksan's decision; design freeze's inbox condition is open again until then.

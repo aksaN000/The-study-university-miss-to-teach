@@ -21,7 +21,24 @@ with a pointer to the chapter that will cover it properly.
 
 ## Untriaged
 
-_(none)_
+### 2026-10-07: second external review (ChatGPT, of the 151-chapter skeleton)
+
+Claude's proposed verdicts; nothing changes in `SYLLABUS` until Aksan decides.
+
+| # | Suggestion | Proposed verdict | Notes |
+|---|---|---|---|
+| 1 | "What the CPU actually executes" chapter (instructions, registers, stack, heap, x86-64 vs. ARM64, user vs. kernel mode) | New chapter, Part III, after "The C pipeline" and before "Linking and loading" | Reverses the earlier rejection: under the "studied, not mastered" audience rule this has a real practical face (disassemble our own compiled C with objdump, watch registers in gdb). Needs WSL's gcc, so Part III, not Part I. ABIs and multi-architecture Docker images build on it. |
+| 2 | SQL fundamentals before ORMs | New chapter after "SQLite" | "SQL at the prompt: psql, sqlite3, and the queries we actually write": a CSE370 refresher done hands-on, so the ORM chapter has something to compare against. |
+| 3 | HTTP request/response anatomy explicit | Retitle | "HTTP basics" becomes "HTTP: the anatomy of a request and a response". |
+| 4 | Keep concurrency practical, not a distributed-systems course | Covered, plus one fold-in | The six titles are already practical; add deadlocks to the race-conditions chapter. |
+| 5 | Testing levels (unit, integration, end-to-end) and what a test proves | Retitle and fold in | "Automated testing: what a test proves, from unit to end-to-end". |
+| 6 | Trace it, break it, diagnose it as a consistent method | Covered | Already built: `traceit` and `breakage` boxes, and the session's breakage step. |
+| 7 | Encryption vs. authentication vs. integrity vs. trust | Fold into the TLS chapter | A distinction table there; revisited by the security part. |
+| 8 | Move Jupyter later | Reject (the review itself says leave it) | Its dependencies (Python environments, networking) are already met. |
+| 9 | Do not add Kubernetes, Terraform, cloud certs, framework tutorials, system design, DSA | Agree | None are in the syllabus; this matches the project's identity. |
+| 10 | Scores | No action | |
+
+Net effect if accepted: 151 to 153 chapters, two retitles, three fold-ins.
 
 ## Triaged
 
