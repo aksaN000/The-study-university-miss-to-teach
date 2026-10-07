@@ -21,3 +21,9 @@ Hard rules, repeated here because they matter most:
 - Tracking is your job: at the end of every session (and every design change), update
   `tracking/curriculum-map.md`, commit with a descriptive message, and push.
 - Never ask for, accept, or use a pasted token, password, or key.
+- Commits are Aksan's: before the first commit of every session, run
+  `git config user.name "Aksan"` and
+  `git config user.email "92901617+aksaN000@users.noreply.github.com"` (his GitHub no-reply
+  address, linked to the `aksaN000` account). Never add Co-Authored-By, Claude-Session, or any
+  other Claude attribution line to a commit message or PR body.
+- Commit and push directly to `main`; create a branch or PR only when Aksan asks.

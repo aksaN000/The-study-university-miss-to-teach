@@ -542,3 +542,9 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   MAT215, MAT216, STA201, STA301, CSE230, CSE330), closing the MAT checkbox. HUM103 Ethics and
   Culture moves SEP's general ethics to the degree; computing-specific professional practice
   (licensing, publishing) stays open question 4. Seven open questions remain.
+- **2026-10-07, commit identity**: Aksan asked that every commit show as his and carry no Claude
+  attribution. With his explicit go-ahead, `main` was rewritten once and force-pushed: author and
+  committer set to `Aksan <92901617+aksaN000@users.noreply.github.com>` (his GitHub no-reply
+  address) on every commit, Co-Authored-By and Claude-Session trailers stripped. This also fixed
+  the founding commit, whose old address did not link to his account. The session branch
+  `claude/brave-feynman-eeu2b0` was deleted from GitHub. Rule added to CLAUDE.md.
