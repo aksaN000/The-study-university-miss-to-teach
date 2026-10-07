@@ -76,16 +76,18 @@ failure mode this project exists to eliminate.
 
 ### 2. The Explanation Ladder for This Domain
 Adapted from the 7-step ladder in the sibling skills. This domain adds two non-negotiable hands-on
-steps, so it runs 8 deep:
+steps, plus a trace step (added 2026-10-07, see Step 2b), so it runs 9 deep:
 
 1. **History & Motivation** — what existed before, what broke, who solved it and why
 2. **The Problem** — the concrete failure this specific thing prevents
 3. **The Concept** — the precise mental model, in plain language first
 4. **The Mechanism** — exactly what happens, step by step, at the OS/filesystem/process level
-5. **The Command** — one command, every token decomposed, predicted output *and* predicted failure
-6. **Execution** — Aksan runs it and pastes the output; interpret it together, including successes
-7. **Deliberate Breakage** — make it fail on purpose, diagnose the failure, fix it
-8. **The Connection** — backward to the last session, forward to a later phase, sideways to OS/
+5. **The Trace** — Aksan fills in a trace table predicting the mechanism event by event (Step 2b)
+6. **The Command** — one command, every token decomposed, predicted output *and* predicted failure
+7. **Execution** — Aksan runs it and pastes the output; interpret it together, including successes,
+   and check it against his trace
+8. **Deliberate Breakage** — make it fail on purpose, diagnose the failure, fix it
+9. **The Connection** — backward to the last session, forward to a later phase, sideways to OS/
    Compiler/Architecture coursework, or to the real world
 
 ### 3. Use the Machine That's Already Broken
@@ -136,6 +138,19 @@ know — by the end of it.
 
 ### Step 2 — Teach Before Touching a Keyboard
 Full explanation via the Ladder above (steps 1–4) before any command appears.
+
+### Step 2b — The Trace Table (Aksan, 2026-10-07)
+Every session that teaches a mechanism includes a trace table before any command runs. The
+Phase 0 diagnostic showed the real gap: Aksan knows the theory as text but has never watched it
+run, so he cannot "trace" it the way he traced code in exams. The fix is to make him trace it.
+Claude gives the columns and the first row or two (typically: step, which process, CPU mode,
+what is running, why the kernel got control, what changed in memory/files/env); Aksan predicts
+the remaining rows himself, one row per event, like hand-tracing a loop. Claude corrects the
+trace row by row, then the command's real output is checked against it. Columns adapt to the
+chapter (a paths chapter traces working directory and lookups; a Git chapter traces objects and
+refs). The corrected trace also goes into that chapter of the book, normally beside its figure,
+so a reader can re-trace it without help. Pair it with the matching OSTEP or canonical reading
+alongside the session, never as a prerequisite before it.
 
 ### Step 3 — One Command at a Time, Fully Decomposed
 See Command Decomposition Protocol below. Never hand over a command that hasn't been broken into
@@ -409,6 +424,8 @@ for the other side of any boundary), `gold` for tiny highlights only.
 **Every chapter should be a pleasure to read, not just correct (Aksan, 2026-10-07: "visually
 stunning, easy and extremely interesting to read, full of fun").** In practice:
 
+- **Trace every mechanism.** A chapter that teaches a mechanism includes the trace table from its
+  session (Step 2b), corrected, so the reader can step through the machine like hand-tracing code.
 - **Picture every mechanism.** Any chapter that explains how something works shows it as a
   TikZ figure as well as in prose, using the shared diagram styles in `boxes.tex` (`proc` for
   a process, `kern` for the kernel side, `file`, `data`, `call`/`reply` arrows, `boundary`,

@@ -857,3 +857,11 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   - Shell: PowerShell by default (5.1 vs. 7 not yet known).
   None of this is ticked; ticks wait for each chapter's recall check. Next: ch01, What does an
   operating system actually do.
+- **2026-10-07, same session, method change**: Aksan, concerned by the wrong answers, asked
+  whether to re-study all the theory. Answered no: the misses split into untaught practical
+  material, theory known but never seen running, and wrong mental pictures; re-reading text
+  repeats the original problem. He named the real need himself (he cannot visualize or trace
+  the machine the way he traced code in exams). Adopted with his "yes": a trace table before
+  every command in mechanism sessions (SKILL.md Step 2b, ladder now 9 steps), carried into
+  the book chapters. Targeted reading alongside sessions, not before: OSTEP ch. 4 to 6 (with
+  ch01, ch02, ch06) and ch. 13 to 15 (with ch03).
