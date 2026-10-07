@@ -135,7 +135,21 @@ SYLLABUS = [
         "Webhooks: when the server calls us",
         "Beyond request and response: streaming, WebSockets, and gRPC",
     ]),
-    ('part09-databases', 'Databases in Practice', 8, [
+    ('part09-under-the-hood', 'Under the Hood: How Languages, Libraries, and Frameworks Are Built', 8, [
+        "Language, runtime, standard library: three things we call \"Python\"",
+        "How a language evolves: PEPs, TC39, versions, and deprecations",
+        "Building a tiny language, part one: from text to a syntax tree",
+        "Building a tiny language, part two: a tree-walking interpreter",
+        "Building a tiny language, part three: bytecode and a small virtual machine",
+        "What a library really is: public API, internals, and reading the source of one we use",
+        "Foreign function interfaces: how Python and JavaScript call C",
+        "Library vs. framework: inversion of control, or why the framework calls us",
+        "Building a tiny web framework: routing, middleware, and the request object",
+        "Building a tiny React: components, the virtual DOM, and reconciliation",
+        "Building a tiny autograd: how PyTorch computes gradients",
+        "Plugins and extension points: how tools let us add our own code",
+    ]),
+    ('part10-databases', 'Databases in Practice', 9, [
         "A database is a server: processes, ports, and connection strings",
         "SQLite: the database that is just a file",
         "SQL at the prompt: psql, sqlite3, and the queries we actually write",
@@ -147,7 +161,7 @@ SYLLABUS = [
         "Caching and Redis: a second store, and what it costs in consistency",
         "Backups and restores: a backup never restored is only a hope",
     ]),
-    ('part10-security', 'Security in Practice', 9, [
+    ('part11-security', 'Security in Practice', 10, [
         "Secrets: environment files, .env, and keeping keys out of Git",
         "When a secret leaks: Git history, rotation, and scanning",
         "Passwords: hashing, salts, and why we never store them",
@@ -155,7 +169,7 @@ SYLLABUS = [
         "XSS and CSRF: attacks that live in the browser",
         "Least privilege: narrow users, narrow permissions, narrow tokens",
     ]),
-    ('part11-concurrency', 'Concurrency and Distributed Systems in Practice', 10, [
+    ('part12-concurrency', 'Concurrency and Distributed Systems in Practice', 11, [
         "Concurrency in practice: threads, processes, and async I/O",
         "Python's GIL and the free-threaded build: what actually runs in parallel",
         "Race conditions and deadlocks we can reproduce: locks, and letting the database be the lock",
@@ -163,7 +177,7 @@ SYLLABUS = [
         "More than one machine: partial failure, timeouts, and retries",
         "Replication and consistency in practice: what eventually consistent actually means",
     ]),
-    ('part12-jupyter', 'Jupyter and the Notebook Stack', 11, [
+    ('part13-jupyter', 'Jupyter and the Notebook Stack', 12, [
         "The frontend/kernel split, and why it exists",
         "The kernel protocol",
         "Kernel specs: where they live, how discovery works",
@@ -171,7 +185,7 @@ SYLLABUS = [
         "Notebooks and version control",
         "When a notebook is the wrong tool",
     ]),
-    ('part13-containers', 'Containers', 12, [
+    ('part14-containers', 'Containers', 13, [
         "The isolation idea, generalized from environments to the whole OS",
         "Namespaces and cgroups: why a container is not a virtual machine",
         "Images, layers, and Dockerfiles",
@@ -180,7 +194,7 @@ SYLLABUS = [
         "GPU containers",
         "Why \"works on my machine\" stops being necessary",
     ]),
-    ('part14-automation-build', 'Automation and Build Tooling', 13, [
+    ('part15-automation-build', 'Automation and Build Tooling', 14, [
         "Makefiles",
         "GitHub Actions and CI/CD",
         "Automated testing: what a test proves, from unit to end-to-end",
@@ -192,7 +206,7 @@ SYLLABUS = [
         "Documents as code: Markdown, LaTeX, and BibTeX",
         "The same pipeline, five languages: CI beyond Python",
     ]),
-    ('part15-deployment-ops', 'Deployment and Operations', 14, [
+    ('part16-deployment-ops', 'Deployment and Operations', 15, [
         "Deploying something small to a real machine",
         "The cloud is someone else's computer: VMs, object storage, and paying by the hour",
         "Keeping a process alive: systemd, restart policies, and graceful shutdown",
@@ -210,7 +224,7 @@ SYLLABUS = [
         "Infrastructure as code: describing machines instead of clicking",
         "Orchestration: what Kubernetes is for, and when we do not need it",
     ]),
-    ('part16-ml-infra', 'Machine Learning Infrastructure', 15, [
+    ('part17-ml-infra', 'Machine Learning Infrastructure', 16, [
         "Reproducible ML environments",
         "CUDA and driver versions",
         "More than one GPU: data parallelism and NCCL in practice",
@@ -225,7 +239,7 @@ SYLLABUS = [
         "Serving large language models: batching, the KV cache, and vLLM",
         "Why almost every ML project fails to be reproducible",
     ]),
-    ('part17-capstone', 'Capstone: From Source to Production', 16, [
+    ('part18-capstone', 'Capstone: From Source to Production', 17, [
         "One application through every layer",
         "Breaking it on purpose, one layer at a time",
     ]),

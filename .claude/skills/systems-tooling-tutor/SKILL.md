@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (185 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (197 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
@@ -335,7 +335,7 @@ honestly rather than pretending it away:
   (`sed`, `date`, `ls` flags genuinely differ), Homebrew as the missing package manager, launchd
   vs. systemd, APFS's case-insensitive-by-default filesystem vs. ext4/NTFS.
 - **One genuine hands-on macOS touchpoint does exist and should be used when we reach it**: GitHub
-  Actions provides free `macos-latest` runners, so Phase 13's CI material can have Aksan actually
+  Actions provides free `macos-latest` runners, so Phase 14's CI material can have Aksan actually
   trigger a real macOS build in a workflow with no Mac required. Flag this explicitly when that
   chapter comes up rather than letting the "no hands-on Mac" rule above hide a case where hands-on
   is genuinely possible.
@@ -367,7 +367,7 @@ Python's. That shaped a real design decision, not just a note to self:
   that maps every concept from the Python-specific chapters onto four other ecosystems explicitly
   — same problems, different syntax, so the underlying reasoning becomes visibly portable rather
   than staying implicit.
-- **Phase 13 (build/CI) closes the same way** — a comparison chapter ("The same
+- **Phase 14 (build/CI) closes the same way** — a comparison chapter ("The same
   pipeline, five languages") after the Python/generic CI material, doing for build tooling what
   the packaging capstone does.
 - **Scope boundary (Aksan, 2026-10-07: "it needs to clear as much concepts as it can to make a
@@ -485,15 +485,16 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 | 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, lockfiles, conda, uv/poetry, the editor and language servers, publishing |
 | 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx, CJS vs. ESM, Vite, TypeScript, accessibility, supply chain, licenses, functional ideas, cross-ecosystem capstone |
 | 7 | APIs: browser DevTools, REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks, streaming/WebSockets/gRPC |
-| 8 | Databases in practice: the database as a server, SQLite, SQL at the prompt, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
-| 9 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
-| 10 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, races and deadlocks, queues and workers, partial failure, replication |
-| 11 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
-| 12 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
-| 13 | Automation and build tooling: Make, GitHub Actions, testing levels, pre-commit, linters, type checkers, AI coding assistants, reproducible builds, documents as code |
-| 14 | Deployment and operations: deploying, the cloud, systemd, scheduling and time, application servers, reverse proxies, HTTPS, caching and CDNs, logs, process inspection, profiling, monitoring, rollback, infrastructure as code, orchestration |
-| 15 | ML infrastructure: environments, CUDA, multi-GPU, Slurm, DVC, data formats, model weights, tracking, config, serving, local models, LLM serving, reproducibility |
-| 16 | Capstone: one application through every layer, then broken on purpose layer by layer |
+| 8 | Under the hood: language vs. runtime vs. stdlib, language evolution, a tiny language (tree, interpreter, bytecode VM), library internals, FFI, inversion of control, a tiny web framework, a tiny React, a tiny autograd, plugins |
+| 9 | Databases in practice: the database as a server, SQLite, SQL at the prompt, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
+| 10 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
+| 11 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, races and deadlocks, queues and workers, partial failure, replication |
+| 12 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
+| 13 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
+| 14 | Automation and build tooling: Make, GitHub Actions, testing levels, pre-commit, linters, type checkers, AI coding assistants, reproducible builds, documents as code |
+| 15 | Deployment and operations: deploying, the cloud, systemd, scheduling and time, application servers, reverse proxies, HTTPS, caching and CDNs, logs, process inspection, profiling, monitoring, rollback, infrastructure as code, orchestration |
+| 16 | ML infrastructure: environments, CUDA, multi-GPU, Slurm, DVC, data formats, model weights, tracking, config, serving, local models, LLM serving, reproducibility |
+| 17 | Capstone: one application through every layer, then broken on purpose layer by layer |
 
 ---
 

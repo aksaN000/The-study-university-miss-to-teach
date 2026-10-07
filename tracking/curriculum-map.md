@@ -20,15 +20,16 @@ Generated from `book/generate_stubs.py` (the single syllabus source). Phase N = 
 | 5 | VI | Python Environments and Packaging (12 ch.) | ⏳ Not started |
 | 6 | VII | JavaScript and Node Tooling (14 ch.) | ⏳ Not started |
 | 7 | VIII | APIs: How Applications Talk (9 ch.) | ⏳ Not started |
-| 8 | IX | Databases in Practice (10 ch.) | ⏳ Not started |
-| 9 | X | Security in Practice (6 ch.) | ⏳ Not started |
-| 10 | XI | Concurrency and Distributed Systems in Practice (6 ch.) | ⏳ Not started |
-| 11 | XII | Jupyter and the Notebook Stack (6 ch.) | ⏳ Not started |
-| 12 | XIII | Containers (7 ch.) | ⏳ Not started |
-| 13 | XIV | Automation and Build Tooling (10 ch.) | ⏳ Not started |
-| 14 | XV | Deployment and Operations (16 ch.) | ⏳ Not started |
-| 15 | XVI | Machine Learning Infrastructure (13 ch.) | ⏳ Not started |
-| 16 | XVII | Capstone: From Source to Production (2 ch.) | ⏳ Not started |
+| 8 | IX | Under the Hood: How Languages, Libraries, and Frameworks Are Built (12 ch.) | ⏳ Not started |
+| 9 | X | Databases in Practice (10 ch.) | ⏳ Not started |
+| 10 | XI | Security in Practice (6 ch.) | ⏳ Not started |
+| 11 | XII | Concurrency and Distributed Systems in Practice (6 ch.) | ⏳ Not started |
+| 12 | XIII | Jupyter and the Notebook Stack (6 ch.) | ⏳ Not started |
+| 13 | XIV | Containers (7 ch.) | ⏳ Not started |
+| 14 | XV | Automation and Build Tooling (10 ch.) | ⏳ Not started |
+| 15 | XVI | Deployment and Operations (16 ch.) | ⏳ Not started |
+| 16 | XVII | Machine Learning Infrastructure (13 ch.) | ⏳ Not started |
+| 17 | XVIII | Capstone: From Source to Production (2 ch.) | ⏳ Not started |
 
 ---
 
@@ -163,99 +164,113 @@ chapters by title in conversation and by number only when reading the compiled b
 - [ ] ch108 Webhooks: when the server calls us
 - [ ] ch109 Beyond request and response: streaming, WebSockets, and gRPC
 
-### Phase 8: Databases in Practice (Part IX)
-- [ ] ch110 A database is a server: processes, ports, and connection strings
-- [ ] ch111 SQLite: the database that is just a file
-- [ ] ch112 SQL at the prompt: psql, sqlite3, and the queries we actually write
-- [ ] ch113 Drivers and connection pools: why connections are expensive
-- [ ] ch114 Migrations: schema changes as version-controlled code
-- [ ] ch115 ORMs vs. raw SQL: what the abstraction hides
-- [ ] ch116 Indexes and EXPLAIN: reading what the planner actually did
-- [ ] ch117 Transactions and isolation levels in practice: anomalies we can reproduce
-- [ ] ch118 Caching and Redis: a second store, and what it costs in consistency
-- [ ] ch119 Backups and restores: a backup never restored is only a hope
+### Phase 8: Under the Hood: How Languages, Libraries, and Frameworks Are Built (Part IX)
+- [ ] ch110 Language, runtime, standard library: three things we call "Python"
+- [ ] ch111 How a language evolves: PEPs, TC39, versions, and deprecations
+- [ ] ch112 Building a tiny language, part one: from text to a syntax tree
+- [ ] ch113 Building a tiny language, part two: a tree-walking interpreter
+- [ ] ch114 Building a tiny language, part three: bytecode and a small virtual machine
+- [ ] ch115 What a library really is: public API, internals, and reading the source of one we use
+- [ ] ch116 Foreign function interfaces: how Python and JavaScript call C
+- [ ] ch117 Library vs. framework: inversion of control, or why the framework calls us
+- [ ] ch118 Building a tiny web framework: routing, middleware, and the request object
+- [ ] ch119 Building a tiny React: components, the virtual DOM, and reconciliation
+- [ ] ch120 Building a tiny autograd: how PyTorch computes gradients
+- [ ] ch121 Plugins and extension points: how tools let us add our own code
 
-### Phase 9: Security in Practice (Part X)
-- [ ] ch120 Secrets: environment files, .env, and keeping keys out of Git
-- [ ] ch121 When a secret leaks: Git history, rotation, and scanning
-- [ ] ch122 Passwords: hashing, salts, and why we never store them
-- [ ] ch123 Injection: SQL, shell commands, and the general shape of the bug
-- [ ] ch124 XSS and CSRF: attacks that live in the browser
-- [ ] ch125 Least privilege: narrow users, narrow permissions, narrow tokens
+### Phase 9: Databases in Practice (Part X)
+- [ ] ch122 A database is a server: processes, ports, and connection strings
+- [ ] ch123 SQLite: the database that is just a file
+- [ ] ch124 SQL at the prompt: psql, sqlite3, and the queries we actually write
+- [ ] ch125 Drivers and connection pools: why connections are expensive
+- [ ] ch126 Migrations: schema changes as version-controlled code
+- [ ] ch127 ORMs vs. raw SQL: what the abstraction hides
+- [ ] ch128 Indexes and EXPLAIN: reading what the planner actually did
+- [ ] ch129 Transactions and isolation levels in practice: anomalies we can reproduce
+- [ ] ch130 Caching and Redis: a second store, and what it costs in consistency
+- [ ] ch131 Backups and restores: a backup never restored is only a hope
 
-### Phase 10: Concurrency and Distributed Systems in Practice (Part XI)
-- [ ] ch126 Concurrency in practice: threads, processes, and async I/O
-- [ ] ch127 Python's GIL and the free-threaded build: what actually runs in parallel
-- [ ] ch128 Race conditions and deadlocks we can reproduce: locks, and letting the database be the lock
-- [ ] ch129 Queues and background workers: work that should not happen inside the request
-- [ ] ch130 More than one machine: partial failure, timeouts, and retries
-- [ ] ch131 Replication and consistency in practice: what eventually consistent actually means
+### Phase 10: Security in Practice (Part XI)
+- [ ] ch132 Secrets: environment files, .env, and keeping keys out of Git
+- [ ] ch133 When a secret leaks: Git history, rotation, and scanning
+- [ ] ch134 Passwords: hashing, salts, and why we never store them
+- [ ] ch135 Injection: SQL, shell commands, and the general shape of the bug
+- [ ] ch136 XSS and CSRF: attacks that live in the browser
+- [ ] ch137 Least privilege: narrow users, narrow permissions, narrow tokens
 
-### Phase 11: Jupyter and the Notebook Stack (Part XII)
-- [ ] ch132 The frontend/kernel split, and why it exists
-- [ ] ch133 The kernel protocol
-- [ ] ch134 Kernel specs: where they live, how discovery works
-- [ ] ch135 Why notebooks break in ways scripts do not
-- [ ] ch136 Notebooks and version control
-- [ ] ch137 When a notebook is the wrong tool
+### Phase 11: Concurrency and Distributed Systems in Practice (Part XII)
+- [ ] ch138 Concurrency in practice: threads, processes, and async I/O
+- [ ] ch139 Python's GIL and the free-threaded build: what actually runs in parallel
+- [ ] ch140 Race conditions and deadlocks we can reproduce: locks, and letting the database be the lock
+- [ ] ch141 Queues and background workers: work that should not happen inside the request
+- [ ] ch142 More than one machine: partial failure, timeouts, and retries
+- [ ] ch143 Replication and consistency in practice: what eventually consistent actually means
 
-### Phase 12: Containers (Part XIII)
-- [ ] ch138 The isolation idea, generalized from environments to the whole OS
-- [ ] ch139 Namespaces and cgroups: why a container is not a virtual machine
-- [ ] ch140 Images, layers, and Dockerfiles
-- [ ] ch141 Volumes, ports, and networking
-- [ ] ch142 docker-compose
-- [ ] ch143 GPU containers
-- [ ] ch144 Why "works on my machine" stops being necessary
+### Phase 12: Jupyter and the Notebook Stack (Part XIII)
+- [ ] ch144 The frontend/kernel split, and why it exists
+- [ ] ch145 The kernel protocol
+- [ ] ch146 Kernel specs: where they live, how discovery works
+- [ ] ch147 Why notebooks break in ways scripts do not
+- [ ] ch148 Notebooks and version control
+- [ ] ch149 When a notebook is the wrong tool
 
-### Phase 13: Automation and Build Tooling (Part XIV)
-- [ ] ch145 Makefiles
-- [ ] ch146 GitHub Actions and CI/CD
-- [ ] ch147 Automated testing: what a test proves, from unit to end-to-end
-- [ ] ch148 Pre-commit hooks
-- [ ] ch149 Linters and formatters
-- [ ] ch150 Type checkers: mypy, pyright, and tsc, and what they actually prove
-- [ ] ch151 AI coding assistants as tools: what they run, what they see, and how we review them
-- [ ] ch152 Reproducible builds
-- [ ] ch153 Documents as code: Markdown, LaTeX, and BibTeX
-- [ ] ch154 The same pipeline, five languages: CI beyond Python
+### Phase 13: Containers (Part XIV)
+- [ ] ch150 The isolation idea, generalized from environments to the whole OS
+- [ ] ch151 Namespaces and cgroups: why a container is not a virtual machine
+- [ ] ch152 Images, layers, and Dockerfiles
+- [ ] ch153 Volumes, ports, and networking
+- [ ] ch154 docker-compose
+- [ ] ch155 GPU containers
+- [ ] ch156 Why "works on my machine" stops being necessary
 
-### Phase 14: Deployment and Operations (Part XV)
-- [ ] ch155 Deploying something small to a real machine
-- [ ] ch156 The cloud is someone else's computer: VMs, object storage, and paying by the hour
-- [ ] ch157 Keeping a process alive: systemd, restart policies, and graceful shutdown
-- [ ] ch158 Scheduled work and time: cron, systemd timers, UTC, and time zones
-- [ ] ch159 Application servers: WSGI, ASGI, and what actually serves our code
-- [ ] ch160 Reverse proxies: one public port, many services
-- [ ] ch161 From a domain name to HTTPS on our own server
-- [ ] ch162 HTTP caching and CDNs: the copies between us and our users
-- [ ] ch163 Reading logs
-- [ ] ch164 Inspecting a running process: ps, top, lsof, ss, and strace
-- [ ] ch165 Debugging a process that will not start
-- [ ] ch166 Profiling: finding out why it is slow
-- [ ] ch167 Health checks, monitoring, and observability
-- [ ] ch168 Deployment strategies and rollback: shipping without fear
-- [ ] ch169 Infrastructure as code: describing machines instead of clicking
-- [ ] ch170 Orchestration: what Kubernetes is for, and when we do not need it
+### Phase 14: Automation and Build Tooling (Part XV)
+- [ ] ch157 Makefiles
+- [ ] ch158 GitHub Actions and CI/CD
+- [ ] ch159 Automated testing: what a test proves, from unit to end-to-end
+- [ ] ch160 Pre-commit hooks
+- [ ] ch161 Linters and formatters
+- [ ] ch162 Type checkers: mypy, pyright, and tsc, and what they actually prove
+- [ ] ch163 AI coding assistants as tools: what they run, what they see, and how we review them
+- [ ] ch164 Reproducible builds
+- [ ] ch165 Documents as code: Markdown, LaTeX, and BibTeX
+- [ ] ch166 The same pipeline, five languages: CI beyond Python
 
-### Phase 15: Machine Learning Infrastructure (Part XVI)
-- [ ] ch171 Reproducible ML environments
-- [ ] ch172 CUDA and driver versions
-- [ ] ch173 More than one GPU: data parallelism and NCCL in practice
-- [ ] ch174 Shared GPU machines: Slurm and job schedulers
-- [ ] ch175 Data versioning with DVC
-- [ ] ch176 Data formats for data: CSV, Parquet, Arrow, and why loading is slow
-- [ ] ch177 Model weights and the Hugging Face cache: where models actually live
-- [ ] ch178 Experiment tracking: MLflow and W&B
-- [ ] ch179 Configuration management
-- [ ] ch180 Serving a model
-- [ ] ch181 Running models locally: llama.cpp, Ollama, and quantization
-- [ ] ch182 Serving large language models: batching, the KV cache, and vLLM
-- [ ] ch183 Why almost every ML project fails to be reproducible
+### Phase 15: Deployment and Operations (Part XVI)
+- [ ] ch167 Deploying something small to a real machine
+- [ ] ch168 The cloud is someone else's computer: VMs, object storage, and paying by the hour
+- [ ] ch169 Keeping a process alive: systemd, restart policies, and graceful shutdown
+- [ ] ch170 Scheduled work and time: cron, systemd timers, UTC, and time zones
+- [ ] ch171 Application servers: WSGI, ASGI, and what actually serves our code
+- [ ] ch172 Reverse proxies: one public port, many services
+- [ ] ch173 From a domain name to HTTPS on our own server
+- [ ] ch174 HTTP caching and CDNs: the copies between us and our users
+- [ ] ch175 Reading logs
+- [ ] ch176 Inspecting a running process: ps, top, lsof, ss, and strace
+- [ ] ch177 Debugging a process that will not start
+- [ ] ch178 Profiling: finding out why it is slow
+- [ ] ch179 Health checks, monitoring, and observability
+- [ ] ch180 Deployment strategies and rollback: shipping without fear
+- [ ] ch181 Infrastructure as code: describing machines instead of clicking
+- [ ] ch182 Orchestration: what Kubernetes is for, and when we do not need it
 
-### Phase 16: Capstone: From Source to Production (Part XVII)
-- [ ] ch184 One application through every layer
-- [ ] ch185 Breaking it on purpose, one layer at a time
+### Phase 16: Machine Learning Infrastructure (Part XVII)
+- [ ] ch183 Reproducible ML environments
+- [ ] ch184 CUDA and driver versions
+- [ ] ch185 More than one GPU: data parallelism and NCCL in practice
+- [ ] ch186 Shared GPU machines: Slurm and job schedulers
+- [ ] ch187 Data versioning with DVC
+- [ ] ch188 Data formats for data: CSV, Parquet, Arrow, and why loading is slow
+- [ ] ch189 Model weights and the Hugging Face cache: where models actually live
+- [ ] ch190 Experiment tracking: MLflow and W&B
+- [ ] ch191 Configuration management
+- [ ] ch192 Serving a model
+- [ ] ch193 Running models locally: llama.cpp, Ollama, and quantization
+- [ ] ch194 Serving large language models: batching, the KV cache, and vLLM
+- [ ] ch195 Why almost every ML project fails to be reproducible
+
+### Phase 17: Capstone: From Source to Production (Part XVIII)
+- [ ] ch196 One application through every layer
+- [ ] ch197 Breaking it on purpose, one layer at a time
 ### Cross-Cutting — Professional Habits (reinforce throughout, not a single session)
 - [ ] Reading documentation and source instead of guessing
 - [ ] Reading error messages carefully and completely
@@ -324,15 +339,16 @@ alongside the taught material rather than relying only on Claude's explanations.
 | 5 | semver.org; the Python Packaging User Guide (packaging.python.org) and the relevant PEPs (427 wheels, 517/518 build systems, 621 pyproject metadata, 668 externally managed environments) |
 | 6 | docs.npmjs.com (package.json, npmrc, config, scripts, folders); nodejs.org module docs (CommonJS vs. ESM); vite.dev guide ("Why Vite"); pnpm.io "Motivation"; TypeScript handbook; MDN Accessibility and WAI-ARIA; choosealicense.com and SPDX |
 | 7 | MDN: HTTP, Cookies, CORS; RFC 7519 (JWT) read alongside the OWASP cheat sheets on sessions and JWT |
-| 8 | PostgreSQL documentation (Server Administration; Using EXPLAIN; Transaction Isolation); use-the-index-luke.com; Kleppmann, *Designing Data-Intensive Applications*, ch. 7 |
-| 9 | OWASP Top 10 and the OWASP Cheat Sheet Series; Missing Semester: Security & Cryptography |
-| 10 | Python docs: `threading`, `multiprocessing`, `asyncio`, PEP 703 (free-threaded CPython); Kleppmann, *Designing Data-Intensive Applications*, ch. 5, 8, 9 |
-| 11 | Jupyter client docs: the kernel messaging protocol |
-| 12 | Docker's official documentation; docker-curriculum.com; `man 7 namespaces`, `man 7 cgroups` |
-| 13 | Missing Semester: Metaprogramming (build systems, CI, dependency management); GitHub Actions docs; mypy and TypeScript handbooks |
-| 14 | Missing Semester: Debugging and Profiling; `journalctl`/`systemd` man pages; Brendan Gregg's Linux performance pages |
-| 15 | Full Stack Deep Learning (fullstackdeeplearning.com) |
-| 16 | Every source above; the capstone has no single text |
+| 8 | *Crafting Interpreters* (Nystrom) for the tiny language; PEP 1 and the TC39 process document; the Python C API and ctypes docs, pybind11, Node-API; PEP 3333 (WSGI); Rodrigo Pombo, "Build your own React"; Karpathy's micrograd |
+| 9 | PostgreSQL documentation (Server Administration; Using EXPLAIN; Transaction Isolation); use-the-index-luke.com; Kleppmann, *Designing Data-Intensive Applications*, ch. 7 |
+| 10 | OWASP Top 10 and the OWASP Cheat Sheet Series; Missing Semester: Security & Cryptography |
+| 11 | Python docs: `threading`, `multiprocessing`, `asyncio`, PEP 703 (free-threaded CPython); Kleppmann, *Designing Data-Intensive Applications*, ch. 5, 8, 9 |
+| 12 | Jupyter client docs: the kernel messaging protocol |
+| 13 | Docker's official documentation; docker-curriculum.com; `man 7 namespaces`, `man 7 cgroups` |
+| 14 | Missing Semester: Metaprogramming (build systems, CI, dependency management); GitHub Actions docs; mypy and TypeScript handbooks |
+| 15 | Missing Semester: Debugging and Profiling; `journalctl`/`systemd` man pages; Brendan Gregg's Linux performance pages |
+| 16 | Full Stack Deep Learning (fullstackdeeplearning.com) |
+| 17 | Every source above; the capstone has no single text |
 | Cross-cutting | wizardzines.com (Julia Evans) — short, sharp treatments of almost everything above; good as reinforcement after a concept is first taught here, not as the first exposure |
 
 State the specific chapter/lecture at the start of each session, per the project's own instruction —
@@ -462,6 +478,10 @@ thing this project exists to close.
 | Git's commit graph (DAG) | Graph theory from DSA |
 | Deadlock in a dependency-ordered build or containers waiting on each other | Deadlock conditions, OS CSE321 Ch. 6.8 |
 | Cache/registers/memory hierarchy intuition for why Docker layers are fast to reuse | Computer Architecture |
+| Building a tiny language (lexer, parser, interpreter, bytecode VM) | CSE420 Compiler Design, now built end to end and run |
+| Building a tiny autograd | CSE425 Neural Networks and CSE427 ML: backpropagation as code we write |
+| Foreign function interfaces | CSE340 calling conventions and the ABI chapter |
+| Building a tiny web framework and a tiny React | CSE470 design patterns (inversion of control), MERN apps already built |
 | Globbing vs. regular expressions (two different pattern languages) | Regular languages and finite automata, CSE331 |
 | Bits on disk, character encodings, two's complement in file formats | Digital Logic Design, CSE260 |
 | Floating-point surprises across machines and GPU reproducibility | Numerical Methods, CSE330 |
@@ -758,3 +778,10 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   Slurm, data formats for data, model weights and the HF cache, local models and quantization,
   LLM serving. Twelve fold-ins in Chapter Plan Notes. 185 chapters in 17 parts, 218 pages,
   compiled locally. Design freeze waits only on Aksan's sign-off.
+- **2026-10-07, Under the Hood part**: Aksan asked whether the book should cover how
+  programming languages, libraries, and frameworks are built. Yes: new Part IX (after APIs, which
+  the web framework needs) with 12 chapters: language vs. runtime vs. standard library; how
+  languages evolve (PEPs, TC39); building a tiny language in three chapters (tree, tree-walking
+  interpreter, bytecode VM); what a library is; foreign function interfaces; library vs.
+  framework; building a tiny web framework, a tiny React, and a tiny autograd; plugins. Part
+  pages fixed for long titles and 18 parts. 197 chapters in 18 parts, 231 pages, compiled locally.

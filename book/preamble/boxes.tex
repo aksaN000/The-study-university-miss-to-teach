@@ -235,10 +235,10 @@
     \foreach \t [count=\i] in \bookparts {
       \ifnum\i=\value{part}
         \node[anchor=west, text=white, font=\scriptsize\bfseries]
-          at (0,-\i*4.3mm) {\makebox[2.4em][l]{\uppercase\expandafter{\romannumeral\i}}\t};
+          at (0,-\i*4.3mm) {\makebox[3.1em][l]{\uppercase\expandafter{\romannumeral\i}}\t};
         \fill[gold] (-0.35,-\i*4.3mm) circle (1.3pt);
       \else
-        \node[anchor=west, text=white!65!accent] at (0,-\i*4.3mm) {\makebox[2.4em][l]{\uppercase\expandafter{\romannumeral\i}}\t};
+        \node[anchor=west, text=white!65!accent] at (0,-\i*4.3mm) {\makebox[3.1em][l]{\uppercase\expandafter{\romannumeral\i}}\t};
       \fi
     }
   \end{tikzpicture}%
@@ -248,16 +248,16 @@
   {\thispagestyle{empty}%
    \begin{tikzpicture}[remember picture, overlay]
      \fill[accent] (current page.north west) rectangle (current page.south east);
-     \fill[gold] ([xshift=0.8in,yshift=-3.85in]current page.north west) rectangle
-       ([xshift=1.6in,yshift=-3.9in]current page.north west);
      \node[anchor=north west, text=white!80!accent, font=\displayfont\bfseries\fontsize{110}{100}\selectfont]
        at ([xshift=0.75in,yshift=-0.7in]current page.north west) {\Roman{part}};
-     \node[anchor=north west, text width=5.6in, align=left, text=white,
-           font=\displayfont\bfseries\fontsize{30}{35}\selectfont]
-       at ([xshift=0.78in,yshift=-2.55in]current page.north west) {#1};
      \node[anchor=north west, text=white!80!accent, font=\small\addfontfeatures{LetterSpace=18}\bfseries]
        at ([xshift=0.8in,yshift=-2.25in]current page.north west) {PART \Roman{part}};
-     \node[anchor=north west] at ([xshift=0.8in,yshift=-4.4in]current page.north west) {\partmap};
+     \node[anchor=north west, text width=5.6in, align=left, text=white,
+           font=\displayfont\bfseries\fontsize{30}{35}\selectfont] (ptitle)
+       at ([xshift=0.78in,yshift=-2.55in]current page.north west) {#1};
+     \fill[gold] ([xshift=0.02in,yshift=-0.3in]ptitle.south west) rectangle
+       ([xshift=0.82in,yshift=-0.35in]ptitle.south west);
+     \node[anchor=north west] at ([xshift=0.02in,yshift=-0.7in]ptitle.south west) {\partmap};
    \end{tikzpicture}}
 \titlespacing*{\part}{0pt}{0pt}{0pt}
 
