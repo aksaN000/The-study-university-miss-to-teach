@@ -4,13 +4,9 @@ Part of the design-freeze gate (see "Design Freeze Criteria" in `curriculum-map.
 question for each ACM/IEEE CS2023 knowledge area: is it covered by Aksan's degree, covered by
 this project, or out of scope, and if out of scope, why?
 
-**Status: started 2026-10-07, provisional.** Aksan's full BRAC course list has not yet been
-recorded in the repo. The degree column below uses only the courses already on record in
-`curriculum-map.md`: STA 301, ECO101, ECO102, CSE321 (Operating Systems), CSE420 (Compiler
-Design), Computer Architecture, plus the self-reported and unverified DSA, OOP, databases,
-software engineering, Computer Networks, Computer Graphics, and "several AI/ML courses" (no
-course codes). Every row marked *pending* needs the real list (codes and titles) to close.
-The audit is complete only when no row is pending.
+**Status (2026-10-07): every area labelled against Aksan's full course list; open questions
+below await his decisions.** The course list itself is recorded in `curriculum-map.md` under
+"Degree Course List". The audit is complete when every open question is decided.
 
 Source: the 17 knowledge areas of CS2023 (csed.acm.org/knowledge-areas). Labels apply at the
 area level; where an area splits (theory in the degree, practice here), both are named.
@@ -20,43 +16,46 @@ area level; where an area splits (theory in the degree, practice here), both are
 - **Degree**: the theory is taught by a BRAC course. This project does not re-teach it.
 - **Project**: this project owns it (some or all of the area's practical side).
 - **Out of scope**: neither, deliberately. A reason is required.
-- **Pending**: cannot be labelled until the course list is in.
+- **Open**: a real gap that neither covers yet; Aksan decides (see "Open questions").
 
 ## The audit
 
 | KA | Area | Label | Degree side | Project side, or reason for exclusion |
 |---|---|---|---|---|
-| AL | Algorithmic Foundations | Degree (pending code) | DSA (self-reported); a separate algorithms course not yet confirmed | None needed. Graph intuition reused for Git's DAG (Part IV) and build graphs (Part X). |
-| AR | Architecture and Organization | Degree + Project | Computer Architecture | Practical face only: ISAs and calling conventions as they show up in ABIs, executable formats, loaders (Part III); CUDA/driver stack (Part XII). |
-| AI | Artificial Intelligence | Degree (pending codes) | "Several AI/ML courses" | Infrastructure only, not the models: Part XII (environments, CUDA, DVC, tracking, serving). |
-| DM | Data Management | Degree (pending code) + gap | Databases (self-reported) | **Open question**: the practical side of running a database (installing a server, connecting over a port, connection strings, migrations, backups, a database in a container) has no chapter. Candidate for a new chapter after Part V networking and before or inside Part IX containers. |
-| FPL | Foundations of Programming Languages | Degree + Project | CSE420 Compiler Design (front end, parsing, IR) | Runtime half: linking, loaders, interpreters, bytecode VMs, JIT, module systems (Part III, ch70). Type systems and PL semantics stay with the degree; confirm whether a separate PL course exists. |
-| GIT | Graphics and Interactive Techniques | Degree | Computer Graphics (self-reported) | Out of scope for this project beyond GPU drivers in Part XII: graphics theory is not tooling. |
-| HCI | Human-Computer Interaction | Pending | Unknown | If no course: likely out of scope (design discipline, not the layer around code), but recorded for Aksan's decision rather than assumed. |
-| MSF | Mathematical and Statistical Foundations | Degree (pending codes) | STA 301; discrete math and linear algebra not yet confirmed | None needed. |
-| NC | Networking and Communication | Degree + Project | Computer Networks (self-reported) | Practical face: ports, localhost, DNS, HTTP, TLS, SSH keys, servers (Part V); container networking (ch82). |
-| OS | Operating Systems | Degree + Project | CSE321 (processes, threads, scheduling, sync, memory, file systems; see "What NOT to Re-Teach") | Practical face: Part I, Part II, isolation in Part IX, ops in Part XI. |
-| PDC | Parallel and Distributed Computing | Pending + gap | Concurrency and synchronization via CSE321; distributed systems course unknown | **Open question**: no chapter covers practical concurrency tooling (async in Python, worker processes, queues) or distributed-systems basics (more than one machine, partial failure, consistency) beyond Node's event loop (ch38). Needs the course list first: if no distributed systems course, decide project vs. out of scope. |
-| SDF | Software Development Fundamentals | Degree | OOP, DSA, early programming courses | Project supplies the environment around it: editors, terminals, running and debugging programs. |
-| SE | Software Engineering | Degree + Project | Software Engineering (self-reported) | Practical tooling: Git (Part IV), testing, CI, linters, semver, reproducible builds (Part X), code review (ch46). |
-| SEC | Security | Partial + gap | CSE321's final topic was protection and security (not confirmed landed); dedicated security course unknown | Project covers permissions (ch05), TLS (ch51), SSH keys (ch52), supply chain (ch72). **Open question**: secrets management (env files, never committing keys, CI secrets), basic threat modelling, and authentication for a deployed service have no home. Likely a fold-in to ch45/ch87/ch94, possibly a new chapter. |
-| SEP | Society, Ethics, and the Profession | Pending | Unknown (BRAC may require an ethics course) | Licensing of what we publish (the book, OFL fonts, open-source licences on dependencies) has no chapter. Candidate fold-in to ch63 or ch72. Broader ethics: out of scope here, belongs to the degree. |
-| SF | Systems Fundamentals | Project (mostly) | Pieces via CSE321 and Computer Architecture | This is the area the project most directly serves: layering, state, resource allocation, performance, reliability as practised. **Open question**: performance measurement and profiling (timing, profilers, reading resource usage) has no dedicated chapter; Missing Semester's profiling lecture is already the anchor for Part XI. |
-| SPD | Specialized Platform Development | Project (web) + Out of scope (others) | Unknown | Web platform tooling is in scope (Part VII, React/Vite). Mobile, embedded, game, robotics and quantum platforms: out of scope, because each is a specialism Aksan has not chosen, and the transferable tooling questions are already taught via the cross-ecosystem capstones (ch73, ch93). Revisit if his job search points at one. |
+| AL | Algorithmic Foundations | Degree | CSE220 Data Structures, CSE221 Algorithms, CSE331 Automata and Computability (models of computation, formal languages) | None needed. Reused: Git's DAG (Part IV), build graphs (Part X), regular languages behind globbing and regex (ch17). |
+| AR | Architecture and Organization | Degree + Project | CSE260 Digital Logic Design, CSE340 Computer Architecture | Practical face: ISAs and calling conventions as they appear in ABIs, executable formats, loaders (Part III); CUDA and drivers (Part XII). |
+| AI | Artificial Intelligence | Degree + Project | CSE422 AI, CSE427 Machine Learning, CSE425 Neural Networks, CSE440 NLP, CSE428 Image Processing | Infrastructure only, never the models: Part XII (environments, CUDA, DVC, experiment tracking, config, serving). |
+| DM | Data Management | Degree + Open | CSE370 Database Systems | **Open question 1**: operating a database (installing a server, connecting over a port, connection strings, migrations, backups, a database in a container) has no chapter. |
+| FPL | Foundations of Programming Languages | Degree + Project | CSE110 and CSE111 Programming Language I and II, CSE420 Compiler Design (front end, parsing, IR), CSE331 (formal languages) | Runtime half: linking, loaders, interpreters, bytecode VMs, JIT, module systems (Part III, ch70). **Open question 7**: no course covers type systems, semantics, or functional programming. |
+| GIT | Graphics and Interactive Techniques | Degree | CSE423 Computer Graphics, CSE428 Image Processing | Out of scope here beyond GPU drivers (Part XII): graphics is a subject, not the layer around code. |
+| HCI | Human-Computer Interaction | Open | No course | **Open question 6**. Recommendation: out of scope, because HCI is a design and research discipline rather than tooling; accessibility checks could fold into Part VII's tooling chapters. |
+| MSF | Mathematical and Statistical Foundations | Degree | CSE230 Discrete Mathematics, CSE330 Numerical Methods, STA301 Advanced Statistics | None needed. **To confirm**: no MAT courses (calculus, linear algebra) were listed; record them if taken. |
+| NC | Networking and Communication | Degree + Project | CSE421 Computer Networks | Practical face: ports, localhost, DNS, HTTP, TLS, SSH keys, servers (Part V); container networking (ch82). |
+| OS | Operating Systems | Degree + Project | CSE321 Operating Systems (see "What NOT to Re-Teach") | Practical face: Parts I and II, isolation in Part IX, operations in Part XI. |
+| PDC | Parallel and Distributed Computing | Degree (concurrency) + Open | CSE321 covers threads, synchronization, deadlock; no parallel or distributed systems course | **Open question 2**: practical concurrency (async, worker processes, multiprocessing, queues) and distributed basics (several machines, partial failure, retries, consistency) have no chapter beyond Node's event loop (ch38). |
+| SDF | Software Development Fundamentals | Degree | CSE110, CSE111, CSE220 | Project supplies the environment around it: terminals, editors, running and debugging programs. |
+| SE | Software Engineering | Degree + Project | CSE470 Software Engineering | Practical tooling: Git (Part IV), testing, CI, linters, semver, reproducible builds (Part X), code review (ch46). |
+| SEC | Security | Open | No security course; CSE321's final topic was protection and security | Project covers permissions (ch05), TLS (ch51), SSH keys (ch52), supply chain (ch72). **Open question 3**: secrets management (env files, never committing keys, CI secrets), basic threat modelling, and authentication for a deployed service have no home. With no security course, this gap is now firmly ours to decide. |
+| SEP | Society, Ethics, and the Profession | Open | No course (ECO101/102 cover economics, not professional ethics) | **Open question 4**: licensing of what we publish and depend on has no chapter. Recommendation: fold into ch63 or ch72; broader ethics out of scope because it is a different kind of study from tooling. |
+| SF | Systems Fundamentals | Project | Pieces via CSE321, CSE340, CSE260 | The area this project most directly serves: layering, state, resources, reliability as practised. **Open question 5**: measuring performance and profiling has no dedicated chapter. |
+| SPD | Specialized Platform Development | Degree + Project (web); Out of scope (others) | Web development (MERN), as listed | Web tooling is in scope (Part VII: npm, modules, Vite, React's toolchain). Mobile, embedded, game, robotics, quantum: out of scope, because each is a specialism not yet chosen and the transferable questions are taught by the capstones (ch73, ch93). Revisit if the job search points at one. |
 
-## Open questions this audit has raised so far
+## Open questions (Aksan decides each: new chapter, fold in, or out of scope with a reason)
 
-These are not yet inbox items or syllabus changes. Each becomes one once Aksan decides.
-
-1. Databases in practice (DM).
-2. Practical concurrency and distributed-systems basics (PDC), after the course list is in.
-3. Secrets and service security (SEC).
-4. Licensing what we use and publish (SEP).
-5. Measuring performance and profiling (SF).
-6. HCI: degree, out of scope, or something else.
+1. **Databases in practice (DM).** Suggested placement if a chapter: after Part V networking
+   (needs ports and localhost) and before Part IX containers (which will run one).
+2. **Practical concurrency and distributed basics (PDC).**
+3. **Secrets and service security (SEC).**
+4. **Licensing (SEP).**
+5. **Measuring performance and profiling (SF).**
+6. **HCI.** Recommendation above: out of scope.
+7. **PL theory gap (FPL)**: type systems, semantics, functional programming. Likely out of scope
+   for this project (theory, not the layer around code) but a real gap for the "debate as an
+   equal" goal; Aksan may want it as separate study.
 
 ## To close the audit
 
-- [ ] Aksan's full course list (codes and titles) recorded, and every *pending* row resolved
-- [ ] Each open question above decided: new chapter, fold-in, or out of scope with a reason
-- [ ] Any resulting syllabus changes made via `SYLLABUS` and the generators
+- [x] Aksan's full course list recorded and every area labelled (2026-10-07)
+- [ ] MAT courses confirmed (taken or not)
+- [ ] Each open question decided
+- [ ] Any resulting syllabus changes made via `SYLLABUS` and the generators, each logged

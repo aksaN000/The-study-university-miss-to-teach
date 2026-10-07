@@ -238,6 +238,29 @@ confirmed until it shows up correctly in an actual answer or a running command.
 
 ---
 
+## Degree Course List (Aksan, 2026-10-07)
+
+Stated by Aksan directly; supersedes the partial, self-reported list above. BRAC University.
+
+- **Programming and foundations**: CSE110 Programming Language I, CSE111 Programming Language
+  II, CSE220 Data Structures, CSE221 Algorithms, CSE230 Discrete Mathematics, CSE331 Automata
+  and Computability, CSE330 Numerical Methods
+- **Systems**: CSE260 Digital Logic Design, CSE321 Operating Systems, CSE340 Computer
+  Architecture, CSE420 Compiler Design, CSE421 Computer Networks
+- **Data and software**: CSE370 Database Systems, CSE470 Software Engineering, web development
+  (MERN)
+- **AI and ML**: CSE422 Artificial Intelligence, CSE427 Machine Learning, CSE425 Neural
+  Networks, CSE440 Natural Language Processing, CSE428 Image Processing
+- **Other**: CSE423 Computer Graphics, STA301 Advanced Statistics, ECO101 and ECO102
+  (micro and macroeconomics fundamentals)
+- **Not on the list**: any security, parallel/distributed systems, HCI, or ethics course; any
+  MAT course (to confirm). These shape the coverage audit's open questions.
+
+Courses taken are not the same as material that landed: per the "What NOT to Re-Teach" rule,
+verify with one light question before building on any of them.
+
+---
+
 ## What NOT to Re-Teach From Scratch
 
 Cross-referenced from the `os-tutor` skill's course map (CSE321, Spring 2026, BRAC University — that
@@ -292,6 +315,11 @@ thing this project exists to close.
 | Git's commit graph (DAG) | Graph theory from DSA |
 | Deadlock in a dependency-ordered build or containers waiting on each other | Deadlock conditions, OS CSE321 Ch. 6.8 |
 | Cache/registers/memory hierarchy intuition for why Docker layers are fast to reuse | Computer Architecture |
+| Globbing vs. regular expressions (two different pattern languages) | Regular languages and finite automata, CSE331 |
+| Bits on disk, character encodings, two's complement in file formats | Digital Logic Design, CSE260 |
+| Floating-point surprises across machines and GPU reproducibility | Numerical Methods, CSE330 |
+| Running a database server, connection strings, migrations | Database Systems, CSE370 (theory side) |
+| npm, Vite, and the React toolchain | Web development (MERN): the apps were built; the tooling under them was not taught |
 
 ---
 
@@ -486,3 +514,13 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   founding brief as `tracking/project-brief.md`, because the brief and his course list were
   referenced in his message but not included; nothing was reconstructed from memory. Next: Aksan
   pastes the brief verbatim and his full course list, then the audit's pending rows get closed.
+- **2026-10-07, coverage audit pass 2**: Aksan gave his full course list (recorded under
+  "Degree Course List"). Every CS2023 area in `tracking/coverage-audit.md` is now labelled.
+  Degree covers AL, MSF, SDF and GIT outright; AR, AI, FPL, NC, OS, SE and web-SPD split
+  between degree theory and project practice; SF is the project's own. No security, parallel/
+  distributed, HCI, or ethics course exists, so SEC, PDC, HCI and SEP are open. Seven open
+  questions now await Aksan's decisions (databases in practice, practical concurrency and
+  distributed basics, secrets and service security, licensing, profiling, HCI, PL theory),
+  plus confirming whether any MAT courses were taken. Added five cross-course connections
+  (CSE331, CSE260, CSE330, CSE370, MERN). Founding brief still not received; `project-brief.md`
+  still not created. Next: brief pasted verbatim, then decisions on the open questions.
