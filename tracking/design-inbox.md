@@ -21,7 +21,26 @@ with a pointer to the chapter that will cover it properly.
 
 ## Untriaged
 
-_(none)_
+### 2026-10-07: Claude's own gap sweep (Aksan asked "did we miss anything?")
+
+Proposed verdicts; nothing changes in `SYLLABUS` until Aksan decides.
+
+| # | Gap | Proposed verdict | Placement and reason |
+|---|---|---|---|
+| 1 | Using a debugger on our own code: breakpoints, stepping, reading a stack trace (pdb, Node inspector, gdb, VS Code) | New chapter | Part III, after Node.js. Every later part assumes we can debug; no course teaches it. |
+| 2 | The editor as a client: VS Code, language servers, and which interpreter it picked | New chapter | Part VI, after the conda and uv chapters. Directly Aksan's two-Pythons, four-kernels situation. |
+| 3 | Regular expressions in practice | New chapter | Part II, after globbing (the contrast is the point; CSE331 refresher). |
+| 4 | Text and JSON at the command line: grep, sed, awk, jq | New chapter | Part II, right after regex. |
+| 5 | Config formats: JSON, YAML, TOML, and their traps | New chapter | Part II, after dotfiles; every manifest from Part VI on is one of these. |
+| 6 | Long jobs on a remote machine: tmux, nohup, surviving a dropped SSH connection | New chapter | Part II, after SSH. Essential for GPU training runs. |
+| 7 | Scheduled work and time: cron, systemd timers, UTC, time zones | New chapter | Part XIV, after systemd. |
+| 8 | The cloud as someone else's computer: VMs, object storage, paying by the hour | New chapter | Part XIV, after the first deploy. Mental model only, no provider certification. |
+| 9 | AI coding assistants as tools: what they run, what they see, how we review it | New chapter | Part XIII, after pre-commit and linters: permissions, review, and trust, using the tools Aksan already uses. |
+| 10 | Shared GPU machines and job schedulers: Slurm in practice | New chapter (specialized) | Part XVI, after CUDA. Research clusters run on it. |
+| 11 | Documents as code: Markdown, LaTeX, BibTeX, reproducible papers | Consider (specialized) | Part XIII. Thesis and this book both live here; optional. |
+| 12 | Tags and releases; CMake; NAT and tunnels (why a friend cannot reach our localhost); winget and Chocolatey; structured logging in our own code | Fold-ins | Into Semantic versioning; Makefiles; localhost and private vs. public addresses; apt; Reading logs. |
+
+Net effect if all accepted: 153 to 163 or 164 chapters.
 
 ## Triaged
 

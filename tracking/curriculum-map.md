@@ -432,7 +432,7 @@ once the design freezes, and it freezes only when all three hold at the same tim
 - [x] **The coverage audit is complete** (2026-10-07): every CS2023 knowledge area in
   `tracking/coverage-audit.md` is labelled degree, project, or out of scope with a reason; no
   row is pending; every open question the audit raised is decided.
-- [x] **The design inbox is empty of untriaged items** (as of 2026-10-07; reopens whenever a new item arrives): every entry in
+- [ ] **The design inbox is empty of untriaged items** (reopened 2026-10-07 by Claude's gap sweep): every entry in
   `tracking/design-inbox.md` has a verdict (covered, fold in, new chapter).
 - [ ] **Aksan signs off**, explicitly, in a session, recorded in the session log with the date.
 
@@ -695,3 +695,8 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   end-to-end), and race conditions (now with deadlocks). Fold-ins recorded in the new "Chapter
   Plan Notes" section. Jupyter stays. 153 chapters in 17 parts, skeleton regenerated, compiled
   locally. Design freeze again waits only on Aksan's sign-off.
+- **2026-10-07, gap sweep**: Aksan asked whether anything was missed before future exploration
+  adds more. Claude's sweep logged in the design inbox: ten candidate chapters (debugger, editor
+  and language servers, regex, text/JSON tools, config formats, tmux and long remote jobs,
+  scheduling and time, the cloud, AI coding assistants, Slurm) plus fold-ins. Awaiting Aksan.
+  Second review applied and skill re-sent (153 chapters).
