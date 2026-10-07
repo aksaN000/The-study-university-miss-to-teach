@@ -524,3 +524,7 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   plus confirming whether any MAT courses were taken. Added five cross-course connections
   (CSE331, CSE260, CSE330, CSE370, MERN). Founding brief still not received; `project-brief.md`
   still not created. Next: brief pasted verbatim, then decisions on the open questions.
+- **2026-10-07, branch convention**: the two commits above were first pushed to a
+  session-assigned branch (`claude/brave-feynman-eeu2b0`). Aksan asked for all work to go to
+  `main`; new branches only when he asks. Main fast-forwarded to include them, and the
+  convention is now in SKILL.md under "Home of Everything".

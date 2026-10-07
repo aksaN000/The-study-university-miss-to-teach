@@ -233,6 +233,10 @@ Repository layout (authoritative; paths elsewhere in this file are relative to t
   `tools/generate_practice_skeleton.py practice` (never overwrites real content).
 - `notes/notes.md`: Aksan's own notes in his own words; Claude reviews, never writes them.
 
+**Branch convention (Aksan, 2026-10-07):** commit and push directly to `main`. Do not create
+feature branches or pull requests unless Aksan asks for one; if a session starts on a
+session-assigned branch, move the work to `main` instead.
+
 **End-of-session duty (Claude's job, not Aksan's):** update `tracking/curriculum-map.md` (tick
 what passed a recall check, append the session log entry), write the book chapter and practice
 files if the session fully completed, run the generators if the syllabus changed, then commit
