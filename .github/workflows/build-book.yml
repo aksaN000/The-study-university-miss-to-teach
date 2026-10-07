@@ -22,6 +22,14 @@ jobs:
           working_directory: book
           latexmk_use_xelatex: true
 
+      # A release stays attached to whatever commit its tag names, so move
+      # the tag to this build's commit first; otherwise the release would
+      # keep pointing at the first commit it was ever created on.
+      - name: Move the book-latest tag to this commit
+        run: |
+          git tag -f book-latest
+          git push -f origin refs/tags/book-latest
+
       - name: Publish as the book-latest release
         uses: softprops/action-gh-release@v2
         with:

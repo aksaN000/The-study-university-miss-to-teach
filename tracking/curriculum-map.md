@@ -521,7 +521,8 @@ once the design freezes, and it freezes only when all three hold at the same tim
   row is pending; every open question the audit raised is decided.
 - [x] **The design inbox is empty of untriaged items** (as of 2026-10-07; reopens whenever a new item arrives): every entry in
   `tracking/design-inbox.md` has a verdict (covered, fold in, new chapter).
-- [ ] **Aksan signs off**, explicitly, in a session, recorded in the session log with the date.
+- [x] **Aksan signs off**, explicitly, in a session, recorded in the session log with the date.
+  Signed off 2026-10-07 ("design is good enough"). **Design frozen at 198 chapters in 18 parts.**
 
 After the freeze, new confusions still go through the inbox, but a new chapter then needs
 Aksan's explicit approval because it moves a frozen plan.
@@ -818,3 +819,11 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   environments" (overlapped Part VI, the CUDA note, and the ML closing chapter, which absorbs its
   seeds note). Moved "Functional ideas in everyday tools" from Part VII into Part IX, just before
   the tiny React that depends on immutability. 198 chapters in 18 parts.
+- **2026-10-07, DESIGN FROZEN**: Aksan signed off ("design is good enough"). All three freeze
+  criteria hold: audit complete, inbox empty, sign-off. 198 chapters, 18 parts. From here, new
+  confusions still enter through the design inbox, but a new chapter needs Aksan's explicit
+  approval. The founding brief: the first request of this session referred to one that was never
+  pasted, and Aksan does not recognise the term, so it is dropped; this log and SKILL.md hold the
+  project's intent. The `book-latest` tag no longer needs deleting by hand: the build workflow
+  now moves the tag to each build's commit before publishing. **Next session: teaching begins
+  with the Phase 0 diagnostic** (sent 2026-07-30, never answered; resend it fresh).
