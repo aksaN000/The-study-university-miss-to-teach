@@ -4,8 +4,9 @@ Part of the design-freeze gate (see "Design Freeze Criteria" in `curriculum-map.
 question for each ACM/IEEE CS2023 knowledge area: is it covered by Aksan's degree, covered by
 this project, or out of scope, and if out of scope, why?
 
-**Status (2026-10-07): every area labelled against Aksan's full course list; open questions
-below await his decisions.** The course list itself is recorded in `curriculum-map.md` under
+**Status (2026-10-07): every area labelled; questions 1, 3 and 5 decided (new parts VIII to X and
+an expanded XIV); 2, 4, 6 and 7 still await Aksan's decisions.** Chapter and part numbers in
+the table below predate the 2026-10-07 restructure; refer to chapters by title. The course list itself is recorded in `curriculum-map.md` under
 "Degree Course List". The audit is complete when every open question is decided.
 
 Source: the 17 knowledge areas of CS2023 (csed.acm.org/knowledge-areas). Labels apply at the
@@ -42,12 +43,11 @@ area level; where an area splits (theory in the degree, practice here), both are
 
 ## Open questions (Aksan decides each: new chapter, fold in, or out of scope with a reason)
 
-1. **Databases in practice (DM).** Suggested placement if a chapter: after Part V networking
-   (needs ports and localhost) and before Part IX containers (which will run one).
+1. ~~Databases in practice (DM).~~ **Decided 2026-10-07: new Part IX, Databases in Practice (9 ch.).**
 2. **Practical concurrency and distributed basics (PDC).**
-3. **Secrets and service security (SEC).**
+3. ~~Secrets and service security (SEC).~~ **Decided 2026-10-07: new Part X, Security in Practice (6 ch.), plus Part VIII's authentication chapters.**
 4. **Licensing and professional practice (SEP).** General ethics is covered by HUM103.
-5. **Measuring performance and profiling (SF).**
+5. ~~Measuring performance and profiling (SF).~~ **Decided 2026-10-07: Profiling and process-inspection chapters in Part XIV.**
 6. **HCI.** Recommendation above: out of scope.
 7. **PL theory gap (FPL)**: type systems, semantics, functional programming. Likely out of scope
    for this project (theory, not the layer around code) but a real gap for the "debate as an

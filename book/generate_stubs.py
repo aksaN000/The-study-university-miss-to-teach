@@ -10,7 +10,7 @@ CH_DIR = os.path.join(BOOK, "chapters")
 
 # (part_dir_slug, part_title, phase_number, [chapter titles in order])
 SYLLABUS = [
-    ("part01-foundations", "Mental Foundations", 0, [
+    ('part01-foundations', 'Mental Foundations', 0, [
         "What does an operating system actually do",
         "Processes: the unit of a running program",
         "Memory: what is actually there",
@@ -21,7 +21,7 @@ SYLLABUS = [
         "Paths: absolute, relative, and relative to what",
         "Text encodings and line endings: why files disagree",
     ]),
-    ("part02-command-line", "The Command Line", 1, [
+    ('part02-command-line', 'The Command Line', 1, [
         "Terminal, console, shell: three things we call by one name",
         "What a shell is and why it exists",
         "PowerShell vs. bash/zsh: different languages, not different skins",
@@ -42,7 +42,7 @@ SYLLABUS = [
         "Living comfortably in the terminal",
         "A third machine: where macOS agrees with Linux, and where it quietly doesn't",
     ]),
-    ("part03-source-to-process", "From Source Code to Running Process", 2, [
+    ('part03-source-to-process', 'From Source Code to Running Process', 2, [
         "Three kinds of things on PATH: native binaries, language engines, and scripted tools",
         "Executable files: ELF, PE, Mach-O, magic numbers, and shebangs",
         "The C pipeline: preprocess, compile, assemble, link",
@@ -55,7 +55,7 @@ SYLLABUS = [
         "Node.js: a JavaScript engine plus an operating system API",
         "Scripted CLIs: shebangs, launcher shims, and why python -m pip exists",
     ]),
-    ("part04-version-control", "Version Control, Properly", 3, [
+    ('part04-version-control', 'Version Control, Properly', 3, [
         "The object model: blobs, trees, and commits",
         "Refs, and what a branch actually is",
         "HEAD",
@@ -66,26 +66,31 @@ SYLLABUS = [
         "Recovering from disasters with reflog",
         "Reading someone else's history",
     ]),
-    ("part05-networking", "Networking Essentials", 4, [
-        "Ports, localhost, and IP vs. DNS",
+    ('part05-networking', 'Networking Essentials', 4, [
+        "Ports and sockets: how a process gets a network address",
+        "localhost, loopback, and private vs. public addresses",
+        "DNS: from a name to an address",
+        "TCP and UDP in practice: connections, handshakes, refusals, and timeouts",
         "HTTP basics",
         "TLS and certificates",
         "SSH keys",
         "What a server actually is",
+        "Network tools as instruments: curl, dig, ss, ping, and traceroute",
     ]),
-    ("part06-python-packaging", "Python Environments and Packaging", 5, [
+    ('part06-python-packaging', 'Python Environments and Packaging', 5, [
         "What a package manager actually automates",
         "How the interpreter finds code: sys.path and site-packages",
         "Why global installs cause problems: a tour of our own machine",
         "venv: what it actually does, mechanically",
         "pip, PyPI, sdists, and wheels",
         "Why compiled packages make Python versions matter",
+        "Semantic versioning: what a version number promises",
         "requirements.txt, lockfiles, and pyproject.toml",
         "conda: what problem it solved that pip could not",
         "Modern tooling: uv and poetry",
         "Packaging and publishing something of our own",
     ]),
-    ("part07-javascript-tooling", "JavaScript and Node Tooling", 6, [
+    ('part07-javascript-tooling', 'JavaScript and Node Tooling', 6, [
         "npm, global installs, and project scope",
         "package.json and semver ranges: declaring what we need",
         "node\\_modules: nested, flattened, hoisted, and linked",
@@ -97,7 +102,35 @@ SYLLABUS = [
         "Supply-chain security: every dependency is code we chose to run",
         "Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares",
     ]),
-    ("part08-jupyter", "Jupyter and the Notebook Stack", 7, [
+    ('part08-apis', 'APIs: How Applications Talk', 7, [
+        "APIs over HTTP: endpoints, REST, and JSON",
+        "API conventions: status codes, idempotency, pagination, rate limits, and versioning",
+        "Authentication vs. authorization",
+        "Cookies and sessions: state on a stateless protocol",
+        "Tokens and JWT: authentication without server-side sessions",
+        "The same-origin policy and CORS: why the browser blocked our request",
+        "Webhooks: when the server calls us",
+    ]),
+    ('part09-databases', 'Databases in Practice', 8, [
+        "A database is a server: processes, ports, and connection strings",
+        "SQLite: the database that is just a file",
+        "Drivers and connection pools: why connections are expensive",
+        "Migrations: schema changes as version-controlled code",
+        "ORMs vs. raw SQL: what the abstraction hides",
+        "Indexes and EXPLAIN: reading what the planner actually did",
+        "Transactions and isolation levels in practice: anomalies we can reproduce",
+        "Caching and Redis: a second store, and what it costs in consistency",
+        "Backups and restores: a backup never restored is only a hope",
+    ]),
+    ('part10-security', 'Security in Practice', 9, [
+        "Secrets: environment files, .env, and keeping keys out of Git",
+        "When a secret leaks: Git history, rotation, and scanning",
+        "Passwords: hashing, salts, and why we never store them",
+        "Injection: SQL, shell commands, and the general shape of the bug",
+        "XSS and CSRF: attacks that live in the browser",
+        "Least privilege: narrow users, narrow permissions, narrow tokens",
+    ]),
+    ('part11-jupyter', 'Jupyter and the Notebook Stack', 10, [
         "The frontend/kernel split, and why it exists",
         "The kernel protocol",
         "Kernel specs: where they live, how discovery works",
@@ -105,30 +138,37 @@ SYLLABUS = [
         "Notebooks and version control",
         "When a notebook is the wrong tool",
     ]),
-    ("part09-containers", "Containers", 8, [
+    ('part12-containers', 'Containers', 11, [
         "The isolation idea, generalized from environments to the whole OS",
+        "Namespaces and cgroups: why a container is not a virtual machine",
         "Images, layers, and Dockerfiles",
         "Volumes, ports, and networking",
         "docker-compose",
         "GPU containers",
         "Why \"works on my machine\" stops being necessary",
     ]),
-    ("part10-automation-build", "Automation and Build Tooling", 9, [
+    ('part13-automation-build', 'Automation and Build Tooling', 12, [
         "Makefiles",
         "GitHub Actions and CI/CD",
         "Automated testing as a habit, not a chore",
         "Pre-commit hooks",
         "Linters and formatters",
-        "Semantic versioning",
         "Reproducible builds",
         "The same pipeline, five languages: CI beyond Python",
     ]),
-    ("part11-deployment-ops", "Deployment and Operations", 10, [
+    ('part14-deployment-ops', 'Deployment and Operations', 13, [
         "Deploying something small to a real machine",
+        "Keeping a process alive: systemd, restart policies, and graceful shutdown",
+        "Reverse proxies: one public port, many services",
+        "From a domain name to HTTPS on our own server",
         "Reading logs",
+        "Inspecting a running process: ps, top, lsof, ss, and strace",
         "Debugging a process that will not start",
+        "Profiling: finding out why it is slow",
+        "Health checks, monitoring, and observability",
+        "Deployment strategies and rollback: shipping without fear",
     ]),
-    ("part12-ml-infra", "Machine Learning Infrastructure", 11, [
+    ('part15-ml-infra', 'Machine Learning Infrastructure', 14, [
         "Reproducible ML environments",
         "CUDA and driver versions",
         "Data versioning with DVC",
@@ -136,6 +176,10 @@ SYLLABUS = [
         "Configuration management",
         "Serving a model",
         "Why almost every ML project fails to be reproducible",
+    ]),
+    ('part16-capstone', 'Capstone: From Source to Production', 15, [
+        "One application through every layer",
+        "Breaking it on purpose, one layer at a time",
     ]),
 ]
 

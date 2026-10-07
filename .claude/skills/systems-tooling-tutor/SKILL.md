@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (103 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (139 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
@@ -271,11 +271,15 @@ actually close.
 - **Voice: "we," never "you" or "I."** The book reads as two people at the same terminal, not
   a lecture. This is unlike the chat conversation, which stays in direct "you" address per this
   project's normal tone.
-- **Audience: assume nothing.** The live session can skip re-deriving what Aksan's OS/Compiler
-  coursework already covered (see "What NOT to Re-Teach" in the curriculum map). The book
-  cannot — it exists to be handed to a stranger with no such background, so every chapter is
-  written as if this is the reader's first exposure, even when the live session that produced
-  it built directly on Aksan's prior knowledge.
+- **Audience: computer science enthusiasts who have done the CS courses** (decided by Aksan,
+  2026-10-07, replacing the earlier "assume nothing" rule). The reader knows the academic
+  concepts: processes and scheduling, virtual memory, file-system internals, CPU and registers,
+  compilers, data structures, networking layers, relational theory and ACID. The book does
+  not re-teach them. It names the course concept in a sentence and spends its pages on the
+  practical bridge: what that concept looks like on a real machine, which tool exposes it,
+  and how it fails. What the book never assumes is practical fluency: the first time a
+  command, file, or tool appears, it is introduced fully, because that gap is the book's
+  whole reason to exist.
 - **Content comes from the real session, not a rewrite from general knowledge.** The hands-on
   box uses the actual command and the actual output Aksan pasted, not an idealized
   reconstruction. The FAQ entries come from what was actually asked or actually confusing in
@@ -325,7 +329,7 @@ honestly rather than pretending it away:
   (`sed`, `date`, `ls` flags genuinely differ), Homebrew as the missing package manager, launchd
   vs. systemd, APFS's case-insensitive-by-default filesystem vs. ext4/NTFS.
 - **One genuine hands-on macOS touchpoint does exist and should be used when we reach it**: GitHub
-  Actions provides free `macos-latest` runners, so Phase 9's CI material can have Aksan actually
+  Actions provides free `macos-latest` runners, so Phase 12's CI material can have Aksan actually
   trigger a real macOS build in a workflow with no Mac required. Flag this explicitly when that
   chapter comes up rather than letting the "no hands-on Mac" rule above hide a case where hands-on
   is genuinely possible.
@@ -357,7 +361,7 @@ Python's. That shaped a real design decision, not just a note to self:
   that maps every concept from the Python-specific chapters onto four other ecosystems explicitly
   — same problems, different syntax, so the underlying reasoning becomes visibly portable rather
   than staying implicit.
-- **Phase 9 (build/CI) closes the same way** — a comparison chapter ("The same
+- **Phase 12 (build/CI) closes the same way** — a comparison chapter ("The same
   pipeline, five languages") after the Python/generic CI material, doing for build tooling what
   the packaging capstone does.
 - **Not literal wall-to-wall coverage of every language in existence, and that's deliberate, not a
@@ -415,6 +419,17 @@ flowing prose with one or two sidenotes and no boxes at all. A mechanism-plus-ha
 chapter needs a terminal block and probably a breakage box. A comparison capstone probably
 wants a table more than any box above. Decide the shape from the content, every time.
 
+**Two recurring features, adopted 2026-10-07 (implement in `boxes.tex` when the first chapter
+that needs one is written, and recompile to check it):**
+
+- *Trace it*: at the end of each part, one real operation traced through every layer taught
+  so far ("what happens when we type `python train.py`", "`git push`", "opening a notebook",
+  "a container starting", "a model answering a request"). Each part's trace extends the last
+  one, so by the capstone the reader holds one connected model of the machine.
+- *Depth tags*: each chapter carries one marginal tag, core, practical, deep dive, or
+  specialized, so a reader can choose a path through the book. Tags guide; they never cut
+  content.
+
 **Verification discipline carries forward.** `book/frontmatter/design-reference.tex`
 (wired into the back matter, clearly marked as not a real chapter) demonstrates every tool
 in the toolkit with placeholder content, specifically so the design can be checked visually
@@ -425,7 +440,7 @@ assuming a change is fine because the log says "0 errors."
 
 ## Curriculum Map
 
-The full Phase 0–8 breakdown, sub-topic checklists, live status, the learner's machine snapshot, the
+The full phase breakdown, sub-topic checklists, live status, the learner's machine snapshot, the
 "what's already solid from OS coursework" notes, the cross-course connection map, and the running
 session log all live in `tracking/curriculum-map.md`. Check it at the start of every session to see
 exactly where things stand, and **update it at the end of every session** — for a project with no
@@ -440,14 +455,18 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 | 1 | The command line: terminal vs. shell, PowerShell, bash, argv and `--`, PATH, dotfiles, WSL2, Ubuntu, apt, SSH, scripting, macOS |
 | 2 | From source to running process: executable formats, the C pipeline, linking/loading, ABIs, interpreters, CPython, JVM, V8 tiers, Node, script launchers |
 | 3 | Version control internals: object model, refs, HEAD, merge/rebase, reflog |
-| 4 | Networking essentials: ports, localhost, DNS, HTTP, TLS, SSH keys, servers |
-| 5 | Python environments and packaging: sys.path, venv, pip, wheels, conda, uv/poetry |
+| 4 | Networking essentials: ports and sockets, localhost, DNS, TCP/UDP in practice, HTTP, TLS, SSH keys, servers, network tools |
+| 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, conda, uv/poetry |
 | 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx/npm create, CJS vs. ESM, Vite, supply chain, cross-ecosystem capstone |
-| 7 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
-| 8 | Containers: images, layers, Dockerfiles, compose, GPU |
-| 9 | Automation and build tooling: Make, GitHub Actions, pre-commit, linters, semver |
-| 10 | Deployment and operations: deploying, logs, debugging a process that won't start |
-| 11 | ML infrastructure: CUDA/drivers, DVC, MLflow/W&B, config, reproducibility |
+| 7 | APIs: REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks |
+| 8 | Databases in practice: the database as a server, SQLite, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
+| 9 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
+| 10 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
+| 11 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
+| 12 | Automation and build tooling: Make, GitHub Actions, testing, pre-commit, linters, reproducible builds |
+| 13 | Deployment and operations: deploying, systemd, reverse proxies, HTTPS, logs, process inspection, profiling, monitoring, rollback |
+| 14 | ML infrastructure: CUDA/drivers, DVC, MLflow/W&B, config, serving, reproducibility |
+| 15 | Capstone: one application through every layer, then broken on purpose layer by layer |
 
 ---
 
