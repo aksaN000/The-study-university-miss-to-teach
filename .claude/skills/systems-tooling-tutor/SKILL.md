@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (139 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (151 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
@@ -272,14 +272,20 @@ actually close.
   a lecture. This is unlike the chat conversation, which stays in direct "you" address per this
   project's normal tone.
 - **Audience: computer science enthusiasts who have done the CS courses** (decided by Aksan,
-  2026-10-07, replacing the earlier "assume nothing" rule). The reader knows the academic
-  concepts: processes and scheduling, virtual memory, file-system internals, CPU and registers,
-  compilers, data structures, networking layers, relational theory and ACID. The book does
-  not re-teach them. It names the course concept in a sentence and spends its pages on the
-  practical bridge: what that concept looks like on a real machine, which tool exposes it,
-  and how it fails. What the book never assumes is practical fluency: the first time a
-  command, file, or tool appears, it is introduced fully, because that gap is the book's
-  whole reason to exist.
+  2026-10-07, replacing the earlier "assume nothing" rule, then sharpened the same day). The
+  reader has *studied* the academic concepts (processes and scheduling, virtual memory,
+  file-system internals, CPU and registers, compilers, data structures, networking layers,
+  relational theory and ACID) but has not necessarily mastered them and will not remember all
+  of them. Aksan's own words: a 3.73 CGPA means 85 to 89 percent in every course, which is
+  knowing the concepts, not mastering them, and he does not always remember what he studied.
+  So the book never derives a course concept from scratch, and never assumes it either: where
+  a chapter leans on one, it gives a short refresher (a paragraph or a sidenote: what the
+  concept is, in plain words, and which course it came from) and then spends its pages on the
+  practical bridge: what the concept looks like on a real machine, which tool exposes it, and
+  how it fails. Practical fluency is never assumed: the first time a command, file, or tool
+  appears, it is introduced fully, because that gap is the book's whole reason to exist.
+  The live sessions follow the same rule: a course concept gets a quick refresher and one
+  check question, never "you know this from CSE321" as a substitute for explaining it.
 - **Content comes from the real session, not a rewrite from general knowledge.** The hands-on
   box uses the actual command and the actual output Aksan pasted, not an idealized
   reconstruction. The FAQ entries come from what was actually asked or actually confusing in
@@ -329,7 +335,7 @@ honestly rather than pretending it away:
   (`sed`, `date`, `ls` flags genuinely differ), Homebrew as the missing package manager, launchd
   vs. systemd, APFS's case-insensitive-by-default filesystem vs. ext4/NTFS.
 - **One genuine hands-on macOS touchpoint does exist and should be used when we reach it**: GitHub
-  Actions provides free `macos-latest` runners, so Phase 12's CI material can have Aksan actually
+  Actions provides free `macos-latest` runners, so Phase 13's CI material can have Aksan actually
   trigger a real macOS build in a workflow with no Mac required. Flag this explicitly when that
   chapter comes up rather than letting the "no hands-on Mac" rule above hide a case where hands-on
   is genuinely possible.
@@ -361,7 +367,7 @@ Python's. That shaped a real design decision, not just a note to self:
   that maps every concept from the Python-specific chapters onto four other ecosystems explicitly
   — same problems, different syntax, so the underlying reasoning becomes visibly portable rather
   than staying implicit.
-- **Phase 12 (build/CI) closes the same way** — a comparison chapter ("The same
+- **Phase 13 (build/CI) closes the same way** — a comparison chapter ("The same
   pipeline, five languages") after the Python/generic CI material, doing for build tooling what
   the packaging capstone does.
 - **Not literal wall-to-wall coverage of every language in existence, and that's deliberate, not a
@@ -453,20 +459,21 @@ Quick orientation (see the reference file for live status and sub-topic detail):
 |---|---|
 | 0 | Mental foundations: OS role, processes, memory, filesystem, permissions, fork/exec/CreateProcess, env vars, paths, encodings |
 | 1 | The command line: terminal vs. shell, PowerShell, bash, argv and `--`, PATH, dotfiles, WSL2, Ubuntu, apt, SSH, scripting, macOS |
-| 2 | From source to running process: executable formats, the C pipeline, linking/loading, ABIs, interpreters, CPython, JVM, V8 tiers, Node, script launchers |
+| 2 | From source to running process: executable formats, the C pipeline, linking/loading, ABIs, interpreters, CPython, JVM, V8 tiers, Node, script launchers, CLI design |
 | 3 | Version control internals: object model, refs, HEAD, merge/rebase, reflog |
 | 4 | Networking essentials: ports and sockets, localhost, DNS, TCP/UDP in practice, HTTP, TLS, SSH keys, servers, network tools |
 | 5 | Python environments and packaging: sys.path, venv, pip, wheels, semver, conda, uv/poetry |
-| 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx/npm create, CJS vs. ESM, Vite, supply chain, cross-ecosystem capstone |
+| 6 | JavaScript and Node tooling: npm, package.json, node_modules, lockfiles, npmrc, npx/npm create, CJS vs. ESM, Vite, TypeScript, accessibility, supply chain, licenses, functional ideas, cross-ecosystem capstone |
 | 7 | APIs: REST and JSON, conventions, authn vs. authz, cookies and sessions, JWT, CORS, webhooks |
 | 8 | Databases in practice: the database as a server, SQLite, pools, migrations, ORMs, EXPLAIN, isolation, Redis, backups |
 | 9 | Security in practice: secrets, leaks and rotation, password hashing, injection, XSS/CSRF, least privilege |
-| 10 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
-| 11 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
-| 12 | Automation and build tooling: Make, GitHub Actions, testing, pre-commit, linters, reproducible builds |
-| 13 | Deployment and operations: deploying, systemd, reverse proxies, HTTPS, logs, process inspection, profiling, monitoring, rollback |
-| 14 | ML infrastructure: CUDA/drivers, DVC, MLflow/W&B, config, serving, reproducibility |
-| 15 | Capstone: one application through every layer, then broken on purpose layer by layer |
+| 10 | Concurrency and distributed systems in practice: threads/processes/async, the GIL, reproducible races, queues and workers, partial failure, replication |
+| 11 | Jupyter: kernel protocol, kernel specs, notebooks vs. scripts |
+| 12 | Containers: isolation, namespaces and cgroups, images, layers, Dockerfiles, compose, GPU |
+| 13 | Automation and build tooling: Make, GitHub Actions, testing, pre-commit, linters, type checkers, reproducible builds |
+| 14 | Deployment and operations: deploying, systemd, reverse proxies, HTTPS, logs, process inspection, profiling, monitoring, rollback |
+| 15 | ML infrastructure: CUDA/drivers, DVC, MLflow/W&B, config, serving, reproducibility |
+| 16 | Capstone: one application through every layer, then broken on purpose layer by layer |
 
 ---
 

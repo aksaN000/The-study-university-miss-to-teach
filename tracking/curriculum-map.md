@@ -14,20 +14,21 @@ Generated from `book/generate_stubs.py` (the single syllabus source). Phase N = 
 |---|---|---|---|
 | 0 | I | Mental Foundations (9 ch.) | 🔄 Diagnostic sent, awaiting answers |
 | 1 | II | The Command Line (19 ch.) | ⏳ Not started |
-| 2 | III | From Source Code to Running Process (11 ch.) | ⏳ Not started |
+| 2 | III | From Source Code to Running Process (12 ch.) | ⏳ Not started |
 | 3 | IV | Version Control, Properly (9 ch.) | ⏳ Not started |
 | 4 | V | Networking Essentials (9 ch.) | ⏳ Not started |
 | 5 | VI | Python Environments and Packaging (11 ch.) | ⏳ Not started |
-| 6 | VII | JavaScript and Node Tooling (10 ch.) | ⏳ Not started |
+| 6 | VII | JavaScript and Node Tooling (14 ch.) | ⏳ Not started |
 | 7 | VIII | APIs: How Applications Talk (7 ch.) | ⏳ Not started |
 | 8 | IX | Databases in Practice (9 ch.) | ⏳ Not started |
 | 9 | X | Security in Practice (6 ch.) | ⏳ Not started |
-| 10 | XI | Jupyter and the Notebook Stack (6 ch.) | ⏳ Not started |
-| 11 | XII | Containers (7 ch.) | ⏳ Not started |
-| 12 | XIII | Automation and Build Tooling (7 ch.) | ⏳ Not started |
-| 13 | XIV | Deployment and Operations (10 ch.) | ⏳ Not started |
-| 14 | XV | Machine Learning Infrastructure (7 ch.) | ⏳ Not started |
-| 15 | XVI | Capstone: From Source to Production (2 ch.) | ⏳ Not started |
+| 10 | XI | Concurrency and Distributed Systems in Practice (6 ch.) | ⏳ Not started |
+| 11 | XII | Jupyter and the Notebook Stack (6 ch.) | ⏳ Not started |
+| 12 | XIII | Containers (7 ch.) | ⏳ Not started |
+| 13 | XIV | Automation and Build Tooling (8 ch.) | ⏳ Not started |
+| 14 | XV | Deployment and Operations (10 ch.) | ⏳ Not started |
+| 15 | XVI | Machine Learning Infrastructure (7 ch.) | ⏳ Not started |
+| 16 | XVII | Capstone: From Source to Production (2 ch.) | ⏳ Not started |
 
 ---
 
@@ -81,132 +82,146 @@ chapters by title in conversation and by number only when reading the compiled b
 - [ ] ch37 JIT compilation through V8: Ignition, Sparkplug, Maglev, TurboFan
 - [ ] ch38 Node.js: a JavaScript engine plus an operating system API
 - [ ] ch39 Scripted CLIs: shebangs, launcher shims, and why python -m pip exists
+- [ ] ch40 Designing command-line tools for humans: help text, errors, and conventions
 
 ### Phase 3: Version Control, Properly (Part IV)
-- [ ] ch40 The object model: blobs, trees, and commits
-- [ ] ch41 Refs, and what a branch actually is
-- [ ] ch42 HEAD
-- [ ] ch43 Merge vs. rebase, and when each is correct
-- [ ] ch44 Resolving conflicts without panic
-- [ ] ch45 .gitignore: what belongs in a repo
-- [ ] ch46 Remotes, pull requests, and code review
-- [ ] ch47 Recovering from disasters with reflog
-- [ ] ch48 Reading someone else's history
+- [ ] ch41 The object model: blobs, trees, and commits
+- [ ] ch42 Refs, and what a branch actually is
+- [ ] ch43 HEAD
+- [ ] ch44 Merge vs. rebase, and when each is correct
+- [ ] ch45 Resolving conflicts without panic
+- [ ] ch46 .gitignore: what belongs in a repo
+- [ ] ch47 Remotes, pull requests, and code review
+- [ ] ch48 Recovering from disasters with reflog
+- [ ] ch49 Reading someone else's history
 
 ### Phase 4: Networking Essentials (Part V)
-- [ ] ch49 Ports and sockets: how a process gets a network address
-- [ ] ch50 localhost, loopback, and private vs. public addresses
-- [ ] ch51 DNS: from a name to an address
-- [ ] ch52 TCP and UDP in practice: connections, handshakes, refusals, and timeouts
-- [ ] ch53 HTTP basics
-- [ ] ch54 TLS and certificates
-- [ ] ch55 SSH keys
-- [ ] ch56 What a server actually is
-- [ ] ch57 Network tools as instruments: curl, dig, ss, ping, and traceroute
+- [ ] ch50 Ports and sockets: how a process gets a network address
+- [ ] ch51 localhost, loopback, and private vs. public addresses
+- [ ] ch52 DNS: from a name to an address
+- [ ] ch53 TCP and UDP in practice: connections, handshakes, refusals, and timeouts
+- [ ] ch54 HTTP basics
+- [ ] ch55 TLS and certificates
+- [ ] ch56 SSH keys
+- [ ] ch57 What a server actually is
+- [ ] ch58 Network tools as instruments: curl, dig, ss, ping, and traceroute
 
 ### Phase 5: Python Environments and Packaging (Part VI)
-- [ ] ch58 What a package manager actually automates
-- [ ] ch59 How the interpreter finds code: sys.path and site-packages
-- [ ] ch60 Why global installs cause problems: a tour of our own machine
-- [ ] ch61 venv: what it actually does, mechanically
-- [ ] ch62 pip, PyPI, sdists, and wheels
-- [ ] ch63 Why compiled packages make Python versions matter
-- [ ] ch64 Semantic versioning: what a version number promises
-- [ ] ch65 requirements.txt, lockfiles, and pyproject.toml
-- [ ] ch66 conda: what problem it solved that pip could not
-- [ ] ch67 Modern tooling: uv and poetry
-- [ ] ch68 Packaging and publishing something of our own
+- [ ] ch59 What a package manager actually automates
+- [ ] ch60 How the interpreter finds code: sys.path and site-packages
+- [ ] ch61 Why global installs cause problems: a tour of our own machine
+- [ ] ch62 venv: what it actually does, mechanically
+- [ ] ch63 pip, PyPI, sdists, and wheels
+- [ ] ch64 Why compiled packages make Python versions matter
+- [ ] ch65 Semantic versioning: what a version number promises
+- [ ] ch66 requirements.txt, lockfiles, and pyproject.toml
+- [ ] ch67 conda: what problem it solved that pip could not
+- [ ] ch68 Modern tooling: uv and poetry
+- [ ] ch69 Packaging and publishing something of our own
 
 ### Phase 6: JavaScript and Node Tooling (Part VII)
-- [ ] ch69 npm, global installs, and project scope
-- [ ] ch70 package.json and semver ranges: declaring what we need
-- [ ] ch71 node_modules: nested, flattened, hoisted, and linked
-- [ ] ch72 Lockfiles and npm ci: making installs repeatable
-- [ ] ch73 npm configuration: .npmrc, npm_config variables, and stricter validation
-- [ ] ch74 npx, npm create, and scaffolding CLIs
-- [ ] ch75 CommonJS and ES modules: two module systems in one ecosystem
-- [ ] ch76 Transpilers, bundlers, and dev servers: what Vite does with our React code
-- [ ] ch77 Supply-chain security: every dependency is code we chose to run
-- [ ] ch78 Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares
+- [ ] ch70 npm, global installs, and project scope
+- [ ] ch71 package.json and semver ranges: declaring what we need
+- [ ] ch72 node_modules: nested, flattened, hoisted, and linked
+- [ ] ch73 Lockfiles and npm ci: making installs repeatable
+- [ ] ch74 npm configuration: .npmrc, npm_config variables, and stricter validation
+- [ ] ch75 npx, npm create, and scaffolding CLIs
+- [ ] ch76 CommonJS and ES modules: two module systems in one ecosystem
+- [ ] ch77 Transpilers, bundlers, and dev servers: what Vite does with our React code
+- [ ] ch78 TypeScript: a type system added to JavaScript, then erased before it runs
+- [ ] ch79 Accessibility in practice: what the browser exposes, and how we test it
+- [ ] ch80 Supply-chain security: every dependency is code we chose to run
+- [ ] ch81 Software licenses: what we may use, and what we owe when we publish
+- [ ] ch82 Functional ideas in everyday tools: immutability and pure functions in Git, React, and builds
+- [ ] ch83 Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares
 
 ### Phase 7: APIs: How Applications Talk (Part VIII)
-- [ ] ch79 APIs over HTTP: endpoints, REST, and JSON
-- [ ] ch80 API conventions: status codes, idempotency, pagination, rate limits, and versioning
-- [ ] ch81 Authentication vs. authorization
-- [ ] ch82 Cookies and sessions: state on a stateless protocol
-- [ ] ch83 Tokens and JWT: authentication without server-side sessions
-- [ ] ch84 The same-origin policy and CORS: why the browser blocked our request
-- [ ] ch85 Webhooks: when the server calls us
+- [ ] ch84 APIs over HTTP: endpoints, REST, and JSON
+- [ ] ch85 API conventions: status codes, idempotency, pagination, rate limits, and versioning
+- [ ] ch86 Authentication vs. authorization
+- [ ] ch87 Cookies and sessions: state on a stateless protocol
+- [ ] ch88 Tokens and JWT: authentication without server-side sessions
+- [ ] ch89 The same-origin policy and CORS: why the browser blocked our request
+- [ ] ch90 Webhooks: when the server calls us
 
 ### Phase 8: Databases in Practice (Part IX)
-- [ ] ch86 A database is a server: processes, ports, and connection strings
-- [ ] ch87 SQLite: the database that is just a file
-- [ ] ch88 Drivers and connection pools: why connections are expensive
-- [ ] ch89 Migrations: schema changes as version-controlled code
-- [ ] ch90 ORMs vs. raw SQL: what the abstraction hides
-- [ ] ch91 Indexes and EXPLAIN: reading what the planner actually did
-- [ ] ch92 Transactions and isolation levels in practice: anomalies we can reproduce
-- [ ] ch93 Caching and Redis: a second store, and what it costs in consistency
-- [ ] ch94 Backups and restores: a backup never restored is only a hope
+- [ ] ch91 A database is a server: processes, ports, and connection strings
+- [ ] ch92 SQLite: the database that is just a file
+- [ ] ch93 Drivers and connection pools: why connections are expensive
+- [ ] ch94 Migrations: schema changes as version-controlled code
+- [ ] ch95 ORMs vs. raw SQL: what the abstraction hides
+- [ ] ch96 Indexes and EXPLAIN: reading what the planner actually did
+- [ ] ch97 Transactions and isolation levels in practice: anomalies we can reproduce
+- [ ] ch98 Caching and Redis: a second store, and what it costs in consistency
+- [ ] ch99 Backups and restores: a backup never restored is only a hope
 
 ### Phase 9: Security in Practice (Part X)
-- [ ] ch95 Secrets: environment files, .env, and keeping keys out of Git
-- [ ] ch96 When a secret leaks: Git history, rotation, and scanning
-- [ ] ch97 Passwords: hashing, salts, and why we never store them
-- [ ] ch98 Injection: SQL, shell commands, and the general shape of the bug
-- [ ] ch99 XSS and CSRF: attacks that live in the browser
-- [ ] ch100 Least privilege: narrow users, narrow permissions, narrow tokens
+- [ ] ch100 Secrets: environment files, .env, and keeping keys out of Git
+- [ ] ch101 When a secret leaks: Git history, rotation, and scanning
+- [ ] ch102 Passwords: hashing, salts, and why we never store them
+- [ ] ch103 Injection: SQL, shell commands, and the general shape of the bug
+- [ ] ch104 XSS and CSRF: attacks that live in the browser
+- [ ] ch105 Least privilege: narrow users, narrow permissions, narrow tokens
 
-### Phase 10: Jupyter and the Notebook Stack (Part XI)
-- [ ] ch101 The frontend/kernel split, and why it exists
-- [ ] ch102 The kernel protocol
-- [ ] ch103 Kernel specs: where they live, how discovery works
-- [ ] ch104 Why notebooks break in ways scripts do not
-- [ ] ch105 Notebooks and version control
-- [ ] ch106 When a notebook is the wrong tool
+### Phase 10: Concurrency and Distributed Systems in Practice (Part XI)
+- [ ] ch106 Concurrency in practice: threads, processes, and async I/O
+- [ ] ch107 Python's GIL and the free-threaded build: what actually runs in parallel
+- [ ] ch108 Race conditions we can reproduce: locks, and letting the database be the lock
+- [ ] ch109 Queues and background workers: work that should not happen inside the request
+- [ ] ch110 More than one machine: partial failure, timeouts, and retries
+- [ ] ch111 Replication and consistency in practice: what eventually consistent actually means
 
-### Phase 11: Containers (Part XII)
-- [ ] ch107 The isolation idea, generalized from environments to the whole OS
-- [ ] ch108 Namespaces and cgroups: why a container is not a virtual machine
-- [ ] ch109 Images, layers, and Dockerfiles
-- [ ] ch110 Volumes, ports, and networking
-- [ ] ch111 docker-compose
-- [ ] ch112 GPU containers
-- [ ] ch113 Why "works on my machine" stops being necessary
+### Phase 11: Jupyter and the Notebook Stack (Part XII)
+- [ ] ch112 The frontend/kernel split, and why it exists
+- [ ] ch113 The kernel protocol
+- [ ] ch114 Kernel specs: where they live, how discovery works
+- [ ] ch115 Why notebooks break in ways scripts do not
+- [ ] ch116 Notebooks and version control
+- [ ] ch117 When a notebook is the wrong tool
 
-### Phase 12: Automation and Build Tooling (Part XIII)
-- [ ] ch114 Makefiles
-- [ ] ch115 GitHub Actions and CI/CD
-- [ ] ch116 Automated testing as a habit, not a chore
-- [ ] ch117 Pre-commit hooks
-- [ ] ch118 Linters and formatters
-- [ ] ch119 Reproducible builds
-- [ ] ch120 The same pipeline, five languages: CI beyond Python
+### Phase 12: Containers (Part XIII)
+- [ ] ch118 The isolation idea, generalized from environments to the whole OS
+- [ ] ch119 Namespaces and cgroups: why a container is not a virtual machine
+- [ ] ch120 Images, layers, and Dockerfiles
+- [ ] ch121 Volumes, ports, and networking
+- [ ] ch122 docker-compose
+- [ ] ch123 GPU containers
+- [ ] ch124 Why "works on my machine" stops being necessary
 
-### Phase 13: Deployment and Operations (Part XIV)
-- [ ] ch121 Deploying something small to a real machine
-- [ ] ch122 Keeping a process alive: systemd, restart policies, and graceful shutdown
-- [ ] ch123 Reverse proxies: one public port, many services
-- [ ] ch124 From a domain name to HTTPS on our own server
-- [ ] ch125 Reading logs
-- [ ] ch126 Inspecting a running process: ps, top, lsof, ss, and strace
-- [ ] ch127 Debugging a process that will not start
-- [ ] ch128 Profiling: finding out why it is slow
-- [ ] ch129 Health checks, monitoring, and observability
-- [ ] ch130 Deployment strategies and rollback: shipping without fear
+### Phase 13: Automation and Build Tooling (Part XIV)
+- [ ] ch125 Makefiles
+- [ ] ch126 GitHub Actions and CI/CD
+- [ ] ch127 Automated testing as a habit, not a chore
+- [ ] ch128 Pre-commit hooks
+- [ ] ch129 Linters and formatters
+- [ ] ch130 Type checkers: mypy, pyright, and tsc, and what they actually prove
+- [ ] ch131 Reproducible builds
+- [ ] ch132 The same pipeline, five languages: CI beyond Python
 
-### Phase 14: Machine Learning Infrastructure (Part XV)
-- [ ] ch131 Reproducible ML environments
-- [ ] ch132 CUDA and driver versions
-- [ ] ch133 Data versioning with DVC
-- [ ] ch134 Experiment tracking: MLflow and W&B
-- [ ] ch135 Configuration management
-- [ ] ch136 Serving a model
-- [ ] ch137 Why almost every ML project fails to be reproducible
+### Phase 14: Deployment and Operations (Part XV)
+- [ ] ch133 Deploying something small to a real machine
+- [ ] ch134 Keeping a process alive: systemd, restart policies, and graceful shutdown
+- [ ] ch135 Reverse proxies: one public port, many services
+- [ ] ch136 From a domain name to HTTPS on our own server
+- [ ] ch137 Reading logs
+- [ ] ch138 Inspecting a running process: ps, top, lsof, ss, and strace
+- [ ] ch139 Debugging a process that will not start
+- [ ] ch140 Profiling: finding out why it is slow
+- [ ] ch141 Health checks, monitoring, and observability
+- [ ] ch142 Deployment strategies and rollback: shipping without fear
 
-### Phase 15: Capstone: From Source to Production (Part XVI)
-- [ ] ch138 One application through every layer
-- [ ] ch139 Breaking it on purpose, one layer at a time
+### Phase 15: Machine Learning Infrastructure (Part XVI)
+- [ ] ch143 Reproducible ML environments
+- [ ] ch144 CUDA and driver versions
+- [ ] ch145 Data versioning with DVC
+- [ ] ch146 Experiment tracking: MLflow and W&B
+- [ ] ch147 Configuration management
+- [ ] ch148 Serving a model
+- [ ] ch149 Why almost every ML project fails to be reproducible
+
+### Phase 16: Capstone: From Source to Production (Part XVII)
+- [ ] ch150 One application through every layer
+- [ ] ch151 Breaking it on purpose, one layer at a time
 ### Cross-Cutting — Professional Habits (reinforce throughout, not a single session)
 - [ ] Reading documentation and source instead of guessing
 - [ ] Reading error messages carefully and completely
@@ -235,20 +250,21 @@ alongside the taught material rather than relying only on Claude's explanations.
 |---|---|
 | 0 | *Computer Systems: A Programmer's Perspective* (Bryant & O'Hallaron), "the layer beneath"; OSTEP for processes and virtualization |
 | 1 | *The Linux Command Line* (Shotts, linuxcommand.org); Missing Semester: Shell, Shell Tools & Scripting, Command-line Environment (dotfiles); POSIX Utility Syntax Guidelines (the `--` convention); OverTheWire: Bandit |
-| 2 | CS:APP ch. 7 (Linking) and ch. 8 (Exceptional Control Flow: fork/exec); `man 5 elf`, `man 8 ld.so`; *Crafting Interpreters* (Nystrom, free at craftinginterpreters.com) for tree-walking vs. bytecode; the CPython devguide's compiler/interpreter internals; v8.dev blog posts on Ignition, Sparkplug, Maglev; nodejs.org "The Node.js Event Loop" guide |
+| 2 | clig.dev (Command Line Interface Guidelines) for CLI design; CS:APP ch. 7 (Linking) and ch. 8 (Exceptional Control Flow: fork/exec); `man 5 elf`, `man 8 ld.so`; *Crafting Interpreters* (Nystrom, free at craftinginterpreters.com) for tree-walking vs. bytecode; the CPython devguide's compiler/interpreter internals; v8.dev blog posts on Ignition, Sparkplug, Maglev; nodejs.org "The Node.js Event Loop" guide |
 | 3 | *Pro Git* (Chacon & Straub), especially Git Internals; Missing Semester: Version Control; Learn Git Branching |
 | 4 | Julia Evans' networking zines; MDN "An overview of HTTP"; Missing Semester: Security & Cryptography for the TLS/SSH trust model |
 | 5 | semver.org; the Python Packaging User Guide (packaging.python.org) and the relevant PEPs (427 wheels, 517/518 build systems, 621 pyproject metadata, 668 externally managed environments) |
-| 6 | docs.npmjs.com (package.json, npmrc, config, scripts, folders); nodejs.org module docs (CommonJS vs. ESM); vite.dev guide ("Why Vite"); pnpm.io "Motivation" |
+| 6 | docs.npmjs.com (package.json, npmrc, config, scripts, folders); nodejs.org module docs (CommonJS vs. ESM); vite.dev guide ("Why Vite"); pnpm.io "Motivation"; TypeScript handbook; MDN Accessibility and WAI-ARIA; choosealicense.com and SPDX |
 | 7 | MDN: HTTP, Cookies, CORS; RFC 7519 (JWT) read alongside the OWASP cheat sheets on sessions and JWT |
 | 8 | PostgreSQL documentation (Server Administration; Using EXPLAIN; Transaction Isolation); use-the-index-luke.com; Kleppmann, *Designing Data-Intensive Applications*, ch. 7 |
 | 9 | OWASP Top 10 and the OWASP Cheat Sheet Series; Missing Semester: Security & Cryptography |
-| 10 | Jupyter client docs: the kernel messaging protocol |
-| 11 | Docker's official documentation; docker-curriculum.com; `man 7 namespaces`, `man 7 cgroups` |
-| 12 | Missing Semester: Metaprogramming (build systems, CI, dependency management); GitHub Actions docs |
-| 13 | Missing Semester: Debugging and Profiling; `journalctl`/`systemd` man pages; Brendan Gregg's Linux performance pages |
-| 14 | Full Stack Deep Learning (fullstackdeeplearning.com) |
-| 15 | Every source above; the capstone has no single text |
+| 10 | Python docs: `threading`, `multiprocessing`, `asyncio`, PEP 703 (free-threaded CPython); Kleppmann, *Designing Data-Intensive Applications*, ch. 5, 8, 9 |
+| 11 | Jupyter client docs: the kernel messaging protocol |
+| 12 | Docker's official documentation; docker-curriculum.com; `man 7 namespaces`, `man 7 cgroups` |
+| 13 | Missing Semester: Metaprogramming (build systems, CI, dependency management); GitHub Actions docs; mypy and TypeScript handbooks |
+| 14 | Missing Semester: Debugging and Profiling; `journalctl`/`systemd` man pages; Brendan Gregg's Linux performance pages |
+| 15 | Full Stack Deep Learning (fullstackdeeplearning.com) |
+| 16 | Every source above; the capstone has no single text |
 | Cross-cutting | wizardzines.com (Julia Evans) — short, sharp treatments of almost everything above; good as reinforcement after a concept is first taught here, not as the first exposure |
 
 State the specific chapter/lecture at the start of each session, per the project's own instruction —
@@ -316,8 +332,11 @@ Stated by Aksan directly; supersedes the partial, self-reported list above. BRAC
   the coverage audit's open questions. HUM103 is the only ethics course and is general rather
   than computing-specific.
 
-Courses taken are not the same as material that landed: per the "What NOT to Re-Teach" rule,
-verify with one light question before building on any of them.
+Courses taken are not the same as material that landed, or material that stayed. Aksan's own
+calibration (2026-10-07): CGPA 3.73, roughly 85 to 89 percent in every course; he knows the
+concepts but has not mastered them and does not always remember what he studied. So before
+building on any course concept: a short refresher first, then one light check question.
+Never skip the refresher on the strength of a course code.
 
 ---
 
@@ -388,10 +407,10 @@ thing this project exists to close.
 The project is in its design phase. Teaching (starting with the Phase 0 diagnostic) begins only
 once the design freezes, and it freezes only when all three hold at the same time:
 
-- [ ] **The coverage audit is complete**: every CS2023 knowledge area in
+- [x] **The coverage audit is complete** (2026-10-07): every CS2023 knowledge area in
   `tracking/coverage-audit.md` is labelled degree, project, or out of scope with a reason; no
   row is pending; every open question the audit raised is decided.
-- [ ] **The design inbox is empty of untriaged items**: every entry in
+- [x] **The design inbox is empty of untriaged items** (as of 2026-10-07; reopens whenever a new item arrives): every entry in
   `tracking/design-inbox.md` has a verdict (covered, fold in, new chapter).
 - [ ] **Aksan signs off**, explicitly, in a session, recorded in the session log with the date.
 
@@ -621,3 +640,14 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   placeholders, verified before replacing). Audit open questions 1, 3, 5 closed; 2 (concurrency
   and distributed basics), 4 (licensing), 6 (HCI), 7 (PL theory) still open. Not done: moving
   the `book-latest` tag, which GitHub's connection from this session silently refuses.
+- **2026-10-07, audit closed**: Aksan accepted all four remaining audit questions into the
+  project, each as its practical face: new Part XI Concurrency and Distributed Systems in
+  Practice (6 ch.); a licensing chapter and a functional-ideas chapter in Part VII; HCI as CLI
+  design (Part III) and accessibility testing (Part VII); PL theory as TypeScript (Part VII) and
+  type checkers (Part XIV). Syllabus now 151 chapters in 17 parts, skeleton regenerated (all
+  files verified as placeholders first). He also sharpened the audience rule: studied is not
+  mastered, and not always remembered (3.73 CGPA, 85 to 89 percent per course), so both the
+  book and live sessions give a short refresher before leaning on any course concept; SKILL.md,
+  the preface, and "Degree Course List" updated. Design freeze: audit complete and inbox empty
+  are now ticked; only Aksan's sign-off remains. Still outstanding: the founding brief, and the
+  `book-latest` tag (needs deleting on GitHub so CI can recreate it).

@@ -54,6 +54,7 @@ SYLLABUS = [
         "JIT compilation through V8: Ignition, Sparkplug, Maglev, TurboFan",
         "Node.js: a JavaScript engine plus an operating system API",
         "Scripted CLIs: shebangs, launcher shims, and why python -m pip exists",
+        "Designing command-line tools for humans: help text, errors, and conventions",
     ]),
     ('part04-version-control', 'Version Control, Properly', 3, [
         "The object model: blobs, trees, and commits",
@@ -99,7 +100,11 @@ SYLLABUS = [
         "npx, npm create, and scaffolding CLIs",
         "CommonJS and ES modules: two module systems in one ecosystem",
         "Transpilers, bundlers, and dev servers: what Vite does with our React code",
+        "TypeScript: a type system added to JavaScript, then erased before it runs",
+        "Accessibility in practice: what the browser exposes, and how we test it",
         "Supply-chain security: every dependency is code we chose to run",
+        "Software licenses: what we may use, and what we owe when we publish",
+        "Functional ideas in everyday tools: immutability and pure functions in Git, React, and builds",
         "Packaging elsewhere: Cargo, Maven, Go modules, and what every ecosystem shares",
     ]),
     ('part08-apis', 'APIs: How Applications Talk', 7, [
@@ -130,7 +135,15 @@ SYLLABUS = [
         "XSS and CSRF: attacks that live in the browser",
         "Least privilege: narrow users, narrow permissions, narrow tokens",
     ]),
-    ('part11-jupyter', 'Jupyter and the Notebook Stack', 10, [
+    ('part11-concurrency', 'Concurrency and Distributed Systems in Practice', 10, [
+        "Concurrency in practice: threads, processes, and async I/O",
+        "Python's GIL and the free-threaded build: what actually runs in parallel",
+        "Race conditions we can reproduce: locks, and letting the database be the lock",
+        "Queues and background workers: work that should not happen inside the request",
+        "More than one machine: partial failure, timeouts, and retries",
+        "Replication and consistency in practice: what eventually consistent actually means",
+    ]),
+    ('part12-jupyter', 'Jupyter and the Notebook Stack', 11, [
         "The frontend/kernel split, and why it exists",
         "The kernel protocol",
         "Kernel specs: where they live, how discovery works",
@@ -138,7 +151,7 @@ SYLLABUS = [
         "Notebooks and version control",
         "When a notebook is the wrong tool",
     ]),
-    ('part12-containers', 'Containers', 11, [
+    ('part13-containers', 'Containers', 12, [
         "The isolation idea, generalized from environments to the whole OS",
         "Namespaces and cgroups: why a container is not a virtual machine",
         "Images, layers, and Dockerfiles",
@@ -147,16 +160,17 @@ SYLLABUS = [
         "GPU containers",
         "Why \"works on my machine\" stops being necessary",
     ]),
-    ('part13-automation-build', 'Automation and Build Tooling', 12, [
+    ('part14-automation-build', 'Automation and Build Tooling', 13, [
         "Makefiles",
         "GitHub Actions and CI/CD",
         "Automated testing as a habit, not a chore",
         "Pre-commit hooks",
         "Linters and formatters",
+        "Type checkers: mypy, pyright, and tsc, and what they actually prove",
         "Reproducible builds",
         "The same pipeline, five languages: CI beyond Python",
     ]),
-    ('part14-deployment-ops', 'Deployment and Operations', 13, [
+    ('part15-deployment-ops', 'Deployment and Operations', 14, [
         "Deploying something small to a real machine",
         "Keeping a process alive: systemd, restart policies, and graceful shutdown",
         "Reverse proxies: one public port, many services",
@@ -168,7 +182,7 @@ SYLLABUS = [
         "Health checks, monitoring, and observability",
         "Deployment strategies and rollback: shipping without fear",
     ]),
-    ('part15-ml-infra', 'Machine Learning Infrastructure', 14, [
+    ('part16-ml-infra', 'Machine Learning Infrastructure', 15, [
         "Reproducible ML environments",
         "CUDA and driver versions",
         "Data versioning with DVC",
@@ -177,7 +191,7 @@ SYLLABUS = [
         "Serving a model",
         "Why almost every ML project fails to be reproducible",
     ]),
-    ('part16-capstone', 'Capstone: From Source to Production', 15, [
+    ('part17-capstone', 'Capstone: From Source to Production', 16, [
         "One application through every layer",
         "Breaking it on purpose, one layer at a time",
     ]),
