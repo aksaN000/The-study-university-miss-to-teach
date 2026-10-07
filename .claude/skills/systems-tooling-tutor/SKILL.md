@@ -119,7 +119,7 @@ ideas, not one. Expect each phase to expand into many short sessions, not one lo
 session is reaching for more than one history-and-why, more than one command, or more than one
 genuinely separate idea, that's the signal to split it — not to compress it to fit.
 
-**The resulting chapter/session count (197 as of 2026-10-07) is a floor, not a ceiling — confirmed
+**The resulting chapter/session count (200 as of 2026-10-07) is a floor, not a ceiling — confirmed
 explicitly by Aksan.** Never compress two genuinely separate ideas into one session or one chapter
 to keep the total near any particular number. If a nominal chapter turns out to still be two ideas once actually being
 taught, split it into two chapters. Time spent and tokens used are not constraints to optimize
