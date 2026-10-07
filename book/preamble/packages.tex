@@ -1,60 +1,73 @@
 % Compiled with XeLaTeX (needed for fontspec / real system fonts).
-% latexmk -pdf -pdflatex="xelatex -interaction=nonstopmode -halt-on-error %O %S" main.tex
+% latexmk -xelatex main.tex
 
 \usepackage{fontspec}
 \usepackage[english]{babel}
 \usepackage{microtype}
 
 % ---- Type: one warm, well-built serif family carries the whole book.
-% Weight and size build hierarchy, not a mismatched second typeface.
-% Lora ships as a variable font; xdvipdfmx mis-embeds it when fontspec
-% resolves it through fontconfig's named-instance lookup (a known class
-% of variable-font bug), so it's loaded here by explicit file path
-% instead, which sidesteps that path entirely and is more portable
-% besides -- it doesn't depend on Lora being registered with the OS. ----
+% Static Lora cuts (OFL, from the Lora project), loaded by explicit path
+% so the build is machine-independent and bold is a real bold. ----
 \setmainfont{Lora}[
   Path = fonts/,
-  UprightFont = Lora-Variable.ttf,
-  BoldFont = Lora-Variable.ttf,
-  ItalicFont = Lora-Italic-Variable.ttf,
-  BoldItalicFont = Lora-Italic-Variable.ttf,
+  UprightFont = Lora-Regular.ttf,
+  BoldFont = Lora-Bold.ttf,
+  ItalicFont = Lora-Italic.ttf,
+  BoldItalicFont = Lora-BoldItalic.ttf,
 ]
 \setmonofont{Latin Modern Mono}[Scale=0.92]
-% \displayfont is Lora at whatever weight is invoked around it (bfseries
-% for headings) -- kept as a named alias so heading commands read clearly
-% and so a different display face can be swapped in later in one place.
 \let\displayfont\normalfont
 
-% ---- Page: a real book trim with room for a margin column. ----
+% ---- Page: a real book trim with a centered text block and equal
+% margins. Sidenotes are set as styled notes at the foot of the page
+% (see \sidenote in boxes.tex), so no page carries an empty column. ----
 \usepackage[paperwidth=7.5in, paperheight=9.5in,
-            top=0.85in, bottom=0.9in, left=0.75in,
-            textwidth=4.3in, marginparsep=0.35in, marginparwidth=1.6in,
-            includemp]{geometry}
+            top=0.9in, bottom=1.0in, hmargin=1.0in,
+            headheight=15pt, headsep=18pt]{geometry}
+
+% Kept so full-width elements and older sources still compile; with
+% symmetric margins "full width" is simply the text width.
+\newlength{\fullw}
+\setlength{\fullw}{\textwidth}
+\newlength{\fullextra}
+\setlength{\fullextra}{0pt}
 
 \usepackage{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{listings}
 \usepackage{enumitem}
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
-\usepackage{marginnote}
-\renewcommand*{\marginfont}{\small\itshape}
+\usepackage[bottom,hang,flushmargin]{footmisc}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{changepage}
+\usepackage{needspace}
+\usepackage{lettrine}
+\usepackage[font=small,labelfont={bf,color=accent},labelsep=colon,
+            justification=raggedright,singlelinecheck=false]{caption}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc,fit,backgrounds,
+                decorations.pathreplacing,shapes.geometric,shapes.misc}
 
-% ---- Palette: three colors, used with intent, not five decorative ones. ----
-\definecolor{ink}{HTML}{2A2825}      % body text -- warmer than pure black
-\definecolor{accent}{HTML}{A34A1F}   % the book's one signature color: chapter
-                                       % numbers, colon-heading labels, sidenote
-                                       % rules, epigraph marks
-\definecolor{codeink}{HTML}{2F3B45}  % terminal-block rule and prompt color
-\definecolor{codebg}{HTML}{F4F1EA}   % terminal-block background, warm paper tone
+% ---- Palette. One signature color (accent, a warm terracotta) leads;
+% one cool partner (cool, a deep teal) exists so diagrams can show two
+% sides of a boundary (user vs. kernel, client vs. server, ours vs.
+% theirs) without inventing colors per figure. Everything else is ink
+% and paper. ----
+\definecolor{ink}{HTML}{2A2825}      % body text, warmer than pure black
+\definecolor{accent}{HTML}{A34A1F}   % signature: numbers, labels, rules
+\definecolor{cool}{HTML}{25646A}     % diagram partner color, trace boxes
+\definecolor{gold}{HTML}{D9A441}     % tiny highlights only (the cursor, a marker)
+\definecolor{paper}{HTML}{FBF8F2}    % soft panel fill
+\definecolor{codeink}{HTML}{2F3B45}  % terminal text
+\definecolor{codebg}{HTML}{F4F1EA}   % terminal background, warm paper tone
 \definecolor{warn}{HTML}{8C3B12}     % breakage callouts only
 
 \color{ink}
 
 \usepackage[colorlinks=true, linkcolor=accent!70!black,
-            citecolor=accent!70!black, urlcolor=codeink,
-            bookmarksnumbered=true]{hyperref}
+            citecolor=accent!70!black, urlcolor=cool,
+            bookmarksnumbered=true, linktoc=page]{hyperref}

@@ -1,20 +1,50 @@
+% Title page: drawn on the whole sheet (not inside the text column), so it
+% is centered on the paper. The illustration is the book's thesis in one
+% picture: the layers between our code and the hardware.
 \begin{titlepage}
-\centering
-\vspace*{2.2cm}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % paper and the dark band
+  \fill[paper] (current page.north west) rectangle (current page.south east);
+  \fill[ink] (current page.north west) rectangle ([yshift=-4.15in]current page.north east);
+  \fill[accent] ([yshift=-4.15in]current page.north west) rectangle ([yshift=-4.25in]current page.north east);
 
-{\Huge\bfseries From Zero\par}
-\vspace{0.5cm}
-{\Large Everything a CS Degree Assumes We Already Know\par}
+  % a terminal prompt, typed into the band
+  \node[anchor=north west, font=\ttfamily\small, text=white!55!ink]
+    at ([xshift=0.8in,yshift=-0.75in]current page.north west) {\$ whoami};
+  \node[anchor=north west, font=\ttfamily\small, text=white!55!ink]
+    at ([xshift=0.8in,yshift=-0.98in]current page.north west) {a computer scientist who has never been shown the machine};
 
-\vspace{1.6cm}
-{\large A practical foundation in computer systems and developer tooling\par}
-\vspace{0.3cm}
-{\normalsize\itshape written session by session, and meant to be read the same way\par}
+  % title and subtitle
+  \node[anchor=north west, font=\displayfont\bfseries\fontsize{58}{60}\selectfont, text=white]
+    at ([xshift=0.75in,yshift=-1.55in]current page.north west) {From Zero};
+  \node[anchor=north west, text width=5.8in, align=left,
+        font=\displayfont\fontsize{17}{22}\selectfont, text=white!85!ink]
+    at ([xshift=0.8in,yshift=-2.65in]current page.north west)
+    {Everything a CS degree assumes we already know};
+  \node[anchor=north west, font=\ttfamily\large, text=gold]
+    at ([xshift=0.8in,yshift=-3.35in]current page.north west) {\$ \rule[-1pt]{0.55em}{1.05em}};
 
-\vfill
+  % the layer stack: our code at the top, the hardware at the bottom
+  \begin{scope}[shift={([yshift=-4.85in]current page.north)}]
+    \foreach \lbl/\w [count=\i] in {
+        {our code}/2.2, {packages and environments}/2.9, {interpreters and runtimes}/3.6,
+        {shell and terminal}/4.3, {processes, files, network}/5.0,
+        {operating system kernel}/5.7, {hardware}/6.4} {
+      \pgfmathsetmacro{\mix}{100*(\i-1)/6}
+      \node[rounded corners=2pt, minimum height=7.5mm, minimum width=\w in,
+            fill=accent!\mix!cool, text=white, font=\small\bfseries]
+        at (0,-\i*9.2mm) {\lbl};
+    }
+  \end{scope}
 
-{\normalsize Systems \& Developer Tooling, From Zero: companion volume\par}
-\vspace{0.2cm}
-{\small \today\par}
-
+  % the line that says what the book is
+  \node[anchor=south, text width=5.6in, align=center, font=\displayfont\itshape\normalsize, text=ink!80]
+    at ([yshift=1.25in]current page.south)
+    {A practical foundation in computer systems and developer tooling,\\
+     written session by session, and meant to be read the same way};
+  \node[anchor=south, font=\footnotesize\addfontfeatures{LetterSpace=12}, text=accent]
+    at ([yshift=0.75in]current page.south)
+    {SYSTEMS \& DEVELOPER TOOLING, FROM ZERO\quad\textbullet\quad COMPANION VOLUME};
+\end{tikzpicture}
 \end{titlepage}

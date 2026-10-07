@@ -1,102 +1,289 @@
 % ============================================================
 % ADAPTIVE TOOLKIT, not a fixed per-chapter template.
 % Each chapter uses whichever of these actually serves its content.
-% None are mandatory; none appear in a fixed order.
+% None are mandatory; none appear in a fixed order. The one standing
+% expectation (see SKILL.md, Book Design): any chapter that explains a
+% mechanism shows it as a picture as well as in words.
 % ============================================================
 
-% ---- Colon headings: "Label: elaboration", the label weighted and
-% colored, the elaboration in the body weight. Use for \section-level
-% headings when a heading is used at all -- plain prose needs none. ----
+% ------------------------------------------------------------
+% Text-level tools
+% ------------------------------------------------------------
+
+% Colon headings: "Label: elaboration".
 \newcommand{\theading}[2]{%
-  \par\addvspace{18pt}%
-  {\displayfont\bfseries\large\color{accent}#1:}%
-  {\displayfont\large\color{ink}\space #2}%
+  \par\Needspace{9\baselineskip}\addvspace{20pt}%
+  \noindent{\displayfont\bfseries\large\color{accent}#1:}%
+  \hspace{0.4em}{\displayfont\large\color{ink}#2}%
   \par\addvspace{8pt}\nopagebreak
 }
-% A bare colon-styled label with no visible elaboration text following.
 \newcommand{\tlabel}[1]{{\displayfont\bfseries\large\color{accent}#1}\par\addvspace{6pt}\nopagebreak}
 
-% ---- Sidenote: the primary lightweight tool. A short marginal aside --
-% a definition, a history fragment, a cross-reference -- set beside the
-% line that prompted it rather than boxed into the flow. Use liberally,
-% or not at all, per chapter. ----
-\newcounter{sidenotenum}[chapter]
-\newcommand{\sidenote}[1]{%
-  \refstepcounter{sidenotenum}%
-  \textsuperscript{\color{accent}\tiny\bfseries\thesidenotenum}%
-  \marginnote{\textsuperscript{\color{accent}\tiny\bfseries\thesidenotenum}\,#1}%
-}
+% Sidenote: a short aside (a definition, a date, a small joke) set at the
+% foot of the page, numbered in the accent color.
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\makeatletter
+\renewcommand{\@makefnmark}{\hbox{\textsuperscript{\color{accent}\bfseries\@thefnmark}}}
+\renewcommand{\footnoterule}{\vspace*{-3pt}{\color{accent!50}\hrule width 1.2in height 0.5pt}\vspace*{6pt}}
+\makeatother
+\renewcommand{\footnotelayout}{\itshape\color{ink!85}}
+\setlength{\footnotesep}{10pt}
+\newcommand{\sidenote}[1]{\footnote{#1}}
 
-% ---- Epigraph: a short framing line under the chapter title, before
-% the prose begins. Use when a chapter opens with a quote, a fragment
-% of the "why," or a question worth sitting with -- not mandatory. ----
+% Drop cap for a chapter's first paragraph: \opening{W}{hen we type}
+\renewcommand{\LettrineFontHook}{\displayfont\bfseries\color{accent}}
+\setlength{\DefaultFindent}{2pt}
+\setlength{\DefaultNindent}{0pt}
+\newcommand{\opening}[2]{\lettrine[lines=3,loversize=0.05]{#1}{#2}}
+
+% Epigraph: an optional opening frame.
 \newcommand{\epigraph}[2]{%
   \begin{flushright}\displayfont\itshape\color{ink!80}
-    \parbox{0.75\textwidth}{\raggedleft #1\par\smallskip
+    \parbox{0.8\textwidth}{\raggedleft #1\par\smallskip
     \normalfont\upshape\small\color{accent}#2}
   \end{flushright}\bigskip
 }
 
-% ---- Terminal: real command, real output. Used only when a chapter
-% actually has one to show. ----
+% Depth tag: one per chapter, right under the chapter title:
+% \depthtag{core} | {practical} | {deep dive} | {specialized}
+\newcommand{\depthtag}[1]{%
+  \par\noindent\hfill\tikz[baseline=(t.base)]\node[
+    rounded rectangle, fill=accent!12, text=accent!80!black,
+    font=\scriptsize\bfseries\addfontfeatures{LetterSpace=10}, inner xsep=8pt, inner ysep=3pt](t){\MakeUppercase{#1}};%
+  \par\vspace{6pt}}
+
+% Full-width block: kept for wide tables and figures; with symmetric
+% margins it simply centers its content on the text block.
+\newenvironment{fullwidth}{\par\centering}{\par}
+
+% ------------------------------------------------------------
+% Boxes. Each has one job; the title tells the reader which.
+% ------------------------------------------------------------
+
+% Shared skeleton: a soft panel with a colored spine and a small label.
+\tcbset{
+  fz/.style={
+    breakable, enhanced, boxrule=0pt, frame hidden, arc=2pt,
+    left=12pt, right=10pt, top=8pt, bottom=8pt,
+    before skip=12pt, after skip=12pt,
+    fonttitle=\displayfont\bfseries\small,
+    attach title to upper, after title={\par\smallskip},
+  },
+}
+
+% The mental model: the one picture to keep when the details fade.
+\newtcolorbox{mentalmodel}[1][]{fz, colback=accent!6,
+  borderline west={3pt}{0pt}{accent},
+  coltitle=accent, title={The mental model\ifx\relax#1\relax\else: #1\fi}}
+
+% Course refresher: the short recap the audience rule promises.
+% \begin{refresher}{CSE321}{Virtual memory} ... \end{refresher}
+\newtcolorbox{refresher}[2]{fz, colback=cool!6,
+  borderline west={3pt}{0pt}{cool}, coltitle=cool,
+  title={Quick refresher: #2 \hfill{\normalfont\scriptsize from #1}}}
+
+% Back in time: the history behind a design, with its year.
+\newtcolorbox{backintime}[1]{fz, colback=gold!10,
+  borderline west={3pt}{0pt}{gold!80!black}, coltitle=gold!45!black,
+  title={Back in time: #1}}
+
+% Predict first: a question the reader answers before reading on.
+\newtcolorbox{predict}{fz, colback=white,
+  borderline={0.6pt}{0pt}{accent!60,dashed}, coltitle=accent,
+  title={Predict first}}
+
+% Myth vs. reality: a common belief, then what actually happens.
+% \begin{myth}{Containers are lightweight virtual machines.} ... \end{myth}
+\newtcolorbox{myth}[1]{fz, colback=paper,
+  borderline west={3pt}{0pt}{ink!60}, coltitle=ink,
+  title={Myth: \normalfont\itshape #1}, after title={\par\smallskip\textbf{\color{accent}Reality.}\space}}
+
+% Break it on purpose: the deliberate-failure moment.
+\newtcolorbox{breakage}{fz, colback=warn!5,
+  borderline west={3pt}{0pt}{warn}, coltitle=warn,
+  title={Break it on purpose}}
+
+% Trace it: the part-end exercise, one operation through every layer.
+\newtcolorbox{traceit}[1]{fz, unbreakable, colback=cool!5,
+  borderline={0.8pt}{0pt}{cool}, coltitle=cool, left=14pt,
+  title={Trace it: \normalfont\itshape #1}}
+
+% FAQ: one per real question, wherever it is relevant.
+\newtcolorbox{faqentry}[1]{fz, colback=accent!4,
+  borderline west={1.5pt}{0pt}{accent!60}, coltitle=accent!60!black,
+  title={#1}}
+
+% ------------------------------------------------------------
+% Code, terminals, algorithms
+% ------------------------------------------------------------
+
+% Terminal: real command, real output.
 \lstdefinestyle{termstyle}{
   basicstyle=\ttfamily\small\color{codeink},
   backgroundcolor=\color{codebg},
-  frame=l, framerule=2pt, rulecolor=\color{accent},
-  framesep=10pt, breaklines=true, breakatwhitespace=false,
-  columns=fullflexible, showstringspaces=false,
+  frame=l, framerule=2.5pt, rulecolor=\color{accent},
+  framesep=10pt, xleftmargin=12pt, breaklines=true,
+  columns=fullflexible, keepspaces=true, showstringspaces=false,
   aboveskip=12pt, belowskip=12pt
 }
 \lstnewenvironment{terminal}{\lstset{style=termstyle}}{}
 
-% ---- Breakage: the deliberate-failure moment, when a chapter has one.
-% Deliberately plainer than a full color box -- a rule, not a cage. ----
-\newtcolorbox{breakage}{
-  breakable, enhanced, colback=white, colframe=warn,
-  borderline west={2.5pt}{0pt}{warn}, boxrule=0pt, frame hidden,
-  left=12pt, right=4pt, top=4pt, bottom=4pt,
-  fonttitle=\displayfont\bfseries\color{warn}, title={Break it on purpose}
+% Source code: \begin{code}{Python} ... \end{code}, with gentle syntax color.
+\lstdefinestyle{codestyle}{
+  basicstyle=\ttfamily\small\color{codeink},
+  backgroundcolor=\color{paper},
+  keywordstyle=\color{accent}\bfseries,
+  commentstyle=\color{ink!55}\itshape,
+  stringstyle=\color{cool},
+  numbers=left, numberstyle=\tiny\color{ink!40}, numbersep=8pt,
+  frame=none, xleftmargin=16pt, framesep=6pt,
+  breaklines=true, columns=fullflexible, keepspaces=true,
+  showstringspaces=false, aboveskip=12pt, belowskip=12pt
 }
+\lstdefinelanguage{JavaScript}{
+  keywords={const,let,var,function,return,if,else,for,while,import,export,
+            from,async,await,new,class,true,false,null,undefined,require},
+  sensitive=true, comment=[l]{//}, morecomment=[s]{/*}{*/},
+  morestring=[b]', morestring=[b]", morestring=[b]`
+}
+\lstnewenvironment{code}[1]{\lstset{style=codestyle,language=#1}}{}
 
-% ---- Comparison table: for the cross-language / cross-OS capstones.
-% booktabs rules, no vertical lines, generous row spacing. ----
+% Algorithm: numbered pseudocode in a quiet frame.
+% \begin{algo}{How the shell resolves a command name} ... \end{algo}
+\lstdefinelanguage{pseudo}{
+  keywords={for,each,in,if,then,else,return,while,do,end,and,or,not,
+            procedure,function,fail,break},
+  sensitive=false, comment=[l]{//}
+}
+\newtcblisting{algo}[1]{fz, listing only, colback=white,
+  borderline north={0.8pt}{0pt}{ink}, borderline south={0.8pt}{0pt}{ink},
+  coltitle=ink, left=4pt, title={Algorithm: \normalfont #1},
+  listing options={style=codestyle, language=pseudo, backgroundcolor=\color{white},
+    keywordstyle=\bfseries\color{ink}, aboveskip=0pt, belowskip=0pt}}
+
+% Comparison tables: booktabs, no vertical rules, generous rows.
 \newcommand{\comparerow}{\\[2pt]}
 \renewcommand{\arraystretch}{1.3}
 
-% ---- FAQ: available, not mandatory, not forced into a fixed slot.
-% One per real anticipated question, wherever in the chapter it's
-% actually relevant -- often but not always at the end. ----
-\newtcolorbox{faqentry}[1]{
-  breakable, enhanced, colback=accent!4, colframe=accent!45!black,
-  boxrule=0.4pt, arc=3pt, left=10pt, right=10pt, top=7pt, bottom=7pt,
-  fonttitle=\displayfont\bfseries\color{accent!25!black}, title={#1},
-  before skip=10pt, after skip=10pt
+% ------------------------------------------------------------
+% Diagram vocabulary (TikZ). Every figure in the book draws from these
+% styles so the whole book reads as one visual system.
+% ------------------------------------------------------------
+\tikzset{
+  fz/.style={font=\small, >={Stealth[length=6pt]}, line width=0.7pt},
+  box/.style={draw=ink!70, fill=paper, rounded corners=3pt,
+              minimum height=8mm, inner xsep=8pt, align=center},
+  proc/.style={box, draw=accent, fill=accent!8},          % a running process
+  kern/.style={box, draw=cool, fill=cool!10},             % kernel / system side
+  file/.style={box, draw=ink!60, fill=white, sharp corners,
+               tape, tape bend top=none},                 % a file on disk
+  data/.style={box, draw=gold!80!black, fill=gold!12},    % data, a value, a variable
+  note/.style={font=\footnotesize\itshape, text=ink!75, align=left},
+  flow/.style={->, draw=ink!75},
+  call/.style={->, draw=accent, line width=0.9pt},
+  reply/.style={->, draw=cool, dashed},
+  boundary/.style={draw=cool, dashed, line width=0.8pt},
+  layer/.style={rounded corners=2pt, minimum height=7mm, inner xsep=6pt,
+                font=\small\bfseries, text=white},
+  stepdot/.style={circle, fill=accent, text=white, font=\scriptsize\bfseries,
+               inner sep=1.5pt, minimum size=4.5mm},
 }
 
-% ============================================================
-% Chapter, section, and page furniture
-% ============================================================
+% \layerstack{width}{{Label one},{Label two},...}: a stack of layers,
+% first item on top, colored from cool (top) to accent (bottom).
+\newcommand{\layerstack}[2]{%
+  \begin{tikzpicture}[fz]
+    \foreach \lbl [count=\i] in {#2} {\global\let\fzlayercount\i}
+    \foreach \lbl [count=\i] in {#2} {
+      \pgfmathsetmacro{\mix}{100*(\i-1)/max(1,\fzlayercount-1)}
+      \node[layer, fill=accent!\mix!cool, minimum width=#1]
+        at (0,-\i*8.5mm) {\lbl};
+    }
+  \end{tikzpicture}%
+}
 
+% ------------------------------------------------------------
+% Chapter, part, section, and page furniture
+% ------------------------------------------------------------
+
+\newcommand{\fzchaptitle}[1]{%
+  \begin{minipage}{\fullw}\raggedright\displayfont\bfseries
+    \fontsize{25}{30}\selectfont\color{ink}#1\par\vspace{10pt}
+    {\color{accent}\rule{\fullw}{1.2pt}}
+  \end{minipage}}
+
+% Chapter opening: small spaced "Chapter" label and a big numeral, the
+% title across the full width, an accent rule under it.
 \titleformat{\chapter}[display]
   {\normalfont}
-  {\displayfont\fontsize{60}{60}\selectfont\color{accent!85!black}\thechapter}
-  {8pt}
-  {\raggedright\displayfont\bfseries\fontsize{28}{32}\selectfont\color{ink}}
-\titlespacing*{\chapter}{0pt}{-8pt}{32pt}
+  {\makebox[\fullw][l]{{\color{accent}\addfontfeatures{LetterSpace=18}\small\bfseries CHAPTER}\hfill
+     {\displayfont\bfseries\fontsize{60}{60}\selectfont\color{accent!28}\thechapter}}}
+  {6pt}
+  {\fzchaptitle{#1}}
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont}{}{0pt}
+  {\fzchaptitle{#1}}
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
 
-\titleformat{\part}[display]
-  {\normalfont\centering}
-  {\displayfont\Large\color{accent}Part \thepart}
-  {12pt}
-  {\centering\displayfont\bfseries\Huge\color{ink}}
+% Part opening: a full-bleed page. Big numeral, the part title, and a
+% map of the whole book with this part lit up, so every part opens by
+% showing where we are on the journey. \bookparts is written by
+% generate_stubs.py into _generated_structure.tex.
+\providecommand{\bookparts}{}
+\newcommand{\partmap}{%
+  \begin{tikzpicture}[font=\scriptsize]
+    \foreach \t [count=\i] in \bookparts {
+      \ifnum\i=\value{part}
+        \node[anchor=west, text=white, font=\scriptsize\bfseries]
+          at (0,-\i*4.3mm) {\makebox[2.4em][l]{\uppercase\expandafter{\romannumeral\i}}\t};
+        \fill[gold] (-0.35,-\i*4.3mm) circle (1.3pt);
+      \else
+        \node[anchor=west, text=white!65!accent] at (0,-\i*4.3mm) {\makebox[2.4em][l]{\uppercase\expandafter{\romannumeral\i}}\t};
+      \fi
+    }
+  \end{tikzpicture}%
+}
+\titleformat{\part}[block]
+  {\normalfont}{}{0pt}
+  {\thispagestyle{empty}%
+   \begin{tikzpicture}[remember picture, overlay]
+     \fill[accent] (current page.north west) rectangle (current page.south east);
+     \fill[gold] ([xshift=0.8in,yshift=-3.85in]current page.north west) rectangle
+       ([xshift=1.6in,yshift=-3.9in]current page.north west);
+     \node[anchor=north west, text=white!80!accent, font=\displayfont\bfseries\fontsize{110}{100}\selectfont]
+       at ([xshift=0.75in,yshift=-0.7in]current page.north west) {\Roman{part}};
+     \node[anchor=north west, text width=5.6in, align=left, text=white,
+           font=\displayfont\bfseries\fontsize{30}{35}\selectfont]
+       at ([xshift=0.78in,yshift=-2.55in]current page.north west) {#1};
+     \node[anchor=north west, text=white!80!accent, font=\small\addfontfeatures{LetterSpace=18}\bfseries]
+       at ([xshift=0.8in,yshift=-2.25in]current page.north west) {PART \Roman{part}};
+     \node[anchor=north west] at ([xshift=0.8in,yshift=-4.4in]current page.north west) {\partmap};
+   \end{tikzpicture}}
+\titlespacing*{\part}{0pt}{0pt}{0pt}
 
-\titleformat{\section}{\displayfont\bfseries\Large\color{ink}}{\thesection}{8pt}{}
-\titleformat{\subsection}{\displayfont\bfseries\large\color{ink}}{\thesubsection}{6pt}{}
+\titleformat{\section}{\displayfont\bfseries\Large\color{ink}}{\color{accent}\thesection}{8pt}{#1}
+\titleformat{\subsection}{\displayfont\bfseries\large\color{ink}}{\color{accent}\thesubsection}{6pt}{#1}
 
+% Running heads span the full width, so the rule ties text and margin together.
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE]{\small\itshape\color{ink!70}\leftmark}
-\fancyhead[RO]{\small\itshape\color{ink!70}\rightmark}
-\fancyfoot[C]{\small\color{accent}\thepage}
+\fancyhead[L]{\footnotesize\color{ink!65}\addfontfeatures{LetterSpace=8}\MakeUppercase{\leftmark}}
+\fancyhead[R]{\footnotesize\bfseries\color{accent}\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{accent!50}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{accent!40}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{chapter}>0 \thechapter\quad\fi #1}{}}
+\fancypagestyle{plain}{\fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[R]{\footnotesize\bfseries\color{accent}\thepage}}
+
+% Contents: parts lead in the accent color, chapters are quiet ink with
+% dotted leaders, so the page reads as a map rather than a wall of bold.
+\usepackage{titletoc}
+\titlecontents{part}[0pt]
+  {\addvspace{14pt}\displayfont\bfseries\color{accent}}
+  {\makebox[2.2em][l]{\thecontentslabel}}{}
+  {\hfill\contentspage}[\addvspace{4pt}]
+\titlecontents{chapter}[2.2em]
+  {\addvspace{1.5pt}\small\color{ink}}
+  {\contentslabel[\color{accent!80}\thecontentslabel]{2.2em}}{}
+  {\titlerule*[0.7pc]{.}\contentspage}

@@ -264,7 +264,10 @@ def main():
             chapter_num += 1
         main_tex_blocks.append("".join(block))
 
+    # The part list feeds the "where we are" map on every part page (boxes.tex).
+    part_list = ",".join("{" + title + "}" for _, title, _, _ in SYLLABUS)
     with open(os.path.join(BOOK, "_generated_structure.tex"), "w") as f:
+        f.write(f"\\def\\bookparts{{{part_list}}}\n\n")
         f.write("\n".join(main_tex_blocks))
 
     print(f"Generated {chapter_num - 1} chapter stubs across {len(SYLLABUS)} parts.")

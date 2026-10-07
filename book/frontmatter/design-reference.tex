@@ -1,64 +1,159 @@
 \chapter*{Design reference}
 \addcontentsline{toc}{chapter}{Design reference (not a real chapter)}
 \markboth{Design reference}{Design reference}
+\setcounter{figure}{0}\renewcommand{\thefigure}{D.\arabic{figure}}
 
-\emph{This page is not part of the syllabus. It exists to show what each tool in the
-adaptive toolkit actually looks like once used, with placeholder content standing in for a
-real session. Delete it, or keep it as a quick reference: either is fine.}
+\depthtag{core}
+\opening{T}{his page is not} part of the syllabus. It shows every tool in the toolkit as it
+looks in use, with demonstration content standing in for a real session, so the design can be
+judged on the page before any real chapter is written. Real chapters use only what their
+content calls for; none of this is a template.\sidenote{A sidenote: a definition, a date, a
+small joke, set beside the line that prompted it. Most chapters will have several.}
 
-\bigskip
+\epigraph{Any sufficiently advanced technology is indistinguishable from magic.\\
+This book is about making it distinguishable again.}{Clarke, then us}
 
-\epigraph{A page that never has to lie about being finished is worth more than one that
-pretends to be.}{a working note, not a real citation}
+\theading{A course concept, refreshed}{the box the audience rule promises}
 
-\theading{The idea}{a colon heading, label in the accent color, elaboration in body weight,
-using this chapter's own words rather than a generic slot name.}
+\begin{refresher}{CSE321}{Processes}
+A process is a running program plus everything the operating system keeps about it: an address
+space, open files, an environment, a current directory, and a process ID. Two runs of the same
+program are two processes that share nothing but the file they started from.
+\end{refresher}
 
-This is what ordinary prose looks like on the page: Lora at eleven and a bit points, a
-text column sized for comfortable line length, and a wide outer margin standing by for
-whenever a thought is worth setting beside the line that prompted it rather than
-interrupting the sentence to explain itself.\sidenote{This is a sidenote. Short, set in
-the margin, numbered quietly, used as often or as rarely as a given chapter actually
-warrants, never mandatory.} Some paragraphs will want several of these. Most chapters,
-especially the purely conceptual ones, may want none at all, and that is fine.
+\theading{The history first}{because every tool was somebody's fix}
 
-\theading{Seeing it for real}{a terminal block, used only in chapters that actually have a
-command to show.}
+\begin{backintime}{1971}
+Early Unix found programs by looking in a short, fixed list of directories. When more places
+were needed, the list became a variable that every user could change, and the search order
+became the user's responsibility. That variable is the one we still type today.
+\end{backintime}
+
+\theading{One picture to keep}{a mental model, drawn}
+
+\begin{mentalmodel}[the layers under one command]
+Everything in this book lives in one of these layers. When something breaks, the first
+question is always \emph{which layer?}
+\par\medskip
+\centering\layerstack{3.6in}{{our command},{shell},{process},{system calls},{kernel},{hardware}}
+\end{mentalmodel}
+
+\theading{Mechanisms as figures}{two processes, one boundary}
+
+When the shell runs a program it does not become the program. It asks the kernel for a copy of
+itself, and the copy replaces its own contents with the program we named.
+Figure~\ref{fig:demo-forkexec} shows the conversation.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[fz]
+  % user space: three moments in the life of one command
+  \node[proc, minimum width=27mm] (sh) at (0,0) {shell\\\footnotesize pid 4120};
+  \node[proc, minimum width=27mm] (child) at (4.6,0) {copy of the shell\\\footnotesize pid 4121};
+  \node[proc, minimum width=27mm, draw=cool, fill=cool!8] (py) at (9.2,0) {python\\\footnotesize pid 4121};
+  \draw[call] (sh) -- node[above, font=\scriptsize\bfseries, text=accent]{fork()} (child);
+  \draw[call] (child) -- node[above, font=\scriptsize\bfseries, text=accent]{exec()} (py);
+  % the boundary and the kernel underneath
+  \draw[boundary] (-1.9,-1.05) -- (11.1,-1.05);
+  \node[note, anchor=south east] at (11.1,-1.05) {user space};
+  \node[note, anchor=north east] at (11.1,-1.05) {kernel space};
+  \node[kern, minimum width=13cm, anchor=north] (k) at (4.6,-1.75) {kernel: creates the copy, then loads the new program into it};
+  \foreach \n in {sh,child} \draw[reply] (\n.south) -- (\n.south |- k.north);
+\end{tikzpicture}
+\caption{The shell asks the kernel for a copy of itself, and the copy replaces its own
+contents with the program we named. Same process ID, new contents.}
+\label{fig:demo-forkexec}
+\end{figure}
+
+\begin{predict}
+If the shell and the program are separate processes, what happens to the shell's current
+directory when the program runs \texttt{cd /}? Decide before reading on.
+\end{predict}
+
+\theading{Seeing it for real}{the terminal, with its real output}
 
 \begin{terminal}
-$ echo "placeholder command, not a real session"
-placeholder command, not a real session
+$ type python
+python is /usr/bin/python
+$ echo $PATH
+/home/us/.local/bin:/usr/local/bin:/usr/bin:/bin
 \end{terminal}
 
-\theading{When something breaks on purpose}{the breakage callout, a rule rather than a
-cage, used only where a chapter has a genuine deliberate failure to walk through.}
+\theading{When the steps matter}{an algorithm, numbered}
+
+\begin{algo}{How the shell turns a name into a program}
+procedure resolve(name)
+  if name contains "/" then return name     // a path: no search at all
+  for each dir in PATH, left to right do
+    if dir/name exists and is executable then
+      return dir/name                        // first match wins
+  fail "command not found"
+\end{algo}
+
+\theading{Code in more than one language}{gentle color, numbered lines}
+
+\begin{code}{Python}
+import os, shutil
+# Ask the same question the shell asks.
+print(shutil.which("python"))
+print(os.environ["PATH"].split(os.pathsep)[:3])
+\end{code}
+
+\begin{code}{JavaScript}
+// Node can ask it too.
+const { execSync } = require("child_process");
+console.log(execSync("command -v node").toString().trim());
+\end{code}
+
+\theading{Myths, retired}{a belief, then what really happens}
+
+\begin{myth}{Installing a program makes it available everywhere.}
+Installing puts files somewhere. Whether a name finds them depends on \texttt{PATH}, which is
+different per shell, per user, and per environment.
+\end{myth}
 
 \begin{breakage}
-Placeholder: what we broke, what it looked like, how we found our way back.
+We put an empty directory first in \texttt{PATH} and a fake \texttt{python} inside it. The
+next \texttt{python} ran our fake. Removing the directory from \texttt{PATH} brought the real
+one back, and \texttt{type python} showed us which one was winning at every step.
 \end{breakage}
 
-\theading{A comparison-shaped chapter}{when the content is inherently a table, it becomes
-one instead of prose pretending otherwise.}
+\theading{When the content is a table}{full width, no vertical rules}
 
-\begin{center}
-\begin{tabular}{@{}lll@{}}
+\begin{fullwidth}
+\centering
+\begin{tabular}{@{}llll@{}}
 \toprule
-\textbf{Tool} & \textbf{Lockfile} & \textbf{Registry} \\
+\textbf{Ecosystem} & \textbf{Manifest} & \textbf{Lockfile} & \textbf{Registry} \\
 \midrule
-pip & requirements.txt / lock & PyPI \\
-npm & package-lock.json & npm registry \\
-Cargo & Cargo.lock & crates.io \\
+Python & pyproject.toml & uv.lock / poetry.lock & PyPI \\
+JavaScript & package.json & package-lock.json & npm registry \\
+Rust & Cargo.toml & Cargo.lock & crates.io \\
+Go & go.mod & go.sum & module proxy \\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{fullwidth}
 
-\theading{Questions we might have}{available wherever they land, not bundled into a fixed
-closing slot.}
+\theading{End of a part}{the trace that ties the layers together}
 
-\begin{faqentry}{Is this placeholder text a real question?}
-No. In a real chapter this box holds a question actually asked or actually confusing
-during the session it documents.
+\begin{traceit}{what happens when we type python train.py}
+\centering
+\begin{tikzpicture}[fz, node distance=3mm]
+  \foreach \s/\t [count=\i] in {keyboard/terminal, terminal/shell, shell/{PATH lookup},
+                                {PATH lookup}/fork + exec, fork + exec/interpreter,
+                                interpreter/{imports from disk}} {
+    \node[stepdot] (n\i) at (0,-\i*8mm) {\i};
+    \node[anchor=west] at ($(n\i.east)+(2mm,0)$) {\s \;$\rightarrow$\; \t};
+  }
+\end{tikzpicture}
+\end{traceit}
+
+\theading{Questions we might have}{wherever they land}
+
+\begin{faqentry}{Why does the book draw so many pictures?}
+Because a mechanism we can picture is a mechanism we can rebuild later from memory, long after
+the exact command has slipped away.
 \end{faqentry}
 
 \bigskip
-\emph{End of design reference.}
+\noindent\emph{End of design reference.}

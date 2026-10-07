@@ -388,15 +388,39 @@ distinctive, never use em dashes, use colon-style headings where headings are us
 and let each chapter's actual shape follow what it's teaching rather than forcing a fixed
 template. All four are now real, working, compiled infrastructure, not aspirations:
 
-**Typography and layout.** Compiled with XeLaTeX (not pdflatex; `latexmk -xelatex main.tex`
-from `book/`). Body face is Lora throughout, bundled in `book/fonts/` (OFL-licensed, so
-redistribution is fine) and loaded by explicit file path rather than through system font
-lookup, because Lora's variable-font format otherwise trips a real xdvipdfmx embedding bug.
-This also means the book compiles identically on any machine, not just one that happens to
-have Lora installed. A wide outer margin carries sidenotes; three colors total (`ink` for
-body text, `accent` as the one signature color for chapter numbers/colon-heading
-labels/sidenote marks, plus a warm neutral pair for code), not the old five-color box
-system.
+**Typography and layout (rebuilt 2026-10-07 after Aksan's feedback that text sat left with
+empty space on the right).** Compiled with XeLaTeX (`latexmk -xelatex main.tex` from `book/`;
+CI does the same). Body face is Lora in its static cuts (Regular, Bold, Italic, BoldItalic,
+OFL) bundled in `book/fonts/` and loaded by path, so bold is a real bold and the build is
+machine-independent. The page is a 7.5 x 9.5 in trim with a **centered text block and equal
+margins**: there is no permanent margin column, because an empty column reads as a layout
+bug on every page without notes. `\sidenote{...}` still exists in the source and renders as
+a styled note at the foot of the page. The title page and part pages are drawn on the whole
+sheet with TikZ (centered on the paper, not on the text block). Each part page shows a map
+of all parts with the current one lit, generated from `SYLLABUS` (`\bookparts`). Palette:
+`ink` and `paper`, `accent` (terracotta, the signature), `cool` (teal, the diagram partner
+for the other side of any boundary), `gold` for tiny highlights only.
+
+**Every chapter should be a pleasure to read, not just correct (Aksan, 2026-10-07: "visually
+stunning, easy and extremely interesting to read, full of fun").** In practice:
+
+- **Picture every mechanism.** Any chapter that explains how something works shows it as a
+  TikZ figure as well as in prose, using the shared diagram styles in `boxes.tex` (`proc` for
+  a process, `kern` for the kernel side, `file`, `data`, `call`/`reply` arrows, `boundary`,
+  `\layerstack`), so the whole book reads as one visual system. Use algorithms (`algo`) for
+  step-by-step procedures, tables for comparisons, layer stacks for "which layer is this?"
+- **Fun is a teaching tool, not decoration.** Real stories from the history boxes, myths
+  worth retiring, small jokes in sidenotes, familiar analogies (Bangladeshi context where it
+  fits), "predict first" questions that make the reader commit before the answer. Never at
+  the cost of precision, and never praise or filler.
+- **Every claim a reader could check, they can check**: real commands and real output.
+
+**The toolkit**, all optional and chosen per chapter (demonstrated with placeholder content in
+`book/frontmatter/design-reference.tex`): `\opening{L}{etter}` drop cap; `\depthtag{core}`;
+`\theading`; `\sidenote`; `\epigraph`; boxes `refresher{course}{topic}` (the course recap
+the audience rule requires), `backintime{year}`, `mentalmodel[title]`, `predict`,
+`myth{claim}`, `breakage`, `traceit{operation}` (part ends), `faqentry{question}`; listings
+`terminal`, `code{Python|C|JavaScript}`, `algo{title}`; `figure` with TikZ; booktabs tables.
 
 **No em dashes, anywhere in reader-facing prose.** Not `---`, not the unicode character.
 Use a period and a new sentence, a colon, a semicolon, or parentheses instead. This applies
@@ -413,20 +437,11 @@ generic label doesn't have a real elaboration worth putting after the colon, the
 probably doesn't need a heading there at all, and plain prose is fine.
 
 **Adaptive chapter structure, not a fixed template.** There is no mandatory section
-sequence anymore. `book/preamble/boxes.tex` defines a toolkit, all optional, used only
-where a chapter's actual content calls for it: `\theading`, `\sidenote` (marginal asides,
-use zero to many per chapter), `\epigraph` (an optional opening frame), the `terminal`
-environment (only if there's a real command and real output), the `breakage` box (only if
-there's a genuine deliberate-failure moment), `booktabs` comparison tables (for the
-cross-language/cross-OS capstones, instead of forcing a table's worth of content through
-prose), and `faqentry` boxes (one per real anticipated question, placed wherever relevant,
-not bundled into a fixed closing section). A pure mental-model chapter may be almost all
-flowing prose with one or two sidenotes and no boxes at all. A mechanism-plus-hands-on
-chapter needs a terminal block and probably a breakage box. A comparison capstone probably
-wants a table more than any box above. Decide the shape from the content, every time.
+sequence. A pure mental-model chapter may be prose, a sidenote or two, and one diagram. A
+mechanism-plus-hands-on chapter needs a terminal block, a figure, and probably a breakage
+box. A comparison capstone wants a table. Decide the shape from the content, every time.
 
-**Two recurring features, adopted 2026-10-07 (implement in `boxes.tex` when the first chapter
-that needs one is written, and recompile to check it):**
+**Two recurring features, adopted 2026-10-07 (both now built in `boxes.tex`):**
 
 - *Trace it*: at the end of each part, one real operation traced through every layer taught
   so far ("what happens when we type `python train.py`", "`git push`", "opening a notebook",

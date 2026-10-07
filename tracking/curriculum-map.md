@@ -654,3 +654,13 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
 - **2026-10-07, skill sync**: Aksan asked for a way to save the updated skill to his claude.ai
   account from chat. Rule added to CLAUDE.md: after any SKILL.md change, package it as
   `systems-tooling-tutor.skill` and send it in chat. First copy sent (151-chapter version).
+- **2026-10-07, book design rebuild**: Aksan flagged the title page (centered on the text block,
+  which sat left of a wide margin column) and asked for a visually stunning, fun, figure-rich
+  book. Rebuilt: centered text block with equal margins and sidenotes as styled foot notes;
+  full-sheet TikZ title page (a layer stack from hardware to our code) and part pages (with a
+  map of all parts, current one lit); new chapter openings; static Lora fonts for real bold;
+  quiet contents page; a shared TikZ diagram vocabulary; new boxes (course refresher, back in
+  time, mental model, predict first, myth, trace it), drop caps, depth tags, code and
+  algorithm listings. Verified by compiling locally and inspecting rendered pages. Rule added to
+  SKILL.md: every mechanism gets a figure, and fun is a teaching tool. Also answered: a skill
+  saved on claude.ai does not update itself; Aksan re-saves each new `.skill` file sent in chat.
