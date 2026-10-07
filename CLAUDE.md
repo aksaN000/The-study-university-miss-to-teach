@@ -27,3 +27,7 @@ Hard rules, repeated here because they matter most:
   address, linked to the `aksaN000` account). Never add Co-Authored-By, Claude-Session, or any
   other Claude attribution line to a commit message or PR body.
 - Commit and push directly to `main`; create a branch or PR only when Aksan asks.
+- Whenever `.claude/skills/systems-tooling-tutor/SKILL.md` changes, package it as
+  `systems-tooling-tutor.skill` (a zip holding `systems-tooling-tutor/SKILL.md`) in the
+  scratchpad and send it to Aksan in chat, so he can save the updated skill to his claude.ai
+  account. The repo copy stays the source of truth; the packaged file is never committed.

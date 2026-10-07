@@ -651,3 +651,6 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   the preface, and "Degree Course List" updated. Design freeze: audit complete and inbox empty
   are now ticked; only Aksan's sign-off remains. Still outstanding: the founding brief, and the
   `book-latest` tag (needs deleting on GitHub so CI can recreate it).
+- **2026-10-07, skill sync**: Aksan asked for a way to save the updated skill to his claude.ai
+  account from chat. Rule added to CLAUDE.md: after any SKILL.md change, package it as
+  `systems-tooling-tutor.skill` and send it in chat. First copy sent (151-chapter version).
