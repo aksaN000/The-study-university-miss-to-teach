@@ -873,5 +873,8 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   container signs commits with its own SSH key, which is not on his account; only this repo
   had such commits (15 of 21 on main). Signing is now off per session (rule added to
   `CLAUDE.md` and SKILL.md). Stripping the signatures from the existing 15 needs a rewrite of
-  main and a force-push: Aksan approved, but the session's safety check blocked it, so it waits
-  on his decision. Chapter 1 resumes at the three history check questions.
+  main and a force-push: first blocked by the session's safety check, then done on Aksan's
+  repeated, explicit instruction (all 22 commit trees, authors, dates, and messages verified
+  identical; force-pushed with lease; new head `9620ec7`; CI moves the `book-latest` tag).
+  Aksan also asked to git-ignore `CLAUDE.md`, then declined once told a fresh session would
+  then commit as Claude, with attribution and signing; `CLAUDE.md` stays tracked. Chapter 1 resumes at the three history check questions.
