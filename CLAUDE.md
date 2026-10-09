@@ -26,6 +26,9 @@ Hard rules, repeated here because they matter most:
   `git config user.email "92901617+aksaN000@users.noreply.github.com"` (his GitHub no-reply
   address, linked to the `aksaN000` account). Never add Co-Authored-By, Claude-Session, or any
   other Claude attribution line to a commit message or PR body.
+- Also before the first commit, run `git config commit.gpgsign false`. The cloud container
+  signs commits with its own SSH key, which is not on Aksan's GitHub account, so GitHub shows
+  those commits as "Unverified" (decided 2026-10-09). Never register that key on his account.
 - Commit and push directly to `main`; create a branch or PR only when Aksan asks.
 - Whenever `.claude/skills/systems-tooling-tutor/SKILL.md` changes, package it as
   `systems-tooling-tutor.skill` (a zip holding `systems-tooling-tutor/SKILL.md`) in the

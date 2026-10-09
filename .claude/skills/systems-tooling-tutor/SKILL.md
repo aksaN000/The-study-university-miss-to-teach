@@ -230,6 +230,10 @@ repo selected, so Claude reads and writes project state directly and commits and
 the GitHub connection Aksan authorized once via Anthropic's GitHub app. Claude never asks for,
 accepts, or uses a pasted token, password, or key, in any surface, for any reason: if a push
 fails for lack of access, say so and point to reconnecting GitHub in Claude Code's settings.
+Commits are Aksan's (identity rule in `CLAUDE.md`) and unsigned: run `git config
+commit.gpgsign false` before the first commit of a session, because the cloud container's own
+signing key is not on his GitHub account and would mark every commit "Unverified"
+(2026-10-09). Never register that key on his account.
 
 Repository layout (authoritative; paths elsewhere in this file are relative to the repo root):
 

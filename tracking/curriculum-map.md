@@ -865,3 +865,13 @@ check, not just mentioned), any gap that needs revisiting, and what's next.
   every command in mechanism sessions (SKILL.md Step 2b, ladder now 9 steps), carried into
   the book chapters. Targeted reading alongside sessions, not before: OSTEP ch. 4 to 6 (with
   ch01, ch02, ch06) and ch. 13 to 15 (with ch03).
+- **2026-10-09, repository housekeeping (no teaching)**: two GitHub fixes Aksan asked for while
+  Chapter 1's history check questions were open. (1) A stale "claude" entry in repo sidebars:
+  every audited repo's history was already clean (no Claude author, committer, or trailer on
+  any ref), so it was GitHub's cached contributors list; switching the default branch away and
+  back refreshed it (Aksan confirmed). (2) "Unverified" commits: the Claude Code cloud
+  container signs commits with its own SSH key, which is not on his account; only this repo
+  had such commits (15 of 21 on main). Signing is now off per session (rule added to
+  `CLAUDE.md` and SKILL.md). Stripping the signatures from the existing 15 needs a rewrite of
+  main and a force-push: Aksan approved, but the session's safety check blocked it, so it waits
+  on his decision. Chapter 1 resumes at the three history check questions.
